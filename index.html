@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DC HOSA · Leadership Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d1f3c;--navy-mid:#162a52;--sage:#1f4a30;--teal:#0e4040;--charcoal:#1a1a30;--gold:#c8900a;--gold-lt:#e8ac30;--cream:#f5f2ea;--cream-2:#eae7dc;--white:#fdfbf6;--text-1:#0d1f3c;--text-2:#1e2e48;--text-3:#6878a0;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--cream);overflow-x:hidden;min-height:100vh;}
+.bg-mesh{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 70% 70% at 15% 20%,rgba(30,54,100,.4) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at 85% 80%,rgba(30,70,60,.3) 0%,transparent 55%),radial-gradient(ellipse 50% 50% at 50% 50%,rgba(200,144,10,.04) 0%,transparent 65%);background-color:var(--navy);}
+.bg-grid{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(200,144,10,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,144,10,.04) 1px,transparent 1px);background-size:72px 72px;}
+.wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 48px;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(200,144,10,.1);background:rgba(13,31,60,.9);backdrop-filter:blur(12px);}
+.logo{display:flex;align-items:center;gap:13px;}
+.logo-mark{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--gold),#6a4808);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:8px;font-weight:700;color:#fff;line-height:1.3;text-align:center;}
+.logo-text .top{font-family:'Space Mono',monospace;font-size:9px;color:var(--gold-lt);letter-spacing:3px;text-transform:uppercase;}
+.logo-text .bot{font-size:11px;color:rgba(245,242,234,.4);font-weight:300;margin-top:1px;}
+.nav-links{display:flex;gap:6px;}
+.nl{padding:7px 14px;border-radius:50px;font-size:11px;font-weight:600;color:rgba(245,242,234,.45);border:1px solid rgba(245,242,234,.1);text-decoration:none;transition:all .18s;}
+.nl:hover{color:var(--gold-lt);border-color:rgba(200,144,10,.4);}
+/* HERO */
+.hero{padding:160px 48px 100px;text-align:center;position:relative;}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;padding:8px 18px;border-radius:50px;background:rgba(200,144,10,.12);border:1px solid rgba(200,144,10,.3);font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-lt);margin-bottom:32px;}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold-lt);}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,8vw,120px);font-weight:700;line-height:.9;letter-spacing:-3px;color:var(--cream);margin-bottom:20px;}
+h1 em{color:var(--gold-lt);font-style:italic;}
+h1 span{display:block;}
+.hero-sub{font-size:18px;color:rgba(245,242,234,.72);max-width:540px;margin:0 auto 48px;line-height:1.7;font-weight:300;}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{padding:15px 32px;border-radius:50px;background:linear-gradient(135deg,var(--gold),#6a4808);border:none;color:#fff;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;transition:opacity .18s;}
+.btn-primary:hover{opacity:.85;}
+.btn-ghost{padding:15px 32px;border-radius:50px;background:transparent;border:1.5px solid rgba(245,242,234,.2);color:rgba(245,242,234,.7);font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;transition:all .18s;}
+.btn-ghost:hover{border-color:rgba(200,144,10,.5);color:var(--gold-lt);}
+/* STATS BAR */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(200,144,10,.1);margin:64px 0;border:1px solid rgba(200,144,10,.1);border-radius:16px;overflow:hidden;}
+.stat{padding:28px 24px;text-align:center;background:rgba(13,31,60,.7);}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:var(--gold-lt);line-height:1;margin-bottom:6px;}
+.stat-l{font-size:11px;color:rgba(245,242,234,.4);letter-spacing:.5px;}
+/* AUDIENCE CARDS */
+.section-head{text-align:center;margin-bottom:48px;}
+.section-head .label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.section-head h2{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;line-height:1;letter-spacing:-1.5px;}
+.section-head p{font-size:16px;color:rgba(245,242,234,.45);margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.65;}
+.hub-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px;}
+.hub-card{border-radius:18px;padding:28px;text-decoration:none;transition:all .28s;position:relative;overflow:hidden;cursor:pointer;}
+.hub-card::after{content:'→';position:absolute;bottom:24px;right:24px;font-size:20px;opacity:.4;transition:all .28s;}
+.hub-card:hover::after{opacity:1;transform:translateX(4px);}
+.hub-card:hover{transform:translateY(-4px);}
+.hc-icon{font-size:32px;margin-bottom:14px;}
+.hc-audience{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;opacity:.7;}
+.hc-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;margin-bottom:10px;line-height:1.1;}
+.hc-desc{font-size:12px;line-height:1.65;opacity:.65;}
+.hc-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;}
+.hc-tag{padding:3px 10px;border-radius:50px;font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;opacity:.6;}
+.hub-card.members{background:linear-gradient(135deg,#1f4a30,#2e6644);color:#f8f4ec;}
+.hub-card.members .hc-tag{background:rgba(248,244,236,.12);}
+.hub-card.officers{background:linear-gradient(135deg,#0d2b2b,#1a4d4d);color:#f4f0e8;}
+.hub-card.officers .hc-tag{background:rgba(244,240,232,.12);}
+.hub-card.advisors{background:linear-gradient(135deg,#2a4028,#3a6042);color:#f5f1e8;}
+.hub-card.advisors .hc-tag{background:rgba(245,241,232,.12);}
+.hub-card.state-officers{background:linear-gradient(135deg,#0e1f3d,#1e3668);color:#f6f4ef;}
+.hub-card.state-officers .hc-tag{background:rgba(246,244,239,.12);}
+.hub-card.state-staff{background:linear-gradient(135deg,#1a1a30,#2a2a50);color:#f4f2ec;}
+.hub-card.state-staff .hc-tag{background:rgba(244,242,236,.12);}
+.hub-card-wide{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;}
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:64px 0;}
+.pillar-card{border-radius:14px;padding:22px;text-align:center;}
+.pc-icon{font-size:24px;margin-bottom:10px;}
+.pc-name{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.pc-desc{font-size:12px;line-height:1.6;opacity:.7;}
+/* MISSION STATEMENT */
+.mission{text-align:center;padding:80px 48px;border-top:1px solid rgba(200,144,10,.1);border-bottom:1px solid rgba(200,144,10,.1);margin:32px 0;}
+.mission-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,38px);font-weight:600;line-height:1.4;color:var(--cream);max-width:800px;margin:0 auto 20px;font-style:italic;}
+.mission-attr{font-size:12px;color:rgba(245,242,234,.35);letter-spacing:.5px;}
+/* FOOTER */
+footer{padding:48px;text-align:center;font-size:11px;color:rgba(245,242,234,.3);line-height:2;border-top:1px solid rgba(200,144,10,.1);}
+footer strong{color:var(--gold-lt);}
+footer a{color:rgba(245,242,234,.45);text-decoration:none;}
+footer a:hover{color:var(--gold-lt);}
+/* HAMBURGER */
+.ham-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;border-radius:6px;}
+.ham-btn span{display:block;width:22px;height:2px;background:rgba(245,242,234,.7);border-radius:2px;transition:all .22s;}
+.ham-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.ham-btn.open span:nth-child(2){opacity:0;}
+.ham-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-drawer{position:fixed;top:0;right:-280px;width:280px;height:100vh;z-index:500;background:var(--navy-mid);padding:24px 0 32px;display:flex;flex-direction:column;gap:2px;transition:right .28s cubic-bezier(.4,0,.2,1);overflow-y:auto;border-left:1px solid rgba(200,144,10,.15);}
+.nav-drawer.open{right:0;}
+.drawer-close{align-self:flex-end;margin-right:16px;margin-bottom:16px;background:rgba(245,242,234,.08);border:1px solid rgba(245,242,234,.15);border-radius:6px;font-size:16px;cursor:pointer;padding:6px 11px;color:rgba(245,242,234,.7);}
+.drawer-link{padding:13px 22px;text-decoration:none;font-size:13px;font-weight:600;color:rgba(245,242,234,.6);border-left:3px solid transparent;transition:all .18s;}
+.drawer-link:hover,.drawer-link:focus{color:var(--gold-lt);border-left-color:var(--gold);background:rgba(200,144,10,.08);outline:none;}
+.drawer-overlay{position:fixed;inset:0;z-index:499;background:rgba(0,0,0,.55);display:none;}
+.drawer-overlay.open{display:block;}
+/* BOTTOM TABS */
+.bottom-tabs{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;grid-template-columns:repeat(5,1fr);border-top:1px solid rgba(200,144,10,.2);background:var(--navy-mid);}
+.btab{display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 4px 12px;text-decoration:none;font-size:9px;font-weight:700;color:rgba(245,242,234,.45);}
+.btab:hover{color:var(--gold-lt);}
+@media(max-width:1000px){.wrap{padding:0 24px;}nav{padding:16px 24px;}.hero{padding:120px 24px 80px;}.hub-cards{grid-template-columns:1fr 1fr;}.hub-card-wide{grid-column:1/-1;grid-template-columns:1fr;}.stats{grid-template-columns:1fr 1fr;}.pillars{grid-template-columns:1fr 1fr;}}
+@media(max-width:700px){.nav-links{display:none;}.ham-btn{display:flex;}.hub-cards{grid-template-columns:1fr;}.stats{grid-template-columns:1fr 1fr;}.pillars{grid-template-columns:1fr 1fr;}.bottom-tabs{display:grid;}body{padding-bottom:64px;}}
+a.hub-card,a.hc-audience{outline-offset:3px;}
+a.hub-card:focus{outline:2px solid var(--gold-lt);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.fu{animation:fadeUp .6s ease both;}
+.fu2{animation:fadeUp .6s .15s ease both;}
+.fu3{animation:fadeUp .6s .3s ease both;}
+</style>
+</head>
+<body>
+<div class="bg-mesh"></div>
+<div class="bg-grid"></div>
+
+<nav aria-label="Hub navigation">
+  <div class="logo"><div class="logo-mark" aria-hidden="true">DC<br>HOSA</div><div class="logo-text"><div class="top">Leadership Hub</div><div class="bot">Future Health Professionals</div></div></div>
+  <div class="nav-links" role="navigation" aria-label="Hub pages">
+    <a href="members.html" class="nl">🌱 Members</a>
+    <a href="officers.html" class="nl">📋 Officers</a>
+    <a href="advisors.html" class="nl">🧭 Advisors</a>
+    <a href="state-officers.html" class="nl">⭐ State Officers</a>
+    <a href="state-staff.html" class="nl">🏛 State Staff</a>
+  </div>
+  <button class="ham-btn" id="hamBtn" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleDrawer()"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-drawer" id="navDrawer" role="dialog" aria-label="Navigation menu" aria-modal="true">
+  <button class="drawer-close" onclick="toggleDrawer()" aria-label="Close navigation menu">✕</button>
+  <a href="members.html" class="drawer-link">🌱 Members</a>
+  <a href="officers.html" class="drawer-link">📋 Officers</a>
+  <a href="advisors.html" class="drawer-link">🧭 Advisors</a>
+  <a href="state-officers.html" class="drawer-link">⭐ State Officers</a>
+  <a href="state-staff.html" class="drawer-link">🏛 State Staff</a>
+</div>
+<div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+<section class="hero">
+  <div class="hero-badge fu">DC HOSA · Washington, DC · 2026–27</div>
+  <h1 class="fu2">
+    <span>Leadership</span>
+    <span><em>Hub.</em></span>
+  </h1>
+  <p class="hero-sub fu3">Frameworks, tools, and reflections for every role in DC HOSA — from first-year members to state staff. Grounded in DC, built for real health careers.</p>
+  <div class="hero-cta fu3">
+    <a href="#choose" class="btn-primary">Find My Hub →</a>
+    <a href="#pillars" class="btn-ghost">Our Four Pillars</a>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="stat-n">750+</div><div class="stat-l">DC Members</div></div>
+    <div class="stat"><div class="stat-n">4</div><div class="stat-l">Pillars</div></div>
+    <div class="stat"><div class="stat-n">5</div><div class="stat-l">Role Hubs</div></div>
+    <div class="stat"><div class="stat-n">4</div><div class="stat-l">Strategic Goals 2026–27</div></div>
+  </div>
+
+  <section id="choose">
+    <div class="section-head">
+      <div class="label">Your Hub</div>
+      <h2>Choose Your<br><em>Resource Portal</em></h2>
+      <p>Each hub is built for a specific role in DC HOSA — with the frameworks, tools, and language that fit that exact level of leadership.</p>
+    </div>
+
+    <div class="hub-cards">
+      <a href="members.html" class="hub-card members">
+        <div class="hc-icon">🌱</div>
+        <div class="hc-audience">Chapter Members</div>
+        <div class="hc-title">Know Yourself.<br>Lead Yourself.</div>
+        <div class="hc-desc">EQ, Growth Mindset, Confidence, Real World Bridge, Learn How to Learn, Wins & Losses Journal, Glossary</div>
+        <div class="hc-tags"><span class="hc-tag">EMPOWER Pillar</span><span class="hc-tag">8 Domains</span></div>
+      </a>
+      <a href="officers.html" class="hub-card officers">
+        <div class="hc-icon">📋</div>
+        <div class="hc-audience">Chapter Officers</div>
+        <div class="hc-title">You Run the Chapter.</div>
+        <div class="hc-desc">30-row Boss vs Leader table, 4 Feedback Techniques, ALIGN & CALM Models, Eisenhower, RACI, Meeting Design, Culture</div>
+        <div class="hc-tags"><span class="hc-tag">BUILD + EMPOWER</span><span class="hc-tag">10 Domains</span></div>
+      </a>
+      <a href="advisors.html" class="hub-card advisors">
+        <div class="hc-icon">🧭</div>
+        <div class="hc-audience">Chapter Advisors</div>
+        <div class="hc-title">Develop the Developers.</div>
+        <div class="hc-desc">4 Coaching Frameworks, Pillar Toolkit, Chapter Health Indicators, Perkins V Alignment, Culture Models, Sustainability</div>
+        <div class="hc-tags"><span class="hc-tag">All 4 Pillars</span><span class="hc-tag">8 Domains</span></div>
+      </a>
+    </div>
+
+    <div class="hub-cards">
+      <a href="state-officers.html" class="hub-card state-officers hub-card-wide">
+        <div>
+          <div class="hc-icon">⭐</div>
+          <div class="hc-audience">State Executive Council</div>
+          <div class="hc-title">Lead DC. Shape the Mission.</div>
+          <div class="hc-desc">2026–27 Strategic Goals × 4 Pillars framework, Motivation Lab (Gung Ho!, Geese, Turn the Ship Around), Advanced Decisions, Advocacy, Real World Bridge at state level</div>
+          <div class="hc-tags"><span class="hc-tag">All 4 Goals</span><span class="hc-tag">All 4 Pillars</span><span class="hc-tag">7 Domains</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:16px;background:rgba(255,255,255,.06);border-radius:12px;">
+          <div style="font-size:11px;color:rgba(246,244,239,.5);font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:5px;">Council Positions</div>
+          <div style="font-size:12px;color:rgba(246,244,239,.8);">🏆 President</div>
+          <div style="font-size:12px;color:rgba(246,244,239,.8);">🌟 President-Elect</div>
+          <div style="font-size:12px;color:rgba(246,244,239,.8);">👥 VP Membership</div>
+          <div style="font-size:12px;color:rgba(246,244,239,.8);">🌍 VP Community Outreach</div>
+          <div style="font-size:12px;color:rgba(246,244,239,.8);">📢 VP Public Relations</div>
+          <div style="font-size:12px;color:rgba(246,244,239,.8);">🏫 VP Middle School Development</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="hub-cards">
+      <a href="state-staff.html" class="hub-card state-staff hub-card-wide">
+        <div>
+          <div class="hc-icon">🏛</div>
+          <div class="hc-audience">State Staff</div>
+          <div class="hc-title">You Coach the Coaches.</div>
+          <div class="hc-desc">State Advisor · State Staff — KPIs & Organizational Metrics, Coaching Frameworks, 4 Goals × 4 Pillars Strategic Matrix, Org Culture Models (7-S, Iceberg, Handy), Advanced Decisions, MWLC Facilitation Design, Staff Sustainability</div>
+          <div class="hc-tags"><span class="hc-tag">KPIs</span><span class="hc-tag">Strategy</span><span class="hc-tag">Coaching</span><span class="hc-tag">Perkins V</span><span class="hc-tag">7 Domains</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px;background:rgba(255,255,255,.06);border-radius:12px;">
+          <div style="padding:12px;background:rgba(244,242,236,.07);border-radius:9px;"><div style="font-size:11px;font-weight:700;margin-bottom:5px;">Membership KPIs</div><div style="font-size:10px;color:rgba(244,242,236,.5);">Retention, growth, chapter health, engagement rates</div></div>
+          <div style="padding:12px;background:rgba(244,242,236,.07);border-radius:9px;"><div style="font-size:11px;font-weight:700;margin-bottom:5px;">Financial KPIs</div><div style="font-size:10px;color:rgba(244,242,236,.5);">ILC fundraising, sponsor revenue, cost per member</div></div>
+          <div style="padding:12px;background:rgba(244,242,236,.07);border-radius:9px;"><div style="font-size:11px;font-weight:700;margin-bottom:5px;">Perkins V KPIs</div><div style="font-size:10px;color:rgba(244,242,236,.5);">CTE indicators, WBL touchpoints, transition data</div></div>
+          <div style="padding:12px;background:rgba(244,242,236,.07);border-radius:9px;"><div style="font-size:11px;font-weight:700;margin-bottom:5px;">Impact KPIs</div><div style="font-size:10px;color:rgba(244,242,236,.5);">Community health touchpoints, DC visibility, ward representation</div></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="pillars">
+    <div class="section-head" style="margin-top:64px;">
+      <div class="label">DC HOSA Framework</div>
+      <h2>Four <em>Pillars</em></h2>
+      <p>Every DC HOSA initiative maps to at least one of these pillars — and every role in this hub connects to this framework.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar-card" style="background:rgba(30,60,120,.25);border:1.5px solid rgba(90,170,220,.2);">
+        <div class="pc-icon">🏗</div>
+        <div class="pc-name" style="color:#5ab0e0;">BUILD</div>
+        <div class="pc-desc" style="color:#c0d8f0;">Systems, infrastructure, and organizational foundations that support long-term capacity</div>
+      </div>
+      <div class="pillar-card" style="background:rgba(120,30,20,.25);border:1.5px solid rgba(220,110,90,.2);">
+        <div class="pc-icon">⚡</div>
+        <div class="pc-name" style="color:#e87060;">EMPOWER</div>
+        <div class="pc-desc" style="color:#f0c0b0;">Individual leadership development — building the skills, confidence, and agency of every member</div>
+      </div>
+      <div class="pillar-card" style="background:rgba(120,80,0,.25);border:1.5px solid rgba(220,170,40,.2);">
+        <div class="pc-icon">🚀</div>
+        <div class="pc-name" style="color:var(--gold-lt);">ADVANCE</div>
+        <div class="pc-desc" style="color:#f0d090;">Health career preparation — connecting members to real pathways, competitions, and professional experiences</div>
+      </div>
+      <div class="pillar-card" style="background:rgba(20,80,50,.25);border:1.5px solid rgba(90,170,130,.2);">
+        <div class="pc-icon">🔗</div>
+        <div class="pc-name" style="color:#6aaa84;">CONNECT</div>
+        <div class="pc-desc" style="color:#a0d0b0;">Community relationships — partnerships, advocacy, and DC HOSA's presence in the city it serves</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mission">
+    <div class="mission-quote">"DC's next generation of healthcare leaders should come from DC — from every ward, every background, every pathway."</div>
+    <div class="mission-attr">DC HOSA · Grounded in DC OSSE CTE Perkins V Priorities · International HOSA Mission</div>
+  </div>
+</div>
+
+<nav class="bottom-tabs" aria-label="Hub navigation">
+  <a href="members.html" class="btab" aria-label="Members Hub"><span aria-hidden="true">🌱</span>Members</a>
+  <a href="officers.html" class="btab" aria-label="Officers Hub"><span aria-hidden="true">📋</span>Officers</a>
+  <a href="advisors.html" class="btab" aria-label="Advisors Hub"><span aria-hidden="true">🧭</span>Advisors</a>
+  <a href="state-officers.html" class="btab" aria-label="State Officers Hub"><span aria-hidden="true">⭐</span>SEC</a>
+  <a href="state-staff.html" class="btab" aria-label="State Staff Hub"><span aria-hidden="true">🏛</span>Staff</a>
+</nav>
+
+<footer>
+  <p><strong>DC HOSA Leadership Hub</strong></p>
+  <p>HOSA-Future Health Professionals · District of Columbia Affiliate · 2026–27</p>
+  <p style="margin-top:6px;">
+    <a href="members.html">🌱 Members</a> &nbsp;·&nbsp;
+    <a href="officers.html">📋 Officers</a> &nbsp;·&nbsp;
+    <a href="advisors.html">🧭 Advisors</a> &nbsp;·&nbsp;
+    <a href="state-officers.html">⭐ State Officers</a> &nbsp;·&nbsp;
+    <a href="state-staff.html">🏛 State Staff</a>
+  </p>
+  <p style="margin-top:6px;font-size:10px;">Grounded in DC OSSE CTE Perkins V priorities · BUILD · EMPOWER · ADVANCE · CONNECT</p>
+</footer>
+
+<script>
+function toggleDrawer(){
+  const btn=document.getElementById('hamBtn'),drawer=document.getElementById('navDrawer'),overlay=document.getElementById('drawerOverlay');
+  const open=drawer.classList.toggle('open');overlay.classList.toggle('open',open);btn.classList.toggle('open',open);
+  btn.setAttribute('aria-expanded',String(open));if(open){drawer.querySelector('.drawer-close').focus();}
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&document.getElementById('navDrawer').classList.contains('open'))toggleDrawer();
+});
+// Animate stat numbers on scroll
+const stats = document.querySelectorAll('.stat-n');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.animation = 'fadeUp .5s ease both';
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+stats.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

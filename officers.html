@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DC HOSA · Chapter Officer Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Nunito:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f1c2e;--ink-mid:#1a2f46;--ink-lt:#2a4a6a;--steel:#3a6090;--steel-lt:#5a85b8;--amber:#d4800a;--amber-lt:#f0a030;--amber-pale:#fef7e8;--snow:#f5f7fa;--snow-2:#eaecf2;--snow-3:#d8dce8;--rust:#c84830;--teal:#1a8a7a;--text-1:#0f1c2e;--text-2:#2a3a50;--text-3:#5a6a80;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:15px;}
+body{font-family:'Nunito',sans-serif;background:var(--snow);color:var(--text-1);overflow-x:hidden;}
+#prog{position:fixed;top:0;left:0;z-index:9999;height:3px;width:0%;background:linear-gradient(90deg,var(--amber),var(--steel-lt));transition:width .1s;}
+
+/* HERO */
+.hero{background:var(--ink);position:relative;overflow:hidden;}
+.hero-mesh{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 70% at 15% 60%,rgba(212,128,10,.1) 0%,transparent 55%),radial-gradient(ellipse 50% 60% at 80% 20%,rgba(42,74,106,.4) 0%,transparent 55%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(212,128,10,.07) 1.5px,transparent 1.5px);background-size:28px 28px;}
+
+/* NAV */
+.hero-nav{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:20px 44px;border-bottom:1px solid rgba(212,128,10,.15);}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-mark{width:40px;height:40px;border-radius:9px;background:linear-gradient(135deg,var(--amber),#7a4808);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:600;color:var(--ink);line-height:1.3;text-align:center;}
+.logo-text .top{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;color:var(--amber-lt);letter-spacing:3px;text-transform:uppercase;}
+.logo-text .bot{font-size:11px;color:rgba(245,247,250,.35);font-weight:300;margin-top:1px;}
+.hub-links{display:flex;gap:4px;flex-wrap:wrap;}
+.hub-link{padding:7px 13px;border-radius:50px;font-size:11px;font-weight:600;color:rgba(245,247,250,.5);border:1px solid rgba(245,247,250,.12);text-decoration:none;transition:all .18s;}
+.hub-link:hover,.hub-link:focus{color:var(--amber-lt);border-color:rgba(212,128,10,.4);outline:none;}
+.hub-link.active{background:rgba(212,128,10,.2);color:var(--amber-lt);border-color:rgba(212,128,10,.4);}
+
+/* HAMBURGER */
+.ham-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:8px;border-radius:6px;}
+.ham-btn span{display:block;width:22px;height:2px;background:rgba(245,247,250,.7);border-radius:2px;transition:all .22s;}
+.ham-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.ham-btn.open span:nth-child(2){opacity:0;}
+.ham-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-drawer{position:fixed;top:0;right:-290px;width:290px;height:100vh;z-index:500;background:var(--ink-mid);padding:24px 0 32px;display:flex;flex-direction:column;gap:2px;transition:right .28s cubic-bezier(.4,0,.2,1);overflow-y:auto;border-left:1px solid rgba(212,128,10,.15);}
+.nav-drawer.open{right:0;}
+.drawer-close{align-self:flex-end;margin-right:16px;margin-bottom:16px;background:rgba(245,247,250,.08);border:1px solid rgba(245,247,250,.15);border-radius:6px;font-size:16px;cursor:pointer;padding:6px 11px;color:rgba(245,247,250,.7);transition:background .18s;}
+.drawer-close:hover{background:rgba(245,247,250,.15);}
+.drawer-link{padding:13px 22px;text-decoration:none;font-size:13px;font-weight:600;color:rgba(245,247,250,.6);border-left:3px solid transparent;transition:all .18s;}
+.drawer-link:hover,.drawer-link:focus{color:var(--amber-lt);border-left-color:var(--amber);background:rgba(212,128,10,.08);outline:none;}
+.drawer-overlay{position:fixed;inset:0;z-index:499;background:rgba(0,0,0,.55);display:none;}
+.drawer-overlay.open{display:block;}
+
+/* HERO BODY */
+.hero-body{position:relative;z-index:5;padding:52px 44px 48px;display:grid;grid-template-columns:1fr auto;gap:36px;align-items:end;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--amber-lt);opacity:.6;}
+.hero-h1{font-family:'Fraunces',serif;font-size:clamp(44px,5.5vw,82px);font-weight:900;line-height:.93;color:#f5f7fa;letter-spacing:-2px;margin-bottom:14px;}
+.hero-h1 em{color:var(--amber-lt);font-style:italic;}
+.hero-p{font-size:15px;color:rgba(245,247,250,.72);max-width:520px;line-height:1.7;}
+.hero-stats{display:flex;flex-direction:column;gap:8px;}
+.stat-box{background:rgba(212,128,10,.12);border:1px solid rgba(212,128,10,.25);border-radius:10px;padding:14px 18px;text-align:right;min-width:140px;}
+.stat-num{font-family:'Fraunces',serif;font-size:28px;font-weight:900;color:var(--amber-lt);line-height:1;}
+.stat-label{font-size:10px;color:rgba(245,247,250,.45);margin-top:3px;}
+.pillar-bar{position:relative;z-index:5;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(245,247,250,.06);}
+.pb{padding:15px 18px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background .18s;}
+.pb:hover{background:rgba(245,247,250,.04);}
+.pb.build{color:#5ab0e0;border-top:3px solid #5ab0e0;}
+.pb.empower{color:#e87060;border-top:3px solid #e87060;}
+.pb.advance{color:var(--amber-lt);border-top:3px solid var(--amber-lt);}
+.pb.connect{color:#6aaa84;border-top:3px solid #6aaa84;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:200px 1fr;min-height:100vh;}
+.sidebar{background:var(--ink);position:sticky;top:0;height:100vh;overflow-y:auto;padding:24px 0;border-right:1px solid rgba(212,128,10,.1);scrollbar-width:none;}
+.sidebar::-webkit-scrollbar{display:none;}
+.sidebar-label{font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(245,247,250,.22);padding:0 18px 10px;border-bottom:1px solid rgba(212,128,10,.1);margin-bottom:6px;}
+.nav-item{display:flex;align-items:center;gap:9px;padding:10px 18px;text-decoration:none;transition:all .18s;border-left:2px solid transparent;}
+.nav-item:hover,.nav-item:focus{background:rgba(212,128,10,.07);outline:none;}
+.nav-item.active{background:rgba(212,128,10,.12);border-left-color:var(--amber);}
+.nav-text{font-size:11px;font-weight:600;color:rgba(245,247,250,.5);line-height:1.3;}
+.nav-item.active .nav-text,.nav-item:hover .nav-text{color:var(--amber-lt);}
+.content{padding:0 52px 100px;max-width:1080px;}
+
+/* SECTIONS */
+.sec{padding:68px 0 20px;}
+.sec-hd{margin-bottom:32px;padding-bottom:16px;border-bottom:2px solid var(--snow-3);}
+.sec-hd .tag{font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:6px;}
+.sec-hd h2{font-family:'Fraunces',serif;font-size:34px;font-weight:900;line-height:1;}
+.sec-hd .sec-sub{font-size:13px;color:var(--text-3);margin-top:8px;max-width:560px;line-height:1.65;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:13px;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;}
+
+/* CARDS */
+.card{background:#fff;border-radius:14px;border:1.5px solid var(--snow-3);overflow:hidden;transition:all .22s;cursor:pointer;}
+.card:hover{border-color:rgba(212,128,10,.35);box-shadow:0 8px 24px rgba(15,28,46,.1);transform:translateY(-2px);}
+.card:focus{outline:2px solid var(--amber);outline-offset:2px;}
+.card-top{padding:18px 20px 14px;border-bottom:1px solid var(--snow-2);display:flex;align-items:flex-start;gap:11px;}
+.card-ico{width:42px;height:42px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
+.card-info h3{font-family:'Fraunces',serif;font-size:16px;font-weight:700;margin-bottom:3px;}
+.card-info p{font-size:11px;color:var(--text-3);line-height:1.5;}
+.card-body{padding:14px 20px 18px;}
+.card-cta{font-size:11px;font-weight:700;color:var(--amber);margin-top:14px;text-align:right;letter-spacing:.3px;}
+
+/* RESEARCH BOX */
+.research-box{margin-top:12px;padding:12px 14px;background:rgba(212,128,10,.07);border:1.5px solid rgba(212,128,10,.25);border-radius:9px;}
+.rb-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--amber);margin-bottom:6px;font-family:'JetBrains Mono',monospace;}
+.research-box p{font-size:12px;line-height:1.65;color:var(--text-2);}
+
+/* BOSS/LEADER TABLE */
+.boss-leader-wrap{background:#fff;border-radius:14px;border:1.5px solid var(--snow-3);overflow:hidden;}
+.bl-table{width:100%;border-collapse:collapse;}
+.bl-table th{padding:14px 18px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;background:var(--ink);}
+.bl-table th:first-child{color:var(--rust);border-right:2px solid var(--snow-3);}
+.bl-table th:last-child{color:var(--teal);}
+.bl-table td{padding:11px 18px;font-size:12px;color:var(--text-2);line-height:1.5;border-top:1px solid var(--snow-2);vertical-align:top;}
+.bl-table td:first-child{border-right:2px solid var(--snow-2);font-style:italic;color:#c04820;}
+.bl-table td:last-child{color:#1a6a5a;}
+.bl-table tr:nth-child(even) td{background:var(--snow);}
+
+/* STEPS */
+.step{display:flex;align-items:flex-start;gap:9px;font-size:12px;color:var(--text-2);line-height:1.5;margin-bottom:6px;}
+.step-dot{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;margin-top:1px;font-family:'JetBrains Mono',monospace;}
+
+/* TIPS */
+.tip{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:9px;margin-top:10px;}
+.tip.green{background:#e8faf0;border:1.5px solid #70c8a0;}
+.tip.gold{background:#fef7e8;border:1.5px solid #f0a030;}
+.tip.blue{background:#e8f0fa;border:1.5px solid #8ab8e8;}
+.tip-ico{font-size:14px;flex-shrink:0;margin-top:1px;}
+.tip-txt{font-size:12px;color:var(--text-2);line-height:1.6;}
+.tip-txt strong{color:var(--text-1);}
+
+/* PSYCH SAFETY */
+.psych-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.psych-card{background:#fff;border-radius:13px;border:1.5px solid var(--snow-3);padding:18px;}
+.psych-card h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.psych-card p{font-size:12px;color:var(--text-2);line-height:1.6;}
+
+/* FEEDBACK LOOP */
+.fb-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fb-card{background:#fff;border-radius:13px;border:1.5px solid var(--snow-3);padding:18px;}
+.fb-card h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+
+/* MEETING AGENDA */
+.agenda-row{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border-radius:9px;background:var(--snow);margin-bottom:8px;border-left:3px solid transparent;}
+.agenda-time{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--amber);min-width:40px;flex-shrink:0;margin-top:2px;}
+.agenda-label{font-size:12px;font-weight:600;color:var(--text-1);margin-bottom:2px;}
+.agenda-sub{font-size:11px;color:var(--text-3);}
+
+/* WORKSHEETS */
+.worksheet-panel{background:var(--ink);border-radius:16px;padding:28px;border:1px solid rgba(212,128,10,.15);}
+.ws-title{font-family:'Fraunces',serif;font-size:20px;font-weight:900;color:#f5f7fa;margin-bottom:4px;}
+.ws-sub{font-size:12px;color:rgba(245,247,250,.5);margin-bottom:20px;line-height:1.6;}
+.ws-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.ws-card{background:rgba(245,247,250,.07);border:1px solid rgba(212,128,10,.2);border-radius:11px;padding:16px;display:flex;flex-direction:column;gap:10px;}
+.ws-card-title{font-size:13px;font-weight:700;color:#f5f7fa;}
+.ws-card-desc{font-size:11px;color:rgba(245,247,250,.55);line-height:1.6;}
+.ws-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:50px;background:linear-gradient(135deg,var(--amber),#7a4808);border:none;color:#fff;font-size:11px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:opacity .18s;align-self:flex-start;}
+.ws-btn:hover{opacity:.85;}
+
+/* PRINT BUTTON */
+.print-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:50px;border:1.5px solid var(--snow-3);background:#fff;font-size:12px;font-weight:600;cursor:pointer;color:var(--text-2);transition:all .18s;font-family:'Nunito',sans-serif;}
+.print-btn:hover{border-color:var(--amber);color:var(--amber);}
+
+/* MODAL */
+.ov{position:fixed;inset:0;z-index:1000;background:rgba(15,28,46,.9);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .22s;}
+.ov.on{opacity:1;pointer-events:all;}
+.modal{background:#fff;border-radius:18px;max-width:700px;width:100%;max-height:85vh;overflow-y:auto;transform:translateY(20px) scale(.97);transition:transform .28s cubic-bezier(.34,1.56,.64,1);}
+.ov.on .modal{transform:translateY(0) scale(1);}
+.modal-top{padding:24px 28px 18px;border-bottom:1px solid var(--snow-3);position:sticky;top:0;background:#fff;z-index:5;border-radius:18px 18px 0 0;}
+.mc{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--snow-3);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text-3);transition:all .18s;}
+.mc:hover{background:var(--snow);}
+.modal-body{padding:20px 28px 28px;}
+.ms{margin-bottom:20px;}
+.ms-title{font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:9px;padding-bottom:6px;border-bottom:1px solid var(--snow-2);}
+.mi{display:flex;align-items:flex-start;gap:9px;padding:9px 13px;background:var(--snow);border-radius:8px;font-size:12px;line-height:1.5;margin-bottom:6px;}
+.rq{padding:10px 14px;background:var(--snow-2);border-left:3px solid var(--amber);border-radius:7px;font-size:12px;font-style:italic;color:var(--text-2);line-height:1.55;margin-bottom:7px;}
+
+/* BOTTOM TABS */
+.bottom-tabs{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;grid-template-columns:repeat(5,1fr);border-top:1px solid rgba(212,128,10,.2);background:var(--ink);}
+.btab{display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 4px 12px;text-decoration:none;font-size:10px;font-weight:600;color:rgba(245,247,250,.45);transition:background .18s;}
+.btab.active,.btab:hover{color:var(--amber-lt);}
+.btab.active{border-top:2px solid var(--amber);}
+.btab-label{font-size:9px;font-weight:700;}
+
+/* FOOTER */
+.footer{background:var(--ink);color:rgba(245,247,250,.35);text-align:center;padding:32px;font-size:11px;line-height:1.9;}
+.footer strong{color:var(--amber-lt);}
+
+/* PRINT */
+@media print{
+  .hero,.sidebar,.bottom-tabs,.nav-drawer,.drawer-overlay,.ham-btn,.print-btn,.ws-btn,#prog,.pillar-bar,.ov{display:none!important;}
+  .layout{grid-template-columns:1fr!important;}
+  .content{padding:0 20px!important;max-width:100%!important;}
+  .sec{page-break-inside:avoid;padding:24px 0!important;}
+  body{font-size:11pt;color:#000;background:#fff;}
+  .card,.boss-leader-wrap,.psych-card,.fb-card{box-shadow:none!important;border:1px solid #ccc!important;}
+  h2,h3,h4{color:#000;}
+  .g2,.g3,.psych-grid,.fb-grid,.ws-grid{grid-template-columns:1fr 1fr!important;}
+}
+
+@media(max-width:768px){
+  .ham-btn{display:flex;}
+  .hub-links{display:none;}
+  .layout{grid-template-columns:1fr;padding-bottom:70px;}
+  .sidebar{display:none;}
+  .content{padding:0 20px 100px;}
+  .hero-body{grid-template-columns:1fr;}
+  .hero-stats{display:none;}
+  .pillar-bar{grid-template-columns:1fr 1fr;}
+  .hero-nav{padding:16px 20px;}
+  .bottom-tabs{display:grid;}
+  .g2,.g3,.psych-grid,.fb-grid{grid-template-columns:1fr;}
+  .ws-grid{grid-template-columns:1fr 1fr;}
+  .hero-h1{font-size:clamp(36px,9vw,56px);}
+}
+@media(max-width:480px){
+  .ws-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div id="prog" role="progressbar" aria-label="Reading progress"></div>
+<section class="hero">
+  <div class="hero-mesh" aria-hidden="true"></div>
+  <div class="hero-dots" aria-hidden="true"></div>
+  <nav class="hero-nav" aria-label="Hub navigation">
+    <div class="logo"><div class="logo-mark" aria-hidden="true">DC<br>HOSA</div><div class="logo-text"><div class="top">Leadership Hub</div><div class="bot">Future Health Professionals</div></div></div>
+    <div class="hub-links" role="navigation" aria-label="Hub pages">
+      <a href="members.html" class="hub-link">🌱 Members</a>
+      <a href="officers.html" class="hub-link active" aria-current="page">📋 Officers</a>
+      <a href="advisors.html" class="hub-link">🧭 Advisors</a>
+      <a href="state-officers.html" class="hub-link">⭐ State Officers</a>
+      <a href="state-staff.html" class="hub-link">🏛 State Staff</a>
+    </div>
+    <button class="ham-btn" id="hamBtn" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleDrawer()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-drawer" id="navDrawer" role="dialog" aria-label="Navigation menu" aria-modal="true">
+    <button class="drawer-close" onclick="toggleDrawer()" aria-label="Close navigation menu">✕</button>
+    <a href="index.html" class="drawer-link">🏠 Hub Home</a>
+    <a href="members.html" class="drawer-link">🌱 Members</a>
+    <a href="officers.html" class="drawer-link" style="color:var(--amber-lt);border-left-color:var(--amber);">📋 Officers</a>
+    <a href="advisors.html" class="drawer-link">🧭 Advisors</a>
+    <a href="state-officers.html" class="drawer-link">⭐ State Officers</a>
+    <a href="state-staff.html" class="drawer-link">🏛 State Staff</a>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+  <div class="hero-body">
+    <div>
+      <div class="eyebrow">Chapter Officer Resource · DC HOSA · BUILD + EMPOWER</div>
+      <h1 class="hero-h1">Lead the <em>Room.</em><br>Develop the Team.</h1>
+      <p class="hero-p">You have the role. Now here are the frameworks — from psychological safety to structured feedback — to run a chapter that actually moves.</p>
+    </div>
+    <div class="hero-stats" aria-hidden="true">
+      <div class="stat-box"><div class="stat-num">BUILD</div><div class="stat-label">Primary Pillar</div></div>
+      <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">Officer Domains</div></div>
+      <div class="stat-box"><div class="stat-num">PS-C</div><div class="stat-label">Competition Track</div></div>
+    </div>
+  </div>
+  <div class="pillar-bar" aria-label="Domain quick links">
+    <a href="#leadership" class="pb build">🏗 Leadership</a>
+    <a href="#psych-safety" class="pb empower">⚡ Team Culture</a>
+    <a href="#feedback" class="pb advance">🚀 Feedback</a>
+    <a href="#meeting" class="pb connect">🔗 Facilitation</a>
+  </div>
+</section>
+
+<div class="layout">
+  <nav class="sidebar" aria-label="Section navigation">
+    <div class="sidebar-label">Officer Domains</div>
+    <a href="#leadership" class="nav-item active"><span aria-hidden="true" style="font-size:13px;">🏆</span><span class="nav-text">Boss vs. Leader</span></a>
+    <a href="#psych-safety" class="nav-item"><span aria-hidden="true" style="font-size:13px;">🛡️</span><span class="nav-text">Psychological Safety</span></a>
+    <a href="#motivation" class="nav-item"><span aria-hidden="true" style="font-size:13px;">🔥</span><span class="nav-text">Motivate the Team</span></a>
+    <a href="#feedback" class="nav-item"><span aria-hidden="true" style="font-size:13px;">💬</span><span class="nav-text">Give Feedback</span></a>
+    <a href="#meeting" class="nav-item"><span aria-hidden="true" style="font-size:13px;">📋</span><span class="nav-text">Run a Meeting</span></a>
+    <a href="#worksheets" class="nav-item"><span aria-hidden="true" style="font-size:13px;">📄</span><span class="nav-text">Worksheets</span></a>
+    <a href="#planning" class="nav-item"><span aria-hidden="true" style="font-size:13px;">🗺️</span><span class="nav-text">Event Planning</span></a>
+  </nav>
+
+  <main class="content" id="main-content">
+
+<section class="sec" id="leadership">
+  <div class="sec-hd">
+    <div class="tag">Domain 1 · BUILD Pillar</div>
+    <h2>Boss vs. Leader</h2>
+    <p class="sec-sub">The title makes you an officer. The choices you make every week decide whether you're a boss or a leader. This distinction is fundamental to every leadership model in healthcare management.</p>
+  </div>
+  <div class="boss-leader-wrap" role="region" aria-label="Boss vs Leader comparison table">
+    <table class="bl-table" role="table" aria-label="Comparison of boss behaviors versus leader behaviors">
+      <thead>
+        <tr>
+          <th scope="col">A Boss Says / Does</th>
+          <th scope="col">A Leader Says / Does</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Controls through authority — "Do this because I said so."</td><td>Earns buy-in — explains the why before asking for the what.</td></tr>
+        <tr><td>Takes credit when things go well.</td><td>Attributes success to the team publicly and specifically.</td></tr>
+        <tr><td>Assigns blame when things go wrong.</td><td>Owns team failures, then problem-solves together.</td></tr>
+        <tr><td>Gives vague feedback — "Do better."</td><td>Gives specific behavioral feedback — "When you did X, the effect was Y."</td></tr>
+        <tr><td>Sees people as resources to deploy.</td><td>Sees people as individuals with growing capabilities.</td></tr>
+        <tr><td>Creates dependency — members only act when told.</td><td>Builds independence — members know what good looks like and self-direct.</td></tr>
+        <tr><td>Manages compliance.</td><td>Builds commitment — members choose to show up fully.</td></tr>
+        <tr><td>Reacts to problems.</td><td>Anticipates and prevents problems through consistent communication.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="research-box" style="margin-top:14px;">
+    <div class="rb-label">📚 Research basis</div>
+    <p>Greenleaf's servant leadership model (1970) and Bass & Avolio's transformational leadership research (1994) both confirm that leaders who prioritize developing others — rather than managing compliance — produce measurably higher team performance, retention, and cohesion. In healthcare settings specifically, transformational leadership is correlated with fewer adverse events and higher patient satisfaction scores. The Boss vs. Leader distinction is not just management theory — it predicts clinical team outcomes.</p>
+  </div>
+  <div class="tip gold" style="margin-top:14px;"><span class="tip-ico" aria-hidden="true">💡</span><div class="tip-txt"><strong>Officer self-check, weekly:</strong> "Did I do or say something this week that was boss behavior? What would the leader version of that look like?" The gap between how we think we show up and how we actually show up is almost always smaller than we'd like.</div></div>
+</section>
+
+<section class="sec" id="psych-safety">
+  <div class="sec-hd">
+    <div class="tag">Domain 2 · EMPOWER Pillar</div>
+    <h2>Build Psychological Safety</h2>
+    <p class="sec-sub">Amy Edmondson's landmark research (Harvard, 1999) showed that the highest-performing teams — in hospitals, in tech companies, in military units — all share one thing: members feel safe to speak up, make mistakes, and disagree without fear of punishment. Your job as an officer is to create that environment deliberately.</p>
+  </div>
+  <div class="psych-grid">
+    <div class="psych-card">
+      <h4><span aria-hidden="true">🗣️</span> Model Vulnerability First</h4>
+      <p>Edmondson's research shows psychological safety comes from the leader demonstrating it first. Share a mistake you made and what it taught you before asking members to do the same. Vulnerability at the top gives everyone else permission.</p>
+      <div class="research-box"><div class="rb-label">📚 Research basis</div><p>Teams in Edmondson's studies where leaders explicitly modeled "this is safe to get wrong here" reported 40% higher learning behaviors and significantly fewer critical errors (Edmondson, 1999, AMJ).</p></div>
+    </div>
+    <div class="psych-card">
+      <h4><span aria-hidden="true">✋</span> Reframe Errors as Learning</h4>
+      <p>When a member makes a mistake — publicly if possible — respond with "What did we learn here?" not "Why did that happen?" The first frame activates curiosity and growth; the second activates defensiveness and shutdown.</p>
+      <div class="research-box"><div class="rb-label">📚 Research basis</div><p>High-performing ICU teams in Edmondson's hospital studies reported more errors, not fewer — because they felt safe to surface them. Lower-performing teams hid errors, leading to worse outcomes. Surface rate is an indicator of safety, not incompetence.</p></div>
+    </div>
+    <div class="psych-card">
+      <h4><span aria-hidden="true">🤝</span> Invite Disagreement Explicitly</h4>
+      <p>At every meeting: "Does anyone see this differently?" "What am I missing?" "Who disagrees and why?" If no one ever challenges your ideas, it's not because your ideas are always right — it's because they don't feel safe to say so.</p>
+      <div class="research-box"><div class="rb-label">📚 Research basis</div><p>Google's Project Aristotle (Rozovsky, 2015) studied 180 teams and found psychological safety was the #1 predictor of team effectiveness — above intelligence, experience, or seniority of team members. The most important conversations are the ones that feel risky to have.</p></div>
+    </div>
+  </div>
+  <div class="tip green" style="margin-top:14px;"><span class="tip-ico" aria-hidden="true">🏥</span><div class="tip-txt"><strong>Healthcare parallel (Edmondson, 1999):</strong> Nurses who felt psychologically safe enough to speak up were significantly more likely to catch medication errors before they reached patients. Psychological safety in your chapter is preparation for the clinical environments where speaking up is literally life-saving. Practice it now.</div></div>
+</section>
+
+<section class="sec" id="motivation">
+  <div class="sec-hd">
+    <div class="tag">Domain 3 · EMPOWER Pillar</div>
+    <h2>Motivate the Team</h2>
+    <p class="sec-sub">Motivation isn't a pep talk. It's understanding what actually drives people — and building conditions where those drivers are present. Deci & Ryan's Self-Determination Theory (SDT) gives you a reliable framework.</p>
+  </div>
+  <div class="g3">
+    <div class="card" role="button" tabindex="0" aria-label="Autonomy — click to expand" onclick="openM('autonomy')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openM('autonomy');}">
+      <div class="card-top"><div class="card-ico" style="background:#e8f0fa;" aria-hidden="true">🧭</div><div class="card-info"><h3>Autonomy</h3><p>People need to feel they have genuine choice in what they do — that they are self-directed, not merely compliant.</p></div></div>
+      <div class="card-body">
+        <div class="step"><div class="step-dot" style="background:#e8f0fa;color:#1a3a6b;">→</div><span>Delegate actual decision-making, not just tasks</span></div>
+        <div class="step"><div class="step-dot" style="background:#e8f0fa;color:#1a3a6b;">→</div><span>Ask members what they want to lead — don't assume</span></div>
+        <div class="step"><div class="step-dot" style="background:#e8f0fa;color:#1a3a6b;">→</div><span>Explain the why of each assignment before the what</span></div>
+        <div class="research-box"><div class="rb-label">📚 Research basis</div><p>Deci & Ryan (1985) demonstrated that intrinsically motivated individuals perform significantly better on complex tasks than those working under external pressure or reward.</p></div>
+        <div class="card-cta" aria-hidden="true">Officer application →</div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" aria-label="Competence — click to expand" onclick="openM('competence')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openM('competence');}">
+      <div class="card-top"><div class="card-ico" style="background:#e8faf0;" aria-hidden="true">💪</div><div class="card-info"><h3>Competence</h3><p>People need to feel increasingly capable — to grow, be challenged at the right level, and have their progress acknowledged.</p></div></div>
+      <div class="card-body">
+        <div class="step"><div class="step-dot" style="background:#e8faf0;color:#1a6a5a;">→</div><span>Match challenge to skill — too easy = boredom, too hard = shutdown</span></div>
+        <div class="step"><div class="step-dot" style="background:#e8faf0;color:#1a6a5a;">→</div><span>Acknowledge specific growth publicly</span></div>
+        <div class="step"><div class="step-dot" style="background:#e8faf0;color:#1a6a5a;">→</div><span>Offer stretch assignments with appropriate support</span></div>
+        <div class="research-box"><div class="rb-label">📚 Research basis</div><p>Csikszentmihalyi's flow research (1990) shows that optimal performance and deepest engagement occur when task difficulty is calibrated just above current skill level.</p></div>
+        <div class="card-cta" aria-hidden="true">Officer application →</div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" aria-label="Relatedness — click to expand" onclick="openM('relatedness')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openM('relatedness');}">
+      <div class="card-top"><div class="card-ico" style="background:#faf0e0;" aria-hidden="true">🤝</div><div class="card-info"><h3>Relatedness</h3><p>People need to feel genuinely connected — that they belong to something and matter to the people they work with.</p></div></div>
+      <div class="card-body">
+        <div class="step"><div class="step-dot" style="background:#faf0e0;color:#7a5010;">→</div><span>Spend 5 minutes asking how members are doing before every meeting</span></div>
+        <div class="step"><div class="step-dot" style="background:#faf0e0;color:#7a5010;">→</div><span>Recognize birthdays, milestones, chapter contributions</span></div>
+        <div class="step"><div class="step-dot" style="background:#faf0e0;color:#7a5010;">→</div><span>Make visible the connections between members' roles and the mission</span></div>
+        <div class="research-box"><div class="rb-label">📚 Research basis</div><p>Baumeister & Leary (1995) established belonging as a fundamental human need — not a preference. Chronic disconnection predicts disengagement across every organizational context studied.</p></div>
+        <div class="card-cta" aria-hidden="true">Officer application →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="feedback">
+  <div class="sec-hd">
+    <div class="tag">Domain 4 · ADVANCE Pillar</div>
+    <h2>Give Feedback That Works</h2>
+    <p class="sec-sub">Most feedback fails because it's vague, personal, or untimely. These two evidence-based frameworks give your feedback specificity and structure — and make it actually usable by the person receiving it.</p>
+  </div>
+  <div class="fb-grid">
+    <div class="fb-card">
+      <h4><span aria-hidden="true" style="font-size:18px;">🎯</span> SBI — Situation-Behavior-Impact</h4>
+      <div class="agenda-row" style="border-left-color:#5ab0e0;"><div class="agenda-time">S</div><div><div class="agenda-label">Situation</div><div class="agenda-sub">Anchor in a specific moment — not "sometimes" or "always"</div></div></div>
+      <div class="agenda-row" style="border-left-color:#e87060;"><div class="agenda-time">B</div><div><div class="agenda-label">Behavior</div><div class="agenda-sub">Observable action only — not character, not motive, not interpretation</div></div></div>
+      <div class="agenda-row" style="border-left-color:var(--amber);"><div class="agenda-time">I</div><div><div class="agenda-label">Impact</div><div class="agenda-sub">What it meant for the team — in your own experience</div></div></div>
+      <div class="research-box"><div class="rb-label">📚 Research basis</div><p>Behavioral specificity reduces defensiveness because observable behavior is harder to dispute than character judgments (Losada & Heaphy, 2004). Feedback framed as observation — not interpretation — activates learning rather than self-protection.</p></div>
+    </div>
+    <div class="fb-card">
+      <h4><span aria-hidden="true" style="font-size:18px;">🌱</span> Growth Feedback Protocol</h4>
+      <div class="step" style="margin-bottom:10px;"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">1</div><span>Ask permission — "Can I share an observation?" Consent makes feedback 60% more likely to be heard (Scott, 2017)</span></div>
+      <div class="step" style="margin-bottom:10px;"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">2</div><span>Describe behavior, not person — "When you [specific action]" not "You always..."</span></div>
+      <div class="step" style="margin-bottom:10px;"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">3</div><span>State the impact on the team or mission — make the stakes visible</span></div>
+      <div class="step" style="margin-bottom:10px;"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">4</div><span>Ask what support looks like — "What would help you with this?"</span></div>
+      <div class="step"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">5</div><span>Close with specific next step — a mutual commitment, not a general aspiration</span></div>
+      <div class="research-box"><div class="rb-label">📚 Research basis</div><p>SDT (Deci & Ryan) confirms that feedback aligned with autonomy and competence — rather than control — produces long-term behavior change. Coercive feedback produces short-term compliance and long-term disengagement.</p></div>
+    </div>
+  </div>
+  <div class="tip gold" style="margin-top:14px;"><span class="tip-ico" aria-hidden="true">⚕️</span><div class="tip-txt"><strong>Clinical parallel:</strong> In surgical teams, specific behavioral feedback after procedures reduces adverse event rates. The same mechanism applies in your chapter: vague feedback cannot produce specific change. Specificity is not harsh — it's respectful. It tells people exactly what to work with.</div></div>
+</section>
+
+<section class="sec" id="meeting">
+  <div class="sec-hd">
+    <div class="tag">Domain 5 · CONNECT Pillar</div>
+    <h2>Run a Meeting That Works</h2>
+    <p class="sec-sub">Bad meetings don't just waste time — they signal that the leader doesn't value the team's time. A well-run 30-minute chapter meeting builds more trust than a chaotic 90-minute one. Here's the evidence-based structure.</p>
+  </div>
+  <div style="background:#fff;border-radius:14px;border:1.5px solid var(--snow-3);overflow:hidden;padding:22px;">
+    <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:700;margin-bottom:18px;">45-Minute Chapter Meeting Protocol</div>
+    <div class="agenda-row" style="border-left-color:#5ab0e0;"><div class="agenda-time">0–5</div><div><div class="agenda-label">Check-in (Relational)</div><div class="agenda-sub">One word or one sentence — how is everyone arriving? This 5-minute investment predicts participation quality for the next 40 minutes.</div></div></div>
+    <div class="agenda-row" style="border-left-color:var(--amber);"><div class="agenda-time">5–10</div><div><div class="agenda-label">Wins &amp; Recognition</div><div class="agenda-sub">Specific acknowledgments of what went well. Public recognition activates dopamine and signals what behavior is valued.</div></div></div>
+    <div class="agenda-row" style="border-left-color:#e87060;"><div class="agenda-time">10–30</div><div><div class="agenda-label">Agenda Items (Prepared)</div><div class="agenda-sub">Agenda sent 24 hours before. Owner identified for each item. Decisions documented in real time.</div></div></div>
+    <div class="agenda-row" style="border-left-color:#6aaa84;"><div class="agenda-time">30–40</div><div><div class="agenda-label">Open Discussion</div><div class="agenda-sub">"What's on your mind that we haven't addressed?" Protects informal communication that gets buried in structure.</div></div></div>
+    <div class="agenda-row" style="border-left-color:#9a70d0;"><div class="agenda-time">40–45</div><div><div class="agenda-label">Close &amp; Commitments</div><div class="agenda-sub">Each person states one specific action before the next meeting. Named commitments are 3× more likely to be completed than general intentions (Gollwitzer, 1999).</div></div></div>
+  </div>
+  <div class="tip green" style="margin-top:14px;"><span class="tip-ico" aria-hidden="true">📋</span><div class="tip-txt"><strong>Meeting quality test:</strong> After a meeting, ask privately: "Did everyone who had something to say get a chance to say it?" If not, your meeting structure is serving the loudest voices, not the room. Adjust accordingly.</div></div>
+  <div style="margin-top:14px;text-align:right;">
+    <button class="print-btn" onclick="window.print()" aria-label="Print or save this page as PDF">⬇ Print / Save as PDF</button>
+  </div>
+</section>
+
+<section class="sec" id="worksheets">
+  <div class="sec-hd">
+    <div class="tag">Officer Tools</div>
+    <h2>Officer Reference Cards</h2>
+    <p class="sec-sub">Print-ready quick references for your most frequent officer responsibilities — bring them to meetings, events, and competitions as working tools.</p>
+  </div>
+  <div class="worksheet-panel">
+    <div class="ws-title">Officer Protocol Cards</div>
+    <div class="ws-sub">Each card opens a focused, print-optimized reference for one core officer function. Use them live — before meetings, before events, after conversations that need a debrief.</div>
+    <div class="ws-grid">
+      <div class="ws-card">
+        <div class="ws-card-title">SBI Feedback Card</div>
+        <div class="ws-card-desc">A pocket-sized reference for giving Situation-Behavior-Impact feedback. Includes the three-question protocol, a worked example, and a common mistakes column. Print two-sided and carry it.</div>
+        <button class="ws-btn" onclick="downloadWorksheet('sbi')" aria-label="Download SBI Feedback Card worksheet">⬇ Open Card</button>
+      </div>
+      <div class="ws-card">
+        <div class="ws-card-title">Meeting Agenda Template</div>
+        <div class="ws-card-desc">A fillable meeting agenda template with the 45-minute protocol built in — check-in, wins, agenda, open discussion, commitments close. Send this to your chapter 24 hours before each meeting.</div>
+        <button class="ws-btn" onclick="downloadWorksheet('meeting_template')" aria-label="Download Meeting Agenda Template worksheet">⬇ Open Template</button>
+      </div>
+      <div class="ws-card">
+        <div class="ws-card-title">Event Planning Checklist</div>
+        <div class="ws-card-desc">A tiered planning checklist for chapter events — 4 weeks out through day-of through post-event debrief. Includes the delegation matrix and who-does-what column.</div>
+        <button class="ws-btn" onclick="downloadWorksheet('event_planning')" aria-label="Download Event Planning Checklist worksheet">⬇ Open Checklist</button>
+      </div>
+      <div class="ws-card">
+        <div class="ws-card-title">Officer Self-Assessment</div>
+        <div class="ws-card-desc">A quarterly self-assessment for chapter officers — rate yourself across all five officer domains, identify your primary growth area, and set one specific commitment for next quarter. Based on the Boss vs. Leader framework.</div>
+        <button class="ws-btn" onclick="downloadWorksheet('officer_assess')" aria-label="Download Officer Self-Assessment worksheet">⬇ Open Assessment</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="planning">
+  <div class="sec-hd">
+    <div class="tag">Domain 6 · CONNECT Pillar</div>
+    <h2>Event Planning Fundamentals</h2>
+    <p class="sec-sub">Every successful chapter event follows the same three-phase arc. The difference between a good event and a great one is almost always in the pre-event work, not the day itself.</p>
+  </div>
+  <div class="g3">
+    <div style="background:#fff;border-radius:13px;border:1.5px solid var(--snow-3);padding:18px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;color:var(--amber);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;">Phase 1 · 2–4 Weeks Before</div>
+      <div style="font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin-bottom:10px;">Plan</div>
+      <div class="step"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">1</div><span>Define success — what does "it went well" look like specifically?</span></div>
+      <div class="step"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">2</div><span>Identify all roles — who owns each piece?</span></div>
+      <div class="step"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">3</div><span>Build a run-of-show timeline</span></div>
+      <div class="step"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">4</div><span>Identify what can go wrong — and prepare for the top 3</span></div>
+    </div>
+    <div style="background:#fff;border-radius:13px;border:1.5px solid var(--snow-3);padding:18px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;color:var(--amber);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;">Phase 2 · Day Of</div>
+      <div style="font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin-bottom:10px;">Execute</div>
+      <div class="step"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">1</div><span>Brief your team 30 min before — roles, timing, escalation plan</span></div>
+      <div class="step"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">2</div><span>Empower team to make small decisions — you shouldn't be solving everything</span></div>
+      <div class="step"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">3</div><span>Observe and adapt — stick to the plan until the plan needs to change</span></div>
+      <div class="step"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">4</div><span>Visibly acknowledge good work in the moment</span></div>
+    </div>
+    <div style="background:#fff;border-radius:13px;border:1.5px solid var(--snow-3);padding:18px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;color:var(--amber);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;">Phase 3 · Within 48 Hours</div>
+      <div style="font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin-bottom:10px;">Debrief</div>
+      <div class="step"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">1</div><span>What went well — specifically? (Don't skip this — it reinforces what to repeat)</span></div>
+      <div class="step"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">2</div><span>What would we change next time?</span></div>
+      <div class="step"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">3</div><span>Write it down — most learning evaporates within 72 hours without documentation</span></div>
+      <div class="step"><div class="step-dot" style="background:var(--snow-2);color:var(--text-2);">4</div><span>Thank every person who contributed — specifically</span></div>
+    </div>
+  </div>
+</section>
+
+  </main>
+</div>
+
+<div class="ov" id="modalOv" role="dialog" aria-modal="true" aria-labelledby="mHead" onclick="if(event.target===this)closeModal();">
+  <div class="modal">
+    <div class="modal-top"><button class="mc" onclick="closeModal()" aria-label="Close dialog">✕</button><div id="mHead"></div></div>
+    <div class="modal-body" id="mBody"></div>
+  </div>
+</div>
+
+<nav class="bottom-tabs" aria-label="Hub navigation">
+  <a href="members.html" class="btab" aria-label="Members Hub"><span aria-hidden="true">🌱</span><span class="btab-label">Members</span></a>
+  <a href="officers.html" class="btab active" aria-label="Officers Hub" aria-current="page"><span aria-hidden="true">📋</span><span class="btab-label">Officers</span></a>
+  <a href="advisors.html" class="btab" aria-label="Advisors Hub"><span aria-hidden="true">🧭</span><span class="btab-label">Advisors</span></a>
+  <a href="state-officers.html" class="btab" aria-label="State Officers Hub"><span aria-hidden="true">⭐</span><span class="btab-label">SEC</span></a>
+  <a href="state-staff.html" class="btab" aria-label="State Staff Hub"><span aria-hidden="true">🏛</span><span class="btab-label">Staff</span></a>
+</nav>
+
+<footer class="footer"><p><strong>DC HOSA Chapter Officer Hub</strong> · Washington, DC</p><p>HOSA-Future Health Professionals · District of Columbia Affiliate · 2026–27</p><p style="margin-top:4px;font-size:10px;">Grounded in DC OSSE CTE Perkins V priorities · BUILD + EMPOWER Pillars</p></footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const pct=window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
+  document.getElementById('prog').style.width=pct+'%';
+  const secs=document.querySelectorAll('.sec'),navs=document.querySelectorAll('.nav-item');
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});
+  navs.forEach(n=>n.classList.toggle('active',n.getAttribute('href')==='#'+cur));
+});
+function toggleDrawer(){
+  const btn=document.getElementById('hamBtn'),drawer=document.getElementById('navDrawer'),overlay=document.getElementById('drawerOverlay');
+  const open=drawer.classList.toggle('open');
+  overlay.classList.toggle('open',open);btn.classList.toggle('open',open);
+  btn.setAttribute('aria-expanded',String(open));
+  if(open){drawer.querySelector('.drawer-close').focus();}
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if(document.getElementById('navDrawer').classList.contains('open'))toggleDrawer();
+    if(document.getElementById('modalOv').classList.contains('on'))closeModal();
+  }
+});
+
+const MODALS={
+  autonomy:{head:`<h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;">Autonomy in Practice</h2><div style="font-size:12px;color:var(--text-3);margin-top:3px;">Self-Determination Theory · Deci & Ryan · Officer Applications</div>`,
+  body:`<div class="ms"><div class="ms-title">What it looks like</div><div class="mi"><span>→</span><span><strong>At a chapter meeting:</strong> "I'd like someone to lead the community service planning — who wants to own this and what would you need?" (Not: "Alex, you're doing community service planning.")</span></div><div class="mi"><span>→</span><span><strong>In an assignment:</strong> Share the goal and the constraints clearly, then give people latitude to decide how to get there.</span></div><div class="mi"><span>→</span><span><strong>In a conversation:</strong> "What do you think we should do here?" before "Here's what I think we should do."</span></div></div><div class="ms"><div class="ms-title">What kills autonomy</div><div class="mi"><span>✗</span><span>Micromanaging how someone completes a task you've delegated</span></div><div class="mi"><span>✗</span><span>Overriding decisions without explaining why</span></div><div class="mi"><span>✗</span><span>Giving only "yes/no" responsibilities — never real ownership</span></div></div><div class="ms"><div class="ms-title">Reflection Protocol</div><div class="rq">"In your last three chapter decisions, how much of the input came from you versus the team? If the ratio is heavily weighted toward you, what one decision could you transfer to a member this week?"</div></div>`},
+  competence:{head:`<h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;">Competence in Practice</h2><div style="font-size:12px;color:var(--text-3);margin-top:3px;">Self-Determination Theory · Building capable members deliberately</div>`,
+  body:`<div class="ms"><div class="ms-title">The Challenge-Skill Balance</div><p style="font-size:13px;color:var(--text-2);line-height:1.7;">Csikszentmihalyi's flow research shows that people are most engaged — and perform best — when the challenge level is calibrated just above their current skill level. Too easy = disengagement. Too hard = shutdown. Your job as an officer is to know where each member is and calibrate accordingly.</p></div><div class="ms"><div class="ms-title">Practical Applications</div><div class="mi"><span>✓</span><span>Give stretch assignments to members who've mastered their current role — with explicit support structures</span></div><div class="mi"><span>✓</span><span>Break big tasks down for members who are new — small wins build the competence base</span></div><div class="mi"><span>✓</span><span>Name specific growth publicly: "I want everyone to know that [name] handled [situation] this week — that was not easy and it was excellent."</span></div></div><div class="ms"><div class="ms-title">Reflection Protocol</div><div class="rq">"Who on your team has been doing the same task for more than two months? Are they still growing, or has the challenge level dropped below their current capability?"</div></div>`},
+  relatedness:{head:`<h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;">Relatedness in Practice</h2><div style="font-size:12px;color:var(--text-3);margin-top:3px;">Belonging is a fundamental human need — Baumeister & Leary (1995)</div>`,
+  body:`<div class="ms"><div class="ms-title">The Science of Belonging</div><p style="font-size:13px;color:var(--text-2);line-height:1.7;">Baumeister & Leary's landmark meta-analysis showed that the need to belong is as fundamental as the need for food and water — not a preference but a driver of every major life decision. Members who feel they belong to your chapter will show up, contribute, and recruit others. Members who don't will quietly disappear.</p></div><div class="ms"><div class="ms-title">Officer Actions for Relatedness</div><div class="mi"><span>→</span><span>Learn every member's name and something specific about them within the first three meetings</span></div><div class="mi"><span>→</span><span>Connect members to each other — not just to you: "Have you met [name]? You two should talk about [specific thing]."</span></div><div class="mi"><span>→</span><span>Make the mission visible and personal: "Your work on this event helped kids in Ward 8 access health education they wouldn't otherwise have." Specificity beats abstraction.</span></div></div><div class="ms"><div class="ms-title">Warning signal</div><div class="rq">"If a member is missing from two consecutive meetings without contact, that is a belonging signal — not just an attendance issue. Reach out personally within 48 hours."</div></div>`}
+};
+function openM(key){
+  const m=MODALS[key];if(!m)return;
+  document.getElementById('mHead').innerHTML=m.head;
+  document.getElementById('mBody').innerHTML=m.body;
+  const ov=document.getElementById('modalOv');ov.classList.add('on');
+  ov.querySelector('.mc').focus();
+}
+function closeModal(){document.getElementById('modalOv').classList.remove('on');}
+
+function downloadWorksheet(id){
+  const sheets={
+    sbi:`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>SBI Feedback Card — DC HOSA Officer Hub</title><style>
+body{font-family:Georgia,serif;max-width:720px;margin:40px auto;padding:0 32px;color:#0f1c2e;font-size:12pt;line-height:1.6;}
+h1{font-size:22pt;margin-bottom:4px;}.sub{font-size:10pt;color:#5a6a80;margin-bottom:32px;}
+.card{border:2px solid #d4800a;border-radius:10px;padding:20px;margin-bottom:20px;}
+.card h2{font-size:14pt;color:#0f1c2e;margin-bottom:12px;border-bottom:1px solid #eee;padding-bottom:8px;}
+.letter{font-size:28pt;font-weight:700;color:#d4800a;float:left;margin-right:14px;line-height:1;}
+.label{font-size:10pt;font-weight:700;color:#5a6a80;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.desc{font-size:11pt;line-height:1.6;margin-bottom:8px;}
+.ex{background:#fef7e8;padding:10px 14px;border-left:3px solid #d4800a;border-radius:4px;font-size:10.5pt;font-style:italic;}
+.mistake{padding:8px 12px;background:#fae8e4;border-radius:6px;font-size:10.5pt;margin-bottom:6px;}
+@media print{body{margin:20px;padding:0;}}</style></head><body>
+<h1>SBI Feedback Card</h1><div class="sub">Officer Quick Reference · Situation–Behavior–Impact · DC HOSA 2026–27</div>
+<div class="card"><h2>The Framework</h2>
+<div style="clear:both;margin-bottom:16px;"><div class="letter">S</div><div class="label">Situation</div><div class="desc">Anchor in a specific, observable moment. Not "sometimes" or "always" — a particular instance with a time and place.</div><div class="ex">"During last Wednesday's meeting, when we were planning the community event..."</div></div>
+<div style="clear:both;margin-bottom:16px;"><div class="letter">B</div><div class="label">Behavior</div><div class="desc">Only what you could observe externally — actions and words. No interpretations, no character judgments, no attributed motives.</div><div class="ex">"...you interrupted three members before they finished their point..."</div></div>
+<div style="clear:both;"><div class="letter">I</div><div class="label">Impact</div><div class="desc">What it meant for you, the team, or the mission. Stated in first person — your experience of it, not a verdict.</div><div class="ex">"...and I noticed the energy in the room drop. Two people stopped contributing after that."</div></div>
+</div>
+<div class="card"><h2>Common Mistakes to Avoid</h2>
+<div class="mistake">❌ "You always..." or "You never..." — vague and hard to dispute productively</div>
+<div class="mistake">❌ "You seemed unmotivated" — inference, not observation</div>
+<div class="mistake">❌ "The team thinks..." — diffusing accountability instead of owning your observation</div>
+<div class="mistake">❌ Skipping the impact — behavior without impact feels like complaint, not feedback</div>
+</div>
+<p style="font-size:9pt;color:#aaa;margin-top:24px;">DC HOSA Officer Hub · 2026–27 · Based on Center for Creative Leadership SBI Framework</p>
+</body></html>`,
+
+    meeting_template:`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Chapter Meeting Agenda — DC HOSA</title><style>
+body{font-family:Georgia,serif;max-width:720px;margin:40px auto;padding:0 32px;color:#0f1c2e;font-size:12pt;line-height:1.6;}
+h1{font-size:20pt;margin-bottom:4px;}.sub{font-size:10pt;color:#5a6a80;margin-bottom:28px;}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+.meta-field label{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#5a6a80;display:block;margin-bottom:4px;}
+.line{border:none;border-bottom:1px solid #ccc;width:100%;height:22px;display:block;}
+table{width:100%;border-collapse:collapse;margin-bottom:20px;}
+th{background:#0f1c2e;color:#f5f7fa;padding:10px 12px;text-align:left;font-size:9pt;}
+td{padding:10px 12px;border-bottom:1px solid #eee;vertical-align:top;}
+td:first-child{font-weight:700;white-space:nowrap;width:80px;font-size:10pt;}
+.commit-row{background:#fef7e8;}.commit-label{font-size:8pt;font-weight:700;color:#d4800a;text-transform:uppercase;}
+.notes{border:1px solid #ccc;width:100%;min-height:48px;display:block;margin-bottom:8px;}
+@media print{body{margin:20px;padding:0;}}</style></head><body>
+<h1>DC HOSA Chapter Meeting Agenda</h1><div class="sub">45-Minute Protocol · Send to members 24 hours before</div>
+<div class="meta">
+<div class="meta-field"><label>Date</label><span class="line"></span></div>
+<div class="meta-field"><label>Location / Meeting Link</label><span class="line"></span></div>
+<div class="meta-field"><label>Meeting Facilitator</label><span class="line"></span></div>
+<div class="meta-field"><label>Notes Keeper</label><span class="line"></span></div>
+</div>
+<table>
+<thead><tr><th>Time</th><th>Segment</th><th>Owner</th><th>Notes / Action Items</th></tr></thead>
+<tbody>
+<tr><td>0–5 min</td><td><strong>Check-In</strong> — One word or sentence: how is everyone arriving today?</td><td></td><td></td></tr>
+<tr><td>5–10 min</td><td><strong>Wins &amp; Recognition</strong> — Specific acknowledgments of what went well since last meeting</td><td></td><td></td></tr>
+<tr><td>10–30 min</td><td><strong>Agenda Items</strong><br>1. _______________<br>2. _______________<br>3. _______________</td><td></td><td></td></tr>
+<tr><td>30–40 min</td><td><strong>Open Discussion</strong> — "What's on your mind that we haven't addressed?"</td><td></td><td></td></tr>
+<tr class="commit-row"><td>40–45 min</td><td><strong>Commitments Close</strong> — Each person states one specific action before next meeting<div class="commit-label" style="margin-top:6px;">Who · What · By When</div></td><td></td><td></td></tr>
+</tbody></table>
+<p style="font-size:9pt;color:#aaa;margin-top:24px;">DC HOSA Chapter Officer Hub · 2026–27 · dchosa.org</p>
+</body></html>`,
+
+    event_planning:`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Event Planning Checklist — DC HOSA</title><style>
+body{font-family:Georgia,serif;max-width:720px;margin:40px auto;padding:0 32px;color:#0f1c2e;font-size:11pt;line-height:1.6;}
+h1{font-size:20pt;margin-bottom:4px;}.sub{font-size:10pt;color:#5a6a80;margin-bottom:28px;}
+h2{font-size:13pt;color:#0f1c2e;border-left:4px solid #d4800a;padding-left:10px;margin:24px 0 12px;}
+.check-row{display:flex;align-items:flex-start;gap:10px;padding:8px;border-bottom:1px solid #eee;font-size:10.5pt;}
+.box{width:18px;height:18px;border:1.5px solid #d4800a;border-radius:4px;flex-shrink:0;margin-top:2px;}
+.owner{font-size:9pt;color:#5a6a80;margin-left:auto;min-width:120px;text-align:right;}
+@media print{body{margin:20px;padding:0;}}</style></head><body>
+<h1>DC HOSA Event Planning Checklist</h1><div class="sub">Three-Phase Protocol · Chapter Officer Hub · 2026–27</div>
+<h2>Phase 1 — 2–4 Weeks Before</h2>
+<div class="check-row"><div class="box"></div><div>Define success — what does "went well" look like specifically?</div><div class="owner">Owner: ________</div></div>
+<div class="check-row"><div class="box"></div><div>Build run-of-show timeline with 15-min increments</div><div class="owner">Owner: ________</div></div>
+<div class="check-row"><div class="box"></div><div>Assign roles to specific people — all tasks have a name</div><div class="owner">Owner: ________</div></div>
+<div class="check-row"><div class="box"></div><div>Identify top 3 things that could go wrong — and plan for each</div><div class="owner">Owner: ________</div></div>
+<div class="check-row"><div class="box"></div><div>Confirm venue / logistics / permissions</div><div class="owner">Owner: ________</div></div>
+<div class="check-row"><div class="box"></div><div>Communicate event details to all chapter members</div><div class="owner">Owner: ________</div></div>
+<h2>Phase 2 — 1 Week Before</h2>
+<div class="check-row"><div class="box"></div><div>Confirm all role-owners are ready and briefed</div><div class="owner">Owner: ________</div></div>
+<div class="check-row"><div class="box"></div><div>Gather all materials / supplies needed day-of</div><div class="owner">Owner: ________</div></div>
+<div class="check-row"><div class="box"></div><div>Send reminder to attendees with logistics details</div><div class="owner">Owner: ________</div></div>
+<h2>Phase 3 — Day Of</h2>
+<div class="check-row"><div class="box"></div><div>Team brief 30 minutes before — roles, timing, escalation plan</div><div class="owner">Owner: ________</div></div>
+<div class="check-row"><div class="box"></div><div>Arrive early for setup — minimum 45 minutes</div><div class="owner">Owner: ________</div></div>
+<div class="check-row"><div class="box"></div><div>Delegate day-of decisions to role-owners — don't centralize everything</div><div class="owner">Owner: ________</div></div>
+<div class="check-row"><div class="box"></div><div>Document what happened — photos, counts, notes</div><div class="owner">Owner: ________</div></div>
+<h2>Phase 4 — Within 48 Hours After</h2>
+<div class="check-row"><div class="box"></div><div>Conduct debrief — what went well / what to change next time</div><div class="owner">Owner: ________</div></div>
+<div class="check-row"><div class="box"></div><div>Thank every contributor — specifically, by name</div><div class="owner">Owner: ________</div></div>
+<div class="check-row"><div class="box"></div><div>Document key learnings for next event (within 72 hours — memory fades)</div><div class="owner">Owner: ________</div></div>
+<div class="check-row"><div class="box"></div><div>Report outcomes to advisor — attendance, impact, follow-ups</div><div class="owner">Owner: ________</div></div>
+<p style="font-size:9pt;color:#aaa;margin-top:24px;">DC HOSA Chapter Officer Hub · 2026–27</p>
+</body></html>`,
+
+    officer_assess:`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Officer Self-Assessment — DC HOSA</title><style>
+body{font-family:Georgia,serif;max-width:720px;margin:40px auto;padding:0 32px;color:#0f1c2e;font-size:11pt;line-height:1.6;}
+h1{font-size:20pt;margin-bottom:4px;}.sub{font-size:10pt;color:#5a6a80;margin-bottom:28px;}
+table{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:10.5pt;}
+th{background:#0f1c2e;color:#f5f7fa;padding:10px 12px;text-align:left;font-size:9pt;}
+td{padding:10px 12px;border-bottom:1px solid #eee;vertical-align:top;}
+.scale{display:flex;gap:6px;}.scale span{width:28px;height:28px;border:1.5px solid #d4800a;border-radius:4px;display:inline-block;text-align:center;line-height:26px;font-size:9pt;}
+.growth-box{border:1px solid #d4800a;padding:14px;border-radius:6px;margin-top:20px;background:#fef7e8;}
+@media print{body{margin:20px;padding:0;}}</style></head><body>
+<h1>DC HOSA Officer Self-Assessment</h1><div class="sub">Quarterly · Boss vs. Leader Framework · Rate 1 (rarely) to 5 (consistently)</div>
+<table>
+<thead><tr><th>Domain</th><th style="width:160px;">Rate 1–5</th><th>One example from this quarter</th></tr></thead>
+<tbody>
+<tr><td><strong>Leadership Style</strong><br><span style="font-size:10pt;color:#5a6a80;">I explain the why, give genuine autonomy, and share credit publicly.</span></td><td><div class="scale"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></td><td></td></tr>
+<tr><td><strong>Psychological Safety</strong><br><span style="font-size:10pt;color:#5a6a80;">Members feel safe to speak up, make mistakes, and disagree.</span></td><td><div class="scale"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></td><td></td></tr>
+<tr><td><strong>Feedback Quality</strong><br><span style="font-size:10pt;color:#5a6a80;">I give specific, behavioral, timely feedback using SBI or similar.</span></td><td><div class="scale"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></td><td></td></tr>
+<tr><td><strong>Meeting Facilitation</strong><br><span style="font-size:10pt;color:#5a6a80;">My meetings have structure, every voice is heard, and they close with commitments.</span></td><td><div class="scale"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></td><td></td></tr>
+<tr><td><strong>Member Development</strong><br><span style="font-size:10pt;color:#5a6a80;">I actively develop members' capabilities — not just complete tasks.</span></td><td><div class="scale"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></td><td></td></tr>
+</tbody></table>
+<div class="growth-box">
+<strong>My lowest domain this quarter:</strong> _________________________<br><br>
+<strong>One specific behavior change I'll make next quarter:</strong><br><br>&nbsp;<br>
+<strong>How I'll know it's working (observable sign):</strong><br><br>&nbsp;
+</div>
+<p style="font-size:9pt;color:#aaa;margin-top:24px;">DC HOSA Chapter Officer Hub · 2026–27 · Quarterly review — share with your advisor if you'd like accountability support</p>
+</body></html>`
+  };
+  const w=window.open('','_blank');
+  w.document.write(sheets[id]||'<p>Worksheet not found.</p>');
+  w.document.close();
+  setTimeout(()=>w.print(),600);
+}
+</script>
+</body>
+</html>

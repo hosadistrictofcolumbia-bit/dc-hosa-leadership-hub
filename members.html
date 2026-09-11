@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DC HOSA · Member Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Nunito:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1a3a28;--forest-mid:#234d34;--forest-lt:#2e6644;--sage:#4a8a64;--sage-lt:#6aaa84;--gold:#c8960a;--gold-lt:#e8b030;--gold-pale:#fdf5e0;--cream:#f8f4ec;--cream-2:#ede8de;--cream-3:#ddd5c5;--rust:#c04820;--sky:#2a6a9a;--text-1:#1a2e22;--text-2:#2a4038;--text-3:#5a7060;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:15px;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text-1);overflow-x:hidden;}
+#prog{position:fixed;top:0;left:0;z-index:9999;height:3px;width:0%;background:linear-gradient(90deg,var(--gold),var(--sage));transition:width .1s;}
+
+/* HERO */
+.hero{background:var(--forest);position:relative;overflow:hidden;}
+.hero-mesh{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 70% at 15% 60%,rgba(200,150,10,.1) 0%,transparent 55%),radial-gradient(ellipse 50% 60% at 80% 20%,rgba(46,102,68,.4) 0%,transparent 55%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(200,150,10,.08) 1.5px,transparent 1.5px);background-size:28px 28px;}
+
+/* NAV */
+.hero-nav{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:20px 44px;border-bottom:1px solid rgba(200,150,10,.15);}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-mark{width:40px;height:40px;border-radius:9px;background:linear-gradient(135deg,var(--gold),#7a5a08);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:600;color:var(--forest);line-height:1.3;text-align:center;}
+.logo-text .top{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;color:var(--gold-lt);letter-spacing:3px;text-transform:uppercase;}
+.logo-text .bot{font-size:11px;color:rgba(248,244,236,.35);font-weight:300;margin-top:1px;}
+.hub-links{display:flex;gap:4px;flex-wrap:wrap;}
+.hub-link{padding:7px 13px;border-radius:50px;font-size:11px;font-weight:600;color:rgba(248,244,236,.5);border:1px solid rgba(248,244,236,.12);text-decoration:none;transition:all .18s;}
+.hub-link:hover,.hub-link:focus{color:var(--gold-lt);border-color:rgba(200,150,10,.4);outline:none;}
+.hub-link.active{background:rgba(200,150,10,.2);color:var(--gold-lt);border-color:rgba(200,150,10,.4);}
+
+/* HAMBURGER */
+.ham-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:8px;border-radius:6px;}
+.ham-btn span{display:block;width:22px;height:2px;background:rgba(248,244,236,.7);border-radius:2px;transition:all .22s;}
+.ham-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.ham-btn.open span:nth-child(2){opacity:0;}
+.ham-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-drawer{position:fixed;top:0;right:-290px;width:290px;height:100vh;z-index:500;background:var(--forest-mid);padding:24px 0 32px;display:flex;flex-direction:column;gap:2px;transition:right .28s cubic-bezier(.4,0,.2,1);overflow-y:auto;border-left:1px solid rgba(200,150,10,.15);}
+.nav-drawer.open{right:0;}
+.drawer-close{align-self:flex-end;margin-right:16px;margin-bottom:16px;background:rgba(248,244,236,.08);border:1px solid rgba(248,244,236,.15);border-radius:6px;font-size:16px;cursor:pointer;padding:6px 11px;color:rgba(248,244,236,.7);transition:background .18s;}
+.drawer-close:hover{background:rgba(248,244,236,.15);}
+.drawer-link{padding:13px 22px;text-decoration:none;font-size:13px;font-weight:600;color:rgba(248,244,236,.6);border-left:3px solid transparent;transition:all .18s;}
+.drawer-link:hover,.drawer-link:focus{color:var(--gold-lt);border-left-color:var(--gold);background:rgba(200,150,10,.08);outline:none;}
+.drawer-overlay{position:fixed;inset:0;z-index:499;background:rgba(0,0,0,.55);display:none;}
+.drawer-overlay.open{display:block;}
+
+/* HERO BODY */
+.hero-body{position:relative;z-index:5;padding:52px 44px 48px;display:grid;grid-template-columns:1fr auto;gap:36px;align-items:end;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-lt);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold-lt);opacity:.6;}
+.hero-h1{font-family:'Fraunces',serif;font-size:clamp(44px,5.5vw,82px);font-weight:900;line-height:.93;color:#f8f4ec;letter-spacing:-2px;margin-bottom:14px;}
+.hero-h1 em{color:var(--gold-lt);font-style:italic;}
+.hero-p{font-size:15px;color:rgba(248,244,236,.72);max-width:520px;line-height:1.7;font-weight:400;}
+.hero-stats{display:flex;flex-direction:column;gap:8px;}
+.stat-box{background:rgba(200,150,10,.12);border:1px solid rgba(200,150,10,.25);border-radius:10px;padding:14px 18px;text-align:right;min-width:140px;}
+.stat-num{font-family:'Fraunces',serif;font-size:28px;font-weight:900;color:var(--gold-lt);line-height:1;}
+.stat-label{font-size:10px;color:rgba(248,244,236,.45);margin-top:3px;}
+.pillar-bar{position:relative;z-index:5;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(248,244,236,.06);}
+.pb{padding:15px 18px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background .18s;}
+.pb:hover{background:rgba(248,244,236,.04);}
+.pb.build{color:#5ab0e0;border-top:3px solid #5ab0e0;}
+.pb.empower{color:#e87060;border-top:3px solid #e87060;}
+.pb.advance{color:var(--gold-lt);border-top:3px solid var(--gold-lt);}
+.pb.connect{color:#6aaa84;border-top:3px solid #6aaa84;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:200px 1fr;min-height:100vh;}
+.sidebar{background:var(--forest);position:sticky;top:0;height:100vh;overflow-y:auto;padding:24px 0;border-right:1px solid rgba(200,150,10,.1);scrollbar-width:none;}
+.sidebar::-webkit-scrollbar{display:none;}
+.sidebar-label{font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(248,244,236,.22);padding:0 18px 10px;border-bottom:1px solid rgba(200,150,10,.1);margin-bottom:6px;}
+.nav-item{display:flex;align-items:center;gap:9px;padding:10px 18px;text-decoration:none;transition:all .18s;border-left:2px solid transparent;}
+.nav-item:hover,.nav-item:focus{background:rgba(200,150,10,.07);outline:none;}
+.nav-item.active{background:rgba(200,150,10,.12);border-left-color:var(--gold);}
+.nav-text{font-size:11px;font-weight:600;color:rgba(248,244,236,.5);line-height:1.3;}
+.nav-item.active .nav-text,.nav-item:hover .nav-text{color:var(--gold-lt);}
+.content{padding:0 52px 100px;max-width:1080px;}
+
+/* SECTIONS */
+.sec{padding:68px 0 20px;}
+.sec-hd{margin-bottom:32px;padding-bottom:16px;border-bottom:2px solid var(--cream-3);}
+.sec-hd .tag{font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.sec-hd h2{font-family:'Fraunces',serif;font-size:34px;font-weight:900;line-height:1;}
+.sec-hd .sec-sub{font-size:13px;color:var(--text-3);margin-top:8px;max-width:560px;line-height:1.65;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:13px;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;}
+
+/* CARDS */
+.card{background:#fff;border-radius:14px;border:1.5px solid var(--cream-3);overflow:hidden;transition:all .22s;cursor:pointer;}
+.card:hover{border-color:rgba(200,150,10,.35);box-shadow:0 8px 24px rgba(26,58,40,.1);transform:translateY(-2px);}
+.card:focus{outline:2px solid var(--gold);outline-offset:2px;}
+.card-top{padding:18px 20px 14px;border-bottom:1px solid var(--cream-2);display:flex;align-items:flex-start;gap:11px;}
+.card-ico{width:42px;height:42px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
+.card-info h3{font-family:'Fraunces',serif;font-size:16px;font-weight:700;margin-bottom:3px;}
+.card-info p{font-size:11px;color:var(--text-3);line-height:1.5;}
+.card-body{padding:14px 20px 18px;}
+.card-cta{font-size:11px;font-weight:700;color:var(--gold);margin-top:14px;text-align:right;letter-spacing:.3px;}
+
+/* RESEARCH BOX */
+.research-box{margin-top:12px;padding:12px 14px;background:rgba(200,150,10,.07);border:1.5px solid rgba(200,150,10,.25);border-radius:9px;}
+.rb-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:6px;font-family:'JetBrains Mono',monospace;}
+.research-box p{font-size:12px;line-height:1.65;color:var(--text-2);}
+
+/* TIPS */
+.tip{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:9px;margin-top:10px;}
+.tip.green{background:#e8faf0;border:1.5px solid #70c8a0;}
+.tip.gold{background:#fdf5e0;border:1.5px solid #e8b030;}
+.tip.blue{background:#e8f0fa;border:1.5px solid #8ab8e8;}
+.tip-ico{font-size:14px;flex-shrink:0;margin-top:1px;}
+.tip-txt{font-size:12px;color:var(--text-2);line-height:1.6;}
+.tip-txt strong{color:var(--text-1);}
+
+/* STEPS */
+.step{display:flex;align-items:flex-start;gap:9px;font-size:12px;color:var(--text-2);line-height:1.5;margin-bottom:6px;}
+.step-dot{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;margin-top:1px;font-family:'JetBrains Mono',monospace;}
+
+/* PRINT BUTTON */
+.print-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:50px;border:1.5px solid var(--cream-3);background:#fff;font-size:12px;font-weight:600;cursor:pointer;color:var(--text-2);transition:all .18s;font-family:'Nunito',sans-serif;}
+.print-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+/* DOWNLOAD WORKSHEET AREA */
+.worksheet-panel{background:var(--forest);border-radius:16px;padding:28px;border:1px solid rgba(200,150,10,.15);}
+.ws-title{font-family:'Fraunces',serif;font-size:20px;font-weight:900;color:#f8f4ec;margin-bottom:4px;}
+.ws-sub{font-size:12px;color:rgba(248,244,236,.5);margin-bottom:20px;line-height:1.6;}
+.ws-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.ws-card{background:rgba(248,244,236,.07);border:1px solid rgba(200,150,10,.2);border-radius:11px;padding:16px;display:flex;flex-direction:column;gap:10px;}
+.ws-card-title{font-size:13px;font-weight:700;color:#f8f4ec;}
+.ws-card-desc{font-size:11px;color:rgba(248,244,236,.55);line-height:1.6;}
+.ws-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:50px;background:linear-gradient(135deg,var(--gold),#7a5a08);border:none;color:#fff;font-size:11px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:opacity .18s;align-self:flex-start;}
+.ws-btn:hover{opacity:.85;}
+
+/* CONFIDENCE WHEEL */
+.wheel-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.wq{background:#fff;border-radius:13px;border:1.5px solid var(--cream-3);padding:18px;}
+.wq h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+.waction{font-size:11px;color:var(--text-2);padding:8px 11px;background:var(--cream);border-radius:7px;line-height:1.5;margin-bottom:6px;}
+
+/* LEARN */
+.learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.learn-card{background:#fff;border-radius:13px;border:1.5px solid var(--cream-3);padding:18px;}
+.learn-card h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:7px;}
+.learn-card p{font-size:12px;color:var(--text-2);line-height:1.6;}
+.why-box{margin-top:10px;padding:9px 12px;background:var(--gold-pale);border-left:3px solid var(--gold);border-radius:7px;font-size:11px;font-style:italic;color:var(--text-2);}
+
+/* GLOSSARY */
+.gloss-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.gi{background:#fff;border-radius:11px;border:1.5px solid var(--cream-3);padding:14px;}
+.gi-term{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
+.gi-def{font-size:11px;color:var(--text-2);line-height:1.55;}
+
+/* COMPETENCIES */
+.comp-wrap{background:var(--forest);border-radius:16px;padding:28px;}
+.comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.cc{background:rgba(248,244,236,.06);border:1px solid rgba(248,244,236,.07);border-radius:10px;padding:14px;cursor:pointer;transition:all .18s;}
+.cc:hover,.cc:focus{background:rgba(200,150,10,.1);outline:2px solid var(--gold);outline-offset:2px;}
+.cc.done{border-color:rgba(106,170,132,.5);background:rgba(106,170,132,.08);}
+.cc-name{font-size:12px;font-weight:700;color:#f8f4ec;margin-bottom:7px;}
+.cc-bg{height:3px;background:rgba(255,255,255,.1);border-radius:2px;margin-bottom:6px;}
+.cc-fill{height:100%;border-radius:2px;background:var(--gold);transition:width .7s ease;}
+.cc-fill.on{background:var(--sage-lt);}
+.cc-stat{font-size:10px;color:rgba(255,255,255,.35);}
+
+/* MODAL */
+.ov{position:fixed;inset:0;z-index:1000;background:rgba(26,58,40,.88);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .22s;}
+.ov.on{opacity:1;pointer-events:all;}
+.modal{background:#fff;border-radius:18px;max-width:700px;width:100%;max-height:85vh;overflow-y:auto;transform:translateY(20px) scale(.97);transition:transform .28s cubic-bezier(.34,1.56,.64,1);}
+.ov.on .modal{transform:translateY(0) scale(1);}
+.modal-top{padding:24px 28px 18px;border-bottom:1px solid var(--cream-3);position:sticky;top:0;background:#fff;z-index:5;border-radius:18px 18px 0 0;}
+.mc{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--cream-3);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text-3);transition:all .18s;}
+.mc:hover{background:var(--cream);}
+.modal-body{padding:20px 28px 28px;}
+.ms{margin-bottom:20px;}
+.ms-title{font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:9px;padding-bottom:6px;border-bottom:1px solid var(--cream-2);}
+.mi{display:flex;align-items:flex-start;gap:9px;padding:9px 13px;background:var(--cream);border-radius:8px;font-size:12px;line-height:1.5;margin-bottom:6px;}
+.rq{padding:10px 14px;background:var(--cream-2);border-left:3px solid var(--gold);border-radius:7px;font-size:12px;font-style:italic;color:var(--text-2);line-height:1.55;margin-bottom:7px;}
+
+/* BOTTOM TABS */
+.bottom-tabs{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;grid-template-columns:repeat(5,1fr);border-top:1px solid rgba(200,150,10,.2);background:var(--forest);}
+.btab{display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 4px 12px;text-decoration:none;font-size:10px;font-weight:600;color:rgba(248,244,236,.45);transition:background .18s;}
+.btab.active,.btab:hover{color:var(--gold-lt);}
+.btab.active{border-top:2px solid var(--gold);}
+.btab-label{font-size:9px;font-weight:700;}
+
+/* FOOTER */
+.footer{background:var(--forest);color:rgba(248,244,236,.35);text-align:center;padding:32px;font-size:11px;line-height:1.9;}
+.footer strong{color:var(--gold-lt);}
+
+/* PRINT */
+@media print{
+  .hero,.sidebar,.bottom-tabs,.nav-drawer,.drawer-overlay,.ham-btn,.print-btn,.ws-btn,#prog,.pillar-bar,.ov{display:none!important;}
+  .layout{grid-template-columns:1fr!important;}
+  .content{padding:0 20px!important;max-width:100%!important;}
+  .sec{page-break-inside:avoid;padding:24px 0!important;}
+  body{font-size:11pt;color:#000;background:#fff;}
+  .card,.modal,.learn-card,.wq,.gi{box-shadow:none!important;border:1px solid #ccc!important;}
+  h2,h3,h4{color:#000;}
+  .g2,.g3,.wheel-grid,.learn-grid,.gloss-grid,.comp-grid,.ws-grid{grid-template-columns:1fr 1fr!important;}
+}
+
+@media(max-width:768px){
+  .ham-btn{display:flex;}
+  .hub-links{display:none;}
+  .layout{grid-template-columns:1fr;padding-bottom:70px;}
+  .sidebar{display:none;}
+  .content{padding:0 20px 100px;}
+  .hero-body{grid-template-columns:1fr;}
+  .hero-stats{display:none;}
+  .pillar-bar{grid-template-columns:1fr 1fr;}
+  .hero-nav{padding:16px 20px;}
+  .bottom-tabs{display:grid;}
+  .g2,.g3,.wheel-grid,.learn-grid{grid-template-columns:1fr;}
+  .gloss-grid,.comp-grid,.ws-grid{grid-template-columns:1fr 1fr;}
+  .hero-h1{font-size:clamp(36px,9vw,56px);}
+}
+@media(max-width:480px){
+  .gloss-grid,.comp-grid,.ws-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div id="prog" role="progressbar" aria-label="Reading progress"></div>
+<section class="hero">
+  <div class="hero-mesh" aria-hidden="true"></div>
+  <div class="hero-dots" aria-hidden="true"></div>
+  <nav class="hero-nav" aria-label="Hub navigation">
+    <div class="logo"><div class="logo-mark" aria-hidden="true">DC<br>HOSA</div><div class="logo-text"><div class="top">Leadership Hub</div><div class="bot">Future Health Professionals</div></div></div>
+    <div class="hub-links" role="navigation" aria-label="Hub pages">
+      <a href="members.html" class="hub-link active" aria-current="page">🌱 Members</a>
+      <a href="officers.html" class="hub-link">📋 Officers</a>
+      <a href="advisors.html" class="hub-link">🧭 Advisors</a>
+      <a href="state-officers.html" class="hub-link">⭐ State Officers</a>
+      <a href="state-staff.html" class="hub-link">🏛 State Staff</a>
+    </div>
+    <button class="ham-btn" id="hamBtn" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleDrawer()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-drawer" id="navDrawer" role="dialog" aria-label="Navigation menu" aria-modal="true">
+    <button class="drawer-close" onclick="toggleDrawer()" aria-label="Close navigation menu">✕</button>
+    <a href="index.html" class="drawer-link">🏠 Hub Home</a>
+    <a href="members.html" class="drawer-link" style="color:var(--gold-lt);border-left-color:var(--gold);">🌱 Members</a>
+    <a href="officers.html" class="drawer-link">📋 Officers</a>
+    <a href="advisors.html" class="drawer-link">🧭 Advisors</a>
+    <a href="state-officers.html" class="drawer-link">⭐ State Officers</a>
+    <a href="state-staff.html" class="drawer-link">🏛 State Staff</a>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+  <div class="hero-body">
+    <div>
+      <div class="eyebrow">Chapter Member Resource · DC HOSA</div>
+      <h1 class="hero-h1">Start Here.<br>Lead <em>Yourself.</em></h1>
+      <p class="hero-p">Frameworks, tools, and reflections to understand who you are, communicate with confidence, and connect HOSA to a real health career in DC and beyond.</p>
+    </div>
+    <div class="hero-stats" aria-hidden="true">
+      <div class="stat-box"><div class="stat-num">750+</div><div class="stat-label">DC HOSA Members</div></div>
+      <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">Pillars</div></div>
+      <div class="stat-box"><div class="stat-num">EMPOWER</div><div class="stat-label">Primary Pillar</div></div>
+    </div>
+  </div>
+  <div class="pillar-bar" aria-label="Domain quick links">
+    <a href="#know" class="pb build">🏗 Know</a>
+    <a href="#communicate" class="pb empower">⚡ Communicate</a>
+    <a href="#real-world" class="pb advance">🚀 Apply</a>
+    <a href="#learning" class="pb connect">🔗 Learn</a>
+  </div>
+</section>
+
+<div class="layout">
+  <nav class="sidebar" aria-label="Section navigation">
+    <div class="sidebar-label">Member Domains</div>
+    <a href="#know" class="nav-item active"><span aria-hidden="true" style="font-size:13px;">🧠</span><span class="nav-text">Know Yourself</span></a>
+    <a href="#communicate" class="nav-item"><span aria-hidden="true" style="font-size:13px;">💬</span><span class="nav-text">Communicate</span></a>
+    <a href="#confidence" class="nav-item"><span aria-hidden="true" style="font-size:13px;">✨</span><span class="nav-text">Build Confidence</span></a>
+    <a href="#worksheets" class="nav-item"><span aria-hidden="true" style="font-size:13px;">📄</span><span class="nav-text">Worksheets</span></a>
+    <a href="#real-world" class="nav-item"><span aria-hidden="true" style="font-size:13px;">🏥</span><span class="nav-text">Real World Bridge</span></a>
+    <a href="#learning" class="nav-item"><span aria-hidden="true" style="font-size:13px;">📚</span><span class="nav-text">Learn How to Learn</span></a>
+    <a href="#glossary" class="nav-item"><span aria-hidden="true" style="font-size:13px;">📖</span><span class="nav-text">Glossary</span></a>
+    <a href="#competencies" class="nav-item"><span aria-hidden="true" style="font-size:13px;">📊</span><span class="nav-text">My Competencies</span></a>
+  </nav>
+
+  <main class="content" id="main-content">
+
+<section class="sec" id="know">
+  <div class="sec-hd">
+    <div class="tag">Domain 1</div>
+    <h2>Know Yourself</h2>
+    <p class="sec-sub">Leadership starts with self-understanding. Before you lead others, you need a clear picture of how you think, feel, and respond — and the neuroscience behind why that matters.</p>
+  </div>
+  <div class="g2">
+    <div class="card" role="button" tabindex="0" aria-label="Emotional Intelligence — click to expand" onclick="openM('eq')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openM('eq');}">
+      <div class="card-top"><div class="card-ico" style="background:#e8f0fa;" aria-hidden="true">🧠</div><div class="card-info"><h3>Emotional Intelligence (EQ)</h3><p>Daniel Goleman · Why EQ predicts leadership success more reliably than IQ — and the neuroscience that explains it</p></div></div>
+      <div class="card-body">
+        <div class="step"><div class="step-dot" style="background:#e8f0fa;color:#1a3a6b;">1</div><span><strong>Self-Awareness</strong> — Recognizing your own emotions as they happen</span></div>
+        <div class="step"><div class="step-dot" style="background:#faf0e0;color:#7a5010;">2</div><span><strong>Self-Regulation</strong> — Managing your responses, not just suppressing feelings</span></div>
+        <div class="step"><div class="step-dot" style="background:#e8faf0;color:#207040;">3</div><span><strong>Empathy</strong> — Understanding others' emotional states accurately</span></div>
+        <div class="step"><div class="step-dot" style="background:#f0e8fa;color:#5a1a6b;">4</div><span><strong>Social Skills</strong> — Managing relationships and inspiring others</span></div>
+        <div class="research-box">
+          <div class="rb-label">📚 Research basis</div>
+          <p>When a strong emotion hits, the amygdala — your brain's threat detector — can hijack the prefrontal cortex before conscious thought kicks in. This "amygdala hijack" (Goleman, 1995) means you literally cannot access your best thinking when emotionally flooded. Self-regulation isn't willpower — it's building the neural habit of pausing long enough for the prefrontal cortex to re-engage. EQ is trainable: regular reflection practice literally thickens the prefrontal cortex over time (Davidson et al., 2012).</p>
+        </div>
+        <div class="card-cta" aria-hidden="true">Deep dive →</div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" aria-label="Growth vs Fixed Mindset — click to expand" onclick="openM('mindset')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openM('mindset');}">
+      <div class="card-top"><div class="card-ico" style="background:#e8faf0;" aria-hidden="true">🌱</div><div class="card-info"><h3>Growth vs. Fixed Mindset</h3><p>Carol Dweck · The belief system that determines whether you learn from failure — and the brain science behind it</p></div></div>
+      <div class="card-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="padding:11px;background:#e8faf0;border-radius:9px;border:1.5px solid #70c8a0;">
+            <div style="font-size:9px;font-weight:700;color:#207040;text-transform:uppercase;margin-bottom:7px;">Growth ✓</div>
+            <div class="step" style="font-size:11px;"><span>Abilities can develop</span></div>
+            <div class="step" style="font-size:11px;"><span>Challenges = opportunity</span></div>
+            <div class="step" style="font-size:11px;"><span>Feedback is data</span></div>
+          </div>
+          <div style="padding:11px;background:#fae8e4;border-radius:9px;border:1.5px solid #e89080;">
+            <div style="font-size:9px;font-weight:700;color:#8a2010;text-transform:uppercase;margin-bottom:7px;">Fixed ✗</div>
+            <div class="step" style="font-size:11px;"><span>Abilities are static</span></div>
+            <div class="step" style="font-size:11px;"><span>Challenges feel threatening</span></div>
+            <div class="step" style="font-size:11px;"><span>Feedback feels like attack</span></div>
+          </div>
+        </div>
+        <div class="research-box">
+          <div class="rb-label">📚 Research basis</div>
+          <p>Neuroplasticity research (Kolb & Whishaw, 2009) confirms that the brain forms new synaptic connections every time you learn something new — your brain is literally physically different after learning. Dweck's longitudinal studies showed that students taught growth mindset showed measurably greater academic gains than control groups. The most important word: "yet." "I'm not good at this yet" activates a completely different neural response than "I'm not good at this."</p>
+        </div>
+        <div class="card-cta" aria-hidden="true">Deep dive →</div>
+      </div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="card" role="button" tabindex="0" aria-label="12 Real-World Signs of EI — click to expand" onclick="openM('ei12')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openM('ei12');}">
+      <div class="card-top"><div class="card-ico" style="background:#faf0e0;" aria-hidden="true">💛</div><div class="card-info"><h3>12 Real-World Signs of EI</h3><p>How emotional intelligence actually shows up day-to-day — a self-assessment checklist</p></div></div>
+      <div class="card-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <div style="font-size:11px;padding:7px;background:var(--cream);border-radius:7px;">You pause before reacting</div>
+          <div style="font-size:11px;padding:7px;background:var(--cream);border-radius:7px;">You can name your emotions precisely</div>
+          <div style="font-size:11px;padding:7px;background:var(--cream);border-radius:7px;">You listen to understand, not respond</div>
+          <div style="font-size:11px;padding:7px;background:var(--cream);border-radius:7px;">You don't hold grudges</div>
+          <div style="font-size:11px;padding:7px;background:var(--cream);border-radius:7px;">You notice others' moods</div>
+          <div style="font-size:11px;padding:7px;background:var(--cream);border-radius:7px;">You own your mistakes fully</div>
+        </div>
+        <div class="card-cta" aria-hidden="true">All 12 →</div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" aria-label="8 Reputation-Affecting Habits — click to expand" onclick="openM('reputation')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openM('reputation');}">
+      <div class="card-top"><div class="card-ico" style="background:#fae8e4;" aria-hidden="true">⚠️</div><div class="card-info"><h3>8 Reputation-Affecting Habits</h3><p>Common behaviors that quietly undermine how others see you — and the psychology behind why they damage trust</p></div></div>
+      <div class="card-body">
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="font-size:11px;padding:8px;background:#fae8e4;border-radius:7px;border-left:3px solid #e87060;">Constant complaining without solutions</div>
+          <div style="font-size:11px;padding:8px;background:#fae8e4;border-radius:7px;border-left:3px solid #e87060;">Taking credit for others' contributions</div>
+          <div style="font-size:11px;padding:8px;background:#fae8e4;border-radius:7px;border-left:3px solid #e87060;">Consistent lateness to commitments</div>
+          <div style="font-size:11px;padding:8px;background:#fae8e4;border-radius:7px;border-left:3px solid #e87060;">Making excuses instead of owning mistakes</div>
+        </div>
+        <div class="card-cta" aria-hidden="true">All 8 + fixes →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="communicate">
+  <div class="sec-hd">
+    <div class="tag">Domain 2</div>
+    <h2>Communicate</h2>
+    <p class="sec-sub">Communication is your most transferable leadership skill — and the one that shows up first in every healthcare career. These frameworks give you structure and confidence.</p>
+  </div>
+  <div class="g2">
+    <div class="card" role="button" tabindex="0" aria-label="BMW Speaker Model — click to expand" onclick="openM('bmw')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openM('bmw');}">
+      <div class="card-top"><div class="card-ico" style="background:var(--forest);color:var(--gold-lt);font-size:14px;font-weight:900;font-family:'Fraunces',serif;" aria-hidden="true">BMW</div><div class="card-info"><h3>BMW Speaker Model</h3><p>Oliver Aust · Body, Mind, Words — the three pillars of confident, authentic speaking</p></div></div>
+      <div class="card-body">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;">
+          <div style="padding:13px;background:#e8faf0;border-radius:10px;text-align:center;"><div style="font-family:'Fraunces',serif;font-size:22px;font-weight:900;color:#207040;margin-bottom:4px;">B</div><div style="font-size:10px;font-weight:700;">Body</div><div style="font-size:10px;color:var(--text-3);margin-top:3px;">Breathing, posture, eye contact</div></div>
+          <div style="padding:13px;background:#faf0e0;border-radius:10px;text-align:center;"><div style="font-family:'Fraunces',serif;font-size:22px;font-weight:900;color:#7a5010;margin-bottom:4px;">M</div><div style="font-size:10px;font-weight:700;">Mind</div><div style="font-size:10px;color:var(--text-3);margin-top:3px;">Show up to give, not get</div></div>
+          <div style="padding:13px;background:#e8f0fa;border-radius:10px;text-align:center;"><div style="font-family:'Fraunces',serif;font-size:22px;font-weight:900;color:#1a3a6b;margin-bottom:4px;">W</div><div style="font-size:10px;font-weight:700;">Words</div><div style="font-size:10px;color:var(--text-3);margin-top:3px;">Practice, start/end strong</div></div>
+        </div>
+        <div class="tip gold"><span class="tip-ico" aria-hidden="true">💡</span><div class="tip-txt"><strong>Confidence formula:</strong> Preparation + Past Successes + Intrinsic Self-Belief + Support System. All four can be built.</div></div>
+        <div class="card-cta" aria-hidden="true">Full protocol →</div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" aria-label="Supporting Others' Emotions — click to expand" onclick="openM('emotions')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openM('emotions');}">
+      <div class="card-top"><div class="card-ico" style="background:#faf0e0;" aria-hidden="true">💛</div><div class="card-info"><h3>Supporting Others' Emotions</h3><p>Mica Vaipan · What to ask — and what not to say — when a teammate is struggling</p></div></div>
+      <div class="card-body">
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <div style="display:flex;gap:8px;align-items:flex-start;padding:8px;background:#fae8e4;border-radius:7px;"><div style="font-size:11px;min-width:80px;font-weight:700;color:#c82000;">Anger</div><div style="font-size:11px;color:var(--text-2);">Ask: "What boundary was crossed?" Not: "It's not a big deal."</div></div>
+          <div style="display:flex;gap:8px;align-items:flex-start;padding:8px;background:#e8f0fa;border-radius:7px;"><div style="font-size:11px;min-width:80px;font-weight:700;color:#1a3a6b;">Sadness</div><div style="font-size:11px;color:var(--text-2);">Ask: "What loss are you experiencing?" Not: "It could be worse."</div></div>
+          <div style="display:flex;gap:8px;align-items:flex-start;padding:8px;background:#faf0e0;border-radius:7px;"><div style="font-size:11px;min-width:80px;font-weight:700;color:#7a5010;">Anxiety</div><div style="font-size:11px;color:var(--text-2);">Ask: "What's in your control?" Not: "Just relax."</div></div>
+        </div>
+        <div class="card-cta" aria-hidden="true">All 8 emotions →</div>
+      </div>
+    </div>
+  </div>
+  <div class="card" role="button" tabindex="0" aria-label="Storytell Like a Leader — click to expand" onclick="openM('storytell')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openM('storytell');}">
+    <div class="card-top"><div class="card-ico" style="background:#f0e8fa;" aria-hidden="true">📖</div><div class="card-info"><h3>Storytell Like a Leader — 5 Frameworks</h3><p>Structure your message to land — for presentations, interviews, meetings, and healthcare rounds</p></div></div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;">
+        <div style="padding:12px;background:var(--cream);border-radius:9px;text-align:center;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--gold);margin-bottom:5px;">STARR</div><div style="font-size:10px;color:var(--text-3);">Situation·Task·Action·Result·Reflection</div></div>
+        <div style="padding:12px;background:var(--cream);border-radius:9px;text-align:center;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--gold);margin-bottom:5px;">SCQA</div><div style="font-size:10px;color:var(--text-3);">Situation·Complication·Question·Answer</div></div>
+        <div style="padding:12px;background:var(--cream);border-radius:9px;text-align:center;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--gold);margin-bottom:5px;">ABT</div><div style="font-size:10px;color:var(--text-3);">And · But · Therefore</div></div>
+        <div style="padding:12px;background:var(--cream);border-radius:9px;text-align:center;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--gold);margin-bottom:5px;">Monroe</div><div style="font-size:10px;color:var(--text-3);">Attention·Need·Solution·Visualization·Action</div></div>
+        <div style="padding:12px;background:var(--cream);border-radius:9px;text-align:center;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--gold);margin-bottom:5px;">Golden Circle</div><div style="font-size:10px;color:var(--text-3);">Why → How → What</div></div>
+      </div>
+      <div class="card-cta" aria-hidden="true">Full guide →</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="confidence">
+  <div class="sec-hd">
+    <div class="tag">Domain 3</div>
+    <h2>Build Confidence</h2>
+    <p class="sec-sub">Confidence is a skill, not a trait. Bandura's self-efficacy research shows that four specific sources build self-belief — mastery experiences, vicarious learning, verbal encouragement, and physiological state management. These four quadrants map directly to those sources.</p>
+  </div>
+  <div class="wheel-grid">
+    <div class="wq">
+      <h4><span aria-hidden="true" style="font-size:18px;">🪞</span> Self-Awareness <span style="font-size:10px;font-weight:400;color:var(--text-3);">(Bandura: Physiological State)</span></h4>
+      <div class="waction">📔 Journal for 30 days — track moods and triggers, look for patterns</div>
+      <div class="waction">🧘 5-minute guided breathing before high-stakes moments — slows heart rate, signals safety to amygdala</div>
+      <div class="waction">🤝 Ask a trusted person for feedback on one thing you want to improve</div>
+      <div class="waction">📋 List 3 challenges you faced this week and what each taught you</div>
+    </div>
+    <div class="wq">
+      <h4><span aria-hidden="true" style="font-size:18px;">⭐</span> Self-Belief <span style="font-size:10px;font-weight:400;color:var(--text-3);">(Bandura: Mastery Experiences)</span></h4>
+      <div class="waction">📝 List your top 5 strengths and review them before difficult moments</div>
+      <div class="waction">🧗 Try one new challenging thing per month — completing it is evidence to your brain that you can</div>
+      <div class="waction">✉️ Write a letter to your future self about your growth right now</div>
+      <div class="waction">🎯 Set one bold goal this quarter. Track small daily steps — each step is a mastery experience.</div>
+    </div>
+    <div class="wq">
+      <h4><span aria-hidden="true" style="font-size:18px;">🎤</span> Self-Expression <span style="font-size:10px;font-weight:400;color:var(--text-3);">(Bandura: Verbal Encouragement)</span></h4>
+      <div class="waction">📣 Speak up at least once in every group this week — one sentence counts</div>
+      <div class="waction">🎙️ Record a voice memo about your goals — hearing yourself articulate them builds commitment</div>
+      <div class="waction">✍️ Write a thank-you note and deliver it in person — giving recognition builds your own confidence too</div>
+    </div>
+    <div class="wq">
+      <h4><span aria-hidden="true" style="font-size:18px;">❤️</span> Self-Care <span style="font-size:10px;font-weight:400;color:var(--text-3);">(Bandura: Physiological State)</span></h4>
+      <div class="waction">📅 Schedule recovery time — confidence erodes when the body is depleted</div>
+      <div class="waction">🌿 20 minutes in nature without a phone — cortisol reduction is measurable within this window</div>
+      <div class="waction">🌙 Create a consistent sleep routine — memory consolidation (and self-regulation) depend on it</div>
+    </div>
+  </div>
+  <div class="tip green" style="margin-top:14px;"><span class="tip-ico" aria-hidden="true">🌱</span><div class="tip-txt"><strong>The Compound Effect (Bandura, 1997):</strong> Self-efficacy builds through repeated small successes — not single dramatic moments. Pick one action per quadrant this week. Each completed action is neurological evidence that you are capable, and that evidence accumulates.</div></div>
+</section>
+
+<section class="sec" id="worksheets">
+  <div class="sec-hd">
+    <div class="tag">Reflection Tools</div>
+    <h2>Downloadable Worksheets</h2>
+    <p class="sec-sub">Each tool below opens a print-ready worksheet formatted for the protocol it supports. Open → Print → or save as PDF from your browser's print dialog. Use them before events, after competitions, or in regular practice.</p>
+  </div>
+  <div class="worksheet-panel">
+    <div class="ws-title">Member Protocol Worksheets</div>
+    <div class="ws-sub">Research shows structured reflection significantly accelerates learning gains over unstructured experience (Kolb, 1984). These worksheets turn HOSA experiences into deliberate learning moments.</div>
+    <div class="ws-grid">
+      <div class="ws-card">
+        <div class="ws-card-title">Wins &amp; Losses Reflection Journal</div>
+        <div class="ws-card-desc">A structured STARR-format debrief for any HOSA event, competition, or leadership moment. Grounded in Pennebaker's expressive writing research — even 15 minutes of structured reflection measurably reduces stress and improves future performance.</div>
+        <button class="ws-btn" onclick="downloadWorksheet('journal')" aria-label="Download Wins and Losses Reflection Journal worksheet">⬇ Open Worksheet</button>
+      </div>
+      <div class="ws-card">
+        <div class="ws-card-title">EQ Self-Assessment</div>
+        <div class="ws-card-desc">Map your current EQ profile across all five components. Identify one specific growth target for this semester. Based on Goleman's validated EI framework — self-assessment is the foundation of all EQ development.</div>
+        <button class="ws-btn" onclick="downloadWorksheet('eq_assess')" aria-label="Download EQ Self-Assessment worksheet">⬇ Open Worksheet</button>
+      </div>
+      <div class="ws-card">
+        <div class="ws-card-title">Competency Self-Assessment Tracker</div>
+        <div class="ws-card-desc">A semester-long tracker for all 12 member competencies. Rate yourself at the start of each semester, then again mid-year and at close. Growth is only visible when you measure it twice.</div>
+        <button class="ws-btn" onclick="downloadWorksheet('competency')" aria-label="Download Competency Self-Assessment Tracker worksheet">⬇ Open Worksheet</button>
+      </div>
+      <div class="ws-card">
+        <div class="ws-card-title">Growth Mindset Goal Sheet</div>
+        <div class="ws-card-desc">A structured goal-setting tool that frames objectives around growth process (Dweck's "yet" framework), not just outcomes. Includes an obstacle map and a monthly check-in column.</div>
+        <button class="ws-btn" onclick="downloadWorksheet('growth_goal')" aria-label="Download Growth Mindset Goal Sheet worksheet">⬇ Open Worksheet</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="real-world">
+  <div class="sec-hd">
+    <div class="tag">Domain 5 · ADVANCE Pillar</div>
+    <h2>Real World Bridge</h2>
+    <p class="sec-sub">Every HOSA skill maps to a real healthcare competency. This isn't metaphor — it's pre-professional training grounded in what DC's health workforce actually needs.</p>
+  </div>
+  <div class="g3" style="margin-bottom:0;">
+    <div style="background:#fff;border-radius:13px;border:1.5px solid var(--cream-3);padding:18px;"><div style="font-size:24px;margin-bottom:8px;" aria-hidden="true">🩺</div><div style="font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin-bottom:6px;">HOSA Competitions</div><div style="font-size:11px;color:var(--text-3);margin-bottom:10px;">→ Clinical skills under pressure</div><div style="font-size:12px;color:var(--text-2);line-height:1.65;">Healthcare providers perform procedures under observation with time limits, evaluated on accuracy and communication. HOSA competitive events train exactly this — the same deliberate-practice structure that builds clinical expertise (Ericsson, 1993).</div></div>
+    <div style="background:#fff;border-radius:13px;border:1.5px solid var(--cream-3);padding:18px;"><div style="font-size:24px;margin-bottom:8px;" aria-hidden="true">👥</div><div style="font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin-bottom:6px;">Chapter Meetings</div><div style="font-size:11px;color:var(--text-3);margin-bottom:10px;">→ Interdisciplinary team rounds</div><div style="font-size:12px;color:var(--text-2);line-height:1.65;">Hospital teams hold daily huddles to align on priorities, share information, and make collective decisions. Research shows teams that brief and debrief together have 35% fewer errors (Edmondson, 1999). The chapter meeting is your training ground.</div></div>
+    <div style="background:#fff;border-radius:13px;border:1.5px solid var(--cream-3);padding:18px;"><div style="font-size:24px;margin-bottom:8px;" aria-hidden="true">🌍</div><div style="font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin-bottom:6px;">Community Service</div><div style="font-size:11px;color:var(--text-3);margin-bottom:10px;">→ Population health practice</div><div style="font-size:12px;color:var(--text-2);line-height:1.65;">DC's life expectancy varies by more than 10 years across wards. Your community health work addresses the structural inequity that is the defining challenge of your generation in healthcare — not as background, but as the mission.</div></div>
+    <div style="background:#fff;border-radius:13px;border:1.5px solid var(--cream-3);padding:18px;margin-top:13px;"><div style="font-size:24px;margin-bottom:8px;" aria-hidden="true">🎙️</div><div style="font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin-bottom:6px;">Public Speaking</div><div style="font-size:11px;color:var(--text-3);margin-bottom:10px;">→ Patient communication</div><div style="font-size:12px;color:var(--text-2);line-height:1.65;">Providers who communicate clearly have measurably better patient outcomes and fewer adverse events (JCAHO, 2018). Every HOSA presentation is deliberate practice for the clinical communication that will define your career.</div></div>
+    <div style="background:#fff;border-radius:13px;border:1.5px solid var(--cream-3);padding:18px;margin-top:13px;"><div style="font-size:24px;margin-bottom:8px;" aria-hidden="true">🤝</div><div style="font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin-bottom:6px;">Officer Leadership</div><div style="font-size:11px;color:var(--text-3);margin-bottom:10px;">→ Charge nurse / attending / director</div><div style="font-size:12px;color:var(--text-2);line-height:1.65;">Managing a team, setting direction, running meetings, giving feedback — these are the exact competencies that move healthcare providers into leadership roles. You're practicing them 3–4 years earlier than most of your peers.</div></div>
+    <div style="background:var(--forest);border-radius:13px;padding:18px;margin-top:13px;"><div style="font-size:24px;margin-bottom:8px;" aria-hidden="true">📍</div><div style="font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:#f8f4ec;margin-bottom:6px;">The DC Difference</div><div style="font-size:11px;color:rgba(248,244,236,.5);margin-bottom:10px;">Why context is the mission</div><div style="font-size:12px;color:rgba(248,244,236,.72);line-height:1.65;">Ward 8 residents live on average 12 fewer years than Ward 3 residents — in the same city. DC HOSA exists because the next generation of this city's health workforce should understand and actively address that gap. Your membership is already an act of commitment to that work.</div></div>
+  </div>
+</section>
+
+<section class="sec" id="learning">
+  <div class="sec-hd">
+    <div class="tag">Domain 6</div>
+    <h2>Learn How to Learn</h2>
+    <p class="sec-sub">Healthcare providers are lifelong learners — continuous learning is a professional requirement, not a personal choice. These six methods are backed by cognitive science and used in medical education programs worldwide.</p>
+  </div>
+  <div class="learn-grid">
+    <div class="learn-card"><h4><span aria-hidden="true" style="font-size:18px;">🃏</span> Leitner System</h4><p>Organize flashcards by how well you know each concept. Review difficult ones daily, easy ones weekly. The system forces you to spend time where you have actual gaps — not where you feel comfortable.</p><div class="why-box">Research basis: Spaced repetition exploits the "spacing effect" (Ebbinghaus, 1885) — information reviewed at increasing intervals is retained exponentially longer than information crammed. Medical students using spaced repetition score 25% higher on licensing exams.</div></div>
+    <div class="learn-card"><h4><span aria-hidden="true" style="font-size:18px;">📚</span> SQ3R Method</h4><p>Survey → Question → Read → Recite → Review. Skim structure first. Create questions from headings. Read to find answers. Summarize from memory. Return to check.</p><div class="why-box">Research basis: Active questioning before reading creates retrieval pathways (Pressley et al., 1992). The brain learns by attaching new information to questions it already wants answered — passive reading skips this step.</div></div>
+    <div class="learn-card"><h4><span aria-hidden="true" style="font-size:18px;">📝</span> Cornell Notes</h4><p>Divide your page: Key Points column (left), Details (right), Summary (bottom). Review by covering details and recalling from key points alone. Rebuild the content from prompts.</p><div class="why-box">Research basis: The Testing Effect (Roediger & Karpicke, 2006) shows that retrieving information from memory strengthens retention far more than re-reading the same content. Cornell Notes structure forces retrieval practice into every review session.</div></div>
+    <div class="learn-card"><h4><span aria-hidden="true" style="font-size:18px;">🎨</span> Dual Coding</h4><p>Combine words with visuals — diagrams, mind maps, annotated illustrations. Information encoded in two formats (verbal + visual) is recalled more easily than information encoded one way.</p><div class="why-box">Research basis: Paivio's Dual Coding Theory (1971) demonstrated that verbal and visual memory systems are independent — activating both simultaneously dramatically increases retention and recall speed.</div></div>
+    <div class="learn-card"><h4><span aria-hidden="true" style="font-size:18px;">🗺️</span> Method of Loci</h4><p>Visualize a familiar route. Place pieces of information at specific landmarks. Recall by mentally walking the route. Works for lists, sequences, physiological processes.</p><div class="why-box">Research basis: Memory champions use this technique universally. It works because the hippocampus — your spatial memory system — is one of the brain's most powerful storage mechanisms. You hijack navigation memory to carry other information.</div></div>
+    <div class="learn-card"><h4><span aria-hidden="true" style="font-size:18px;">🧩</span> Feynman Technique</h4><p>Explain any concept as if teaching someone with no background. Find every gap in your explanation — those gaps are gaps in your understanding. Fill them. Repeat until the explanation is complete and simple.</p><div class="why-box">Research basis: The "generation effect" (Slamecka & Graf, 1978) shows that information you generate yourself is remembered far better than information you receive. If you can't explain it simply, you don't understand it well enough to use it clinically.</div></div>
+  </div>
+  <div class="tip green" style="margin-top:14px;"><span class="tip-ico" aria-hidden="true">🏥</span><div class="tip-txt"><strong>Healthcare parallel:</strong> Pennebaker's expressive writing research (1997) showed that structured written reflection — just 15–20 minutes — measurably improved immune function and reduced physician burnout. Reflection isn't soft skill work: it's a clinical resilience practice.</div></div>
+  <div style="margin-top:14px;text-align:right;">
+    <button class="print-btn" onclick="window.print()" aria-label="Print or save this page as PDF">⬇ Print / Save as PDF</button>
+  </div>
+</section>
+
+<section class="sec" id="glossary">
+  <div class="sec-hd">
+    <div class="tag">Reference</div>
+    <h2>Leadership Glossary</h2>
+    <p class="sec-sub">The language of leadership — terms you'll use across HOSA, healthcare, and your career.</p>
+  </div>
+  <div class="gloss-grid" id="glossGrid" role="list" aria-label="Leadership glossary terms"></div>
+</section>
+
+<section class="sec" id="competencies">
+  <div class="sec-hd">
+    <div class="tag">Self-Assessment</div>
+    <h2>My Competencies</h2>
+    <p class="sec-sub">Click any competency to mark it as actively practiced. Or download the full tracker worksheet for a semester-long written self-assessment.</p>
+  </div>
+  <div class="comp-wrap">
+    <p style="font-size:12px;color:rgba(248,244,236,.4);margin-bottom:18px;">Click to mark as practiced this semester. Use the worksheet below for documented tracking.</p>
+    <div class="comp-grid" id="compGrid" role="list" aria-label="Member competencies checklist"></div>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="ws-btn" onclick="downloadWorksheet('competency')" aria-label="Download full competency tracker worksheet">⬇ Download Full Tracker</button>
+      <button style="padding:9px 16px;border-radius:50px;background:rgba(248,244,236,.1);border:1px solid rgba(248,244,236,.2);color:rgba(248,244,236,.6);font-size:11px;font-weight:600;cursor:pointer;font-family:'Nunito',sans-serif;" onclick="resetComps()" aria-label="Reset competency tracker">Reset</button>
+    </div>
+  </div>
+</section>
+
+  </main>
+</div>
+
+<div class="ov" id="modalOv" role="dialog" aria-modal="true" aria-labelledby="mHead" onclick="if(event.target===this)closeModal();">
+  <div class="modal">
+    <div class="modal-top"><button class="mc" onclick="closeModal()" aria-label="Close dialog">✕</button><div id="mHead"></div></div>
+    <div class="modal-body" id="mBody"></div>
+  </div>
+</div>
+
+<nav class="bottom-tabs" aria-label="Hub navigation">
+  <a href="members.html" class="btab active" aria-label="Members Hub" aria-current="page"><span aria-hidden="true">🌱</span><span class="btab-label">Members</span></a>
+  <a href="officers.html" class="btab" aria-label="Officers Hub"><span aria-hidden="true">📋</span><span class="btab-label">Officers</span></a>
+  <a href="advisors.html" class="btab" aria-label="Advisors Hub"><span aria-hidden="true">🧭</span><span class="btab-label">Advisors</span></a>
+  <a href="state-officers.html" class="btab" aria-label="State Officers Hub"><span aria-hidden="true">⭐</span><span class="btab-label">SEC</span></a>
+  <a href="state-staff.html" class="btab" aria-label="State Staff Hub"><span aria-hidden="true">🏛</span><span class="btab-label">Staff</span></a>
+</nav>
+
+<footer class="footer"><p><strong>DC HOSA Member Hub</strong> · Washington, DC</p><p>HOSA-Future Health Professionals · District of Columbia Affiliate · 2026–27</p><p style="margin-top:4px;font-size:10px;">Grounded in DC OSSE CTE Perkins V priorities · EMPOWER Pillar</p></footer>
+
+<script>
+// Progress bar
+window.addEventListener('scroll',()=>{
+  const pct=window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
+  document.getElementById('prog').style.width=pct+'%';
+  const secs=document.querySelectorAll('.sec'),navs=document.querySelectorAll('.nav-item');
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});
+  navs.forEach(n=>n.classList.toggle('active',n.getAttribute('href')==='#'+cur));
+});
+
+// Hamburger drawer
+function toggleDrawer(){
+  const btn=document.getElementById('hamBtn'),
+        drawer=document.getElementById('navDrawer'),
+        overlay=document.getElementById('drawerOverlay');
+  const open=drawer.classList.toggle('open');
+  overlay.classList.toggle('open',open);
+  btn.classList.toggle('open',open);
+  btn.setAttribute('aria-expanded',String(open));
+  if(open){drawer.querySelector('.drawer-close').focus();}
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    const drawer=document.getElementById('navDrawer');
+    if(drawer.classList.contains('open'))toggleDrawer();
+    if(document.getElementById('modalOv').classList.contains('on'))closeModal();
+  }
+});
+
+// Glossary
+const GLOSSARY=[
+  {t:'Growth Mindset',d:'The belief that abilities develop through dedication — \"I can\'t do this yet\" rather than \"I can\'t do this.\"'},
+  {t:'Emotional Intelligence',d:'The ability to identify, understand, and manage your own emotions and recognize and influence others\'.'},
+  {t:'Amygdala Hijack',d:'When a strong emotion activates the amygdala before the prefrontal cortex can respond rationally.'},
+  {t:'Self-Efficacy',d:'Belief in your own capacity to execute the behaviors required to produce a specific outcome (Bandura, 1997).'},
+  {t:'SMART Goals',d:'Goals that are Specific, Measurable, Achievable, Relevant, and Time-bound.'},
+  {t:'Servant Leadership',d:'A philosophy where the leader prioritizes the growth and well-being of the people and communities they lead.'},
+  {t:'RACI Matrix',d:'A framework identifying who is Responsible, Accountable, Consulted, and Informed for any decision or task.'},
+  {t:'Stakeholder',d:'Anyone who has an interest in or is affected by a project, program, or decision.'},
+  {t:'Debrief',d:'A structured reflection after an experience to extract learning from both successes and failures.'},
+  {t:'Active Listening',d:'Fully concentrating on a speaker to understand their message — not preparing your response while they talk.'},
+  {t:'Root Cause',d:'The fundamental reason an issue occurs, as opposed to the surface-level symptom that\'s immediately visible.'},
+  {t:'Accountability',d:'Accepting responsibility for your actions and their outcomes, including when things don\'t go as planned.'},
+  {t:'Neuroplasticity',d:'The brain\'s ability to form new neural connections throughout life in response to learning and experience.'},
+  {t:'Perkins V',d:'Federal legislation supporting Career and Technical Education — DC HOSA\'s primary funding and accountability framework.'},
+  {t:'Health Disparities',d:'Preventable differences in health outcomes tied to social, economic, environmental, or geographic disadvantage.'},
+  {t:'Population Health',d:'An approach focused on improving health outcomes of an entire community by addressing root social determinants.'},
+  {t:'Psychological Safety',d:'A shared belief that it\'s safe to speak up, take risks, and make mistakes without punishment (Edmondson, 1999).'},
+  {t:'Spaced Repetition',d:'A learning method that reviews information at increasing time intervals, exploiting the spacing effect for long-term retention.'},
+];
+function buildGlossary(){
+  document.getElementById('glossGrid').innerHTML=GLOSSARY.map(g=>
+    `<div class="gi" role="listitem"><div class="gi-term">${g.t}</div><div class="gi-def">${g.d}</div></div>`
+  ).join('');
+}
+
+// Competencies
+const COMPS=['Self-Awareness in Practice','Growth Mindset Application','Emotional Regulation Under Pressure','Active Listening','Clear & Confident Communication','Asking Powerful Questions','Supporting Peers in Difficulty','Public Speaking','Structured Reflection After Events','Time & Priority Management','Following Through on Commitments','Seeking Feedback Actively'];
+function buildComps(){
+  document.getElementById('compGrid').innerHTML=COMPS.map((c,i)=>
+    `<div class="cc" id="cc${i}" role="listitem" tabindex="0" aria-label="${c} — click to mark as practiced" onclick="toggleC(${i})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleC(${i});}"><div class="cc-name">${c}</div><div class="cc-bg"><div class="cc-fill" id="cf${i}" style="width:0%"></div></div><div class="cc-stat" id="cs${i}">Not yet marked</div></div>`
+  ).join('');
+}
+function toggleC(i){
+  const on=document.getElementById('cc'+i).classList.toggle('done');
+  const f=document.getElementById('cf'+i);
+  f.style.width=on?'100%':'0%';
+  f.classList.toggle('on',on);
+  document.getElementById('cs'+i).textContent=on?'✓ Actively practiced':'Not yet marked';
+}
+function resetComps(){
+  COMPS.forEach((_,i)=>{
+    document.getElementById('cc'+i).classList.remove('done');
+    document.getElementById('cf'+i).style.width='0%';
+    document.getElementById('cf'+i).classList.remove('on');
+    document.getElementById('cs'+i).textContent='Not yet marked';
+  });
+}
+
+// Worksheets
+function downloadWorksheet(id){
+  const sheets={
+    journal:`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>DC HOSA — Wins & Losses Reflection Journal</title><style>
+body{font-family:Georgia,serif;max-width:720px;margin:40px auto;padding:0 32px;color:#1a2e22;font-size:12pt;line-height:1.6;}
+h1{font-size:22pt;margin-bottom:4px;}.sub{font-size:10pt;color:#5a7060;margin-bottom:32px;}
+.section{margin-bottom:28px;}.section h2{font-size:13pt;border-bottom:2px solid #c8960a;padding-bottom:6px;margin-bottom:14px;}
+.field{margin-bottom:14px;}.field label{font-size:10pt;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#5a7060;display:block;margin-bottom:4px;}
+.line{border:none;border-bottom:1px solid #ccc;width:100%;margin-bottom:8px;height:24px;display:block;}
+.box{border:1px solid #ccc;width:100%;min-height:60px;display:block;margin-bottom:8px;}
+.research{background:#fdf5e0;border-left:3px solid #c8960a;padding:10px 14px;font-size:10pt;font-style:italic;margin-top:28px;}
+.pillar{display:inline-block;padding:4px 10px;border-radius:20px;font-size:9pt;font-weight:700;margin-right:6px;}
+@media print{body{margin:20px;padding:0 20px;}}</style></head>
+<body>
+<h1>DC HOSA — Reflection Journal</h1>
+<div class="sub">Wins &amp; Losses · STARR Protocol · Member Hub · 2026–27</div>
+<div class="section"><h2>Event / Moment Details</h2>
+<div class="field"><label>Date</label><span class="line"></span></div>
+<div class="field"><label>Event or Situation</label><span class="line"></span></div>
+<div class="field"><label>Type</label> <span class="pillar" style="background:#e8faf0;color:#207040;">Win / Milestone</span> <span class="pillar" style="background:#fae8e4;color:#c82000;">Learning Moment</span></div>
+</div>
+<div class="section"><h2>STARR Reflection</h2>
+<div class="field"><label>Situation — What was the context and what were the stakes?</label><span class="box"></span></div>
+<div class="field"><label>Task — What was your specific goal or role?</label><span class="box"></span></div>
+<div class="field"><label>Action — What specifically did you do, and why?</label><span class="box"></span></div>
+<div class="field"><label>Result — What happened? What changed?</label><span class="box"></span></div>
+<div class="field"><label>Reflection — What did you learn? What would you keep or change?</label><span class="box"></span></div>
+</div>
+<div class="section"><h2>Connection to DC HOSA</h2>
+<div class="field"><label>Which pillar does this connect to?</label>
+<span class="pillar" style="background:#dbeeff;color:#1a3a6b;">BUILD</span>
+<span class="pillar" style="background:#ffe8e4;color:#8a2010;">EMPOWER</span>
+<span class="pillar" style="background:#fdf5e0;color:#7a5010;">ADVANCE</span>
+<span class="pillar" style="background:#e8faf0;color:#207040;">CONNECT</span></div>
+<div class="field"><label>One specific thing I will do differently or repeat</label><span class="box"></span></div>
+</div>
+<div class="research"><strong>Why structured reflection works:</strong> Pennebaker (1997) demonstrated that 15–20 minutes of expressive writing about meaningful experiences measurably improves immune function, reduces stress, and accelerates skill development. This worksheet is a clinical-grade reflection tool — treat it as seriously as any competition prep.</div>
+<p style="margin-top:32px;font-size:9pt;color:#aaa;">DC HOSA Leadership Hub · Member Hub · dchosa.org</p>
+</body></html>`,
+
+    eq_assess:`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>DC HOSA — EQ Self-Assessment</title><style>
+body{font-family:Georgia,serif;max-width:720px;margin:40px auto;padding:0 32px;color:#1a2e22;font-size:12pt;line-height:1.6;}
+h1{font-size:22pt;margin-bottom:4px;}.sub{font-size:10pt;color:#5a7060;margin-bottom:32px;}
+table{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:10.5pt;}
+th{background:#1a3a28;color:#f8f4ec;padding:10px 12px;text-align:left;font-size:9pt;}
+td{padding:10px 12px;border-bottom:1px solid #ddd;vertical-align:top;}
+.scale{display:flex;gap:8px;}.scale span{width:30px;height:30px;border:1px solid #ccc;border-radius:4px;display:inline-block;text-align:center;line-height:28px;font-size:10pt;}
+.comp-title{font-weight:700;margin-bottom:4px;}.comp-desc{font-size:9.5pt;color:#5a7060;}
+.growth-box{border:1px solid #c8960a;padding:14px;border-radius:6px;margin-top:20px;background:#fdf5e0;}
+@media print{body{margin:20px;padding:0;}}</style></head>
+<body>
+<h1>DC HOSA — EQ Self-Assessment</h1>
+<div class="sub">Emotional Intelligence Profile · Goleman Framework · Rate 1 (rarely) to 5 (consistently)</div>
+<table>
+<thead><tr><th>Component</th><th style="width:180px;">Rate 1–5</th><th>One specific example from HOSA this semester</th></tr></thead>
+<tbody>
+<tr><td><div class="comp-title">Self-Awareness</div><div class="comp-desc">I recognize my emotions as they happen and can name them specifically.</div></td><td><div class="scale"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></td><td></td></tr>
+<tr><td><div class="comp-title">Self-Regulation</div><div class="comp-desc">I manage my emotional responses rather than reacting impulsively.</div></td><td><div class="scale"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></td><td></td></tr>
+<tr><td><div class="comp-title">Motivation</div><div class="comp-desc">I am driven by internal standards and genuine interest in the work.</div></td><td><div class="scale"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></td><td></td></tr>
+<tr><td><div class="comp-title">Empathy</div><div class="comp-desc">I understand others' emotional experiences and perspectives accurately.</div></td><td><div class="scale"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></td><td></td></tr>
+<tr><td><div class="comp-title">Social Skills</div><div class="comp-desc">I manage relationships effectively, communicate clearly, and inspire others.</div></td><td><div class="scale"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></td><td></td></tr>
+</tbody></table>
+<div class="growth-box">
+<strong>My lowest component:</strong> _________________________<br><br>
+<strong>One specific practice I will try this month to develop it:</strong><br><br>
+&nbsp;<br>&nbsp;<br>
+<strong>I will reassess on this date:</strong> _________________________
+</div>
+<p style="margin-top:32px;font-size:9pt;color:#aaa;">DC HOSA Leadership Hub · Member Hub · 2026–27 · Based on Goleman (1995) EI Framework</p>
+</body></html>`,
+
+    competency:`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>DC HOSA — Competency Tracker</title><style>
+body{font-family:Georgia,serif;max-width:720px;margin:40px auto;padding:0 32px;color:#1a2e22;font-size:11pt;line-height:1.6;}
+h1{font-size:22pt;margin-bottom:4px;}.sub{font-size:10pt;color:#5a7060;margin-bottom:32px;}
+table{width:100%;border-collapse:collapse;font-size:10pt;}
+th{background:#1a3a28;color:#f8f4ec;padding:9px 12px;text-align:left;font-size:9pt;}
+td{padding:10px 12px;border-bottom:1px solid #ddd;vertical-align:middle;}
+.check{width:36px;height:36px;border:1.5px solid #ccc;border-radius:5px;display:inline-block;}
+.notes-cell{min-width:200px;}
+@media print{body{margin:20px;padding:0;}}</style></head>
+<body>
+<h1>DC HOSA — Member Competency Tracker</h1>
+<div class="sub">Semester Self-Assessment · Rate at Start · Mid-Year · End-of-Year</div>
+<table>
+<thead><tr><th>Competency</th><th>Sept (1–5)</th><th>Jan (1–5)</th><th>May (1–5)</th><th>Evidence / Notes</th></tr></thead>
+<tbody>
+<tr><td>Self-Awareness in Practice</td><td><span class="check"></span></td><td><span class="check"></span></td><td><span class="check"></span></td><td class="notes-cell"></td></tr>
+<tr><td>Growth Mindset Application</td><td><span class="check"></span></td><td><span class="check"></span></td><td><span class="check"></span></td><td></td></tr>
+<tr><td>Emotional Regulation Under Pressure</td><td><span class="check"></span></td><td><span class="check"></span></td><td><span class="check"></span></td><td></td></tr>
+<tr><td>Active Listening</td><td><span class="check"></span></td><td><span class="check"></span></td><td><span class="check"></span></td><td></td></tr>
+<tr><td>Clear & Confident Communication</td><td><span class="check"></span></td><td><span class="check"></span></td><td><span class="check"></span></td><td></td></tr>
+<tr><td>Asking Powerful Questions</td><td><span class="check"></span></td><td><span class="check"></span></td><td><span class="check"></span></td><td></td></tr>
+<tr><td>Supporting Peers in Difficulty</td><td><span class="check"></span></td><td><span class="check"></span></td><td><span class="check"></span></td><td></td></tr>
+<tr><td>Public Speaking</td><td><span class="check"></span></td><td><span class="check"></span></td><td><span class="check"></span></td><td></td></tr>
+<tr><td>Structured Reflection After Events</td><td><span class="check"></span></td><td><span class="check"></span></td><td><span class="check"></span></td><td></td></tr>
+<tr><td>Time & Priority Management</td><td><span class="check"></span></td><td><span class="check"></span></td><td><span class="check"></span></td><td></td></tr>
+<tr><td>Following Through on Commitments</td><td><span class="check"></span></td><td><span class="check"></span></td><td><span class="check"></span></td><td></td></tr>
+<tr><td>Seeking Feedback Actively</td><td><span class="check"></span></td><td><span class="check"></span></td><td><span class="check"></span></td><td></td></tr>
+</tbody></table>
+<p style="margin-top:32px;font-size:9pt;color:#aaa;">DC HOSA Leadership Hub · Member Hub · 2026–27</p>
+</body></html>`,
+
+    growth_goal:`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>DC HOSA — Growth Mindset Goal Sheet</title><style>
+body{font-family:Georgia,serif;max-width:720px;margin:40px auto;padding:0 32px;color:#1a2e22;font-size:12pt;line-height:1.6;}
+h1{font-size:22pt;margin-bottom:4px;}.sub{font-size:10pt;color:#5a7060;margin-bottom:32px;}
+.section{margin-bottom:28px;border:1px solid #ddd;border-radius:8px;padding:18px;}
+.section h2{font-size:13pt;color:#1a3a28;margin-bottom:14px;}
+.field{margin-bottom:16px;}.field label{font-size:10pt;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#5a7060;display:block;margin-bottom:5px;}
+.line{border:none;border-bottom:1px solid #ccc;width:100%;margin-bottom:8px;height:24px;display:block;}
+.box{border:1px solid #ccc;width:100%;min-height:50px;display:block;margin-bottom:8px;}
+.checkin{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px;}
+.checkin-cell{border:1px solid #ccc;padding:10px;border-radius:5px;min-height:60px;font-size:9pt;}
+.checkin-label{font-size:8pt;font-weight:700;text-transform:uppercase;color:#5a7060;margin-bottom:6px;}
+@media print{body{margin:20px;padding:0;}}</style></head>
+<body>
+<h1>DC HOSA — Growth Mindset Goal Sheet</h1>
+<div class="sub">Dweck Framework · Process-Focused Goals · 2026–27</div>
+<div class="section"><h2>The Goal (framed as growth, not just outcome)</h2>
+<div class="field"><label>By [date], I want to be able to...</label><span class="box"></span></div>
+<div class="field"><label>Why this matters to me in HOSA and beyond</label><span class="box"></span></div>
+<div class="field"><label>Where I am starting from (honest self-assessment)</label><span class="box"></span></div>
+</div>
+<div class="section"><h2>Process Plan — the "How"</h2>
+<div class="field"><label>Specific skills or habits I need to build</label><span class="box"></span></div>
+<div class="field"><label>Resources or people who can help me</label><span class="box"></span></div>
+<div class="field"><label>Likely obstacles (and my plan for each)</label><span class="box"></span></div>
+</div>
+<div class="section"><h2>Monthly Check-Ins</h2>
+<div class="checkin">
+<div class="checkin-cell"><div class="checkin-label">Month 1</div>Progress so far:<br><br>What I'm adjusting:</div>
+<div class="checkin-cell"><div class="checkin-label">Month 2</div>Progress so far:<br><br>What I'm adjusting:</div>
+<div class="checkin-cell"><div class="checkin-label">Month 3</div>Progress so far:<br><br>What I'm adjusting:</div>
+</div>
+</div>
+<p style="margin-top:28px;font-size:9pt;color:#aaa;">DC HOSA Leadership Hub · Member Hub · 2026–27 · Based on Dweck (2006) Growth Mindset Framework</p>
+</body></html>`
+  };
+  const w=window.open('','_blank');
+  w.document.write(sheets[id]||'<p>Worksheet not found.</p>');
+  w.document.close();
+  setTimeout(()=>w.print(),600);
+}
+
+// Modal system
+const MODALS={
+  eq:{head:`<div style="font-size:32px;margin-bottom:8px;" aria-hidden="true">🧠</div><h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;">Emotional Intelligence</h2><div style="font-size:12px;color:var(--text-3);margin-top:3px;">Daniel Goleman · Why EQ outpredicts IQ in leadership — and the brain science</div>`,
+  body:`<div class="ms"><div class="ms-title">The Neuroscience of EQ</div><p style="font-size:13px;color:var(--text-2);line-height:1.7;">When a strong emotion hits — fear, anger, embarrassment — your amygdala fires before your prefrontal cortex (the reasoning brain) can respond. Goleman calls this an "amygdala hijack." In that state, you literally cannot access your best judgment. Self-regulation isn't willpower — it's building the neural habit of pausing long enough for your rational brain to re-engage. And it's trainable: regular mindfulness and reflection practices measurably increase prefrontal cortex density (Davidson et al., 2012).</p></div><div class="ms"><div class="ms-title">The 5 Components in Practice</div><div class="mi"><span aria-hidden="true">🧠</span><span><strong>Self-Awareness</strong> — Recognizing emotions in real time. Knowing how you respond to stress, criticism, or uncertainty before you act on it.</span></div><div class="mi"><span aria-hidden="true">🎛️</span><span><strong>Self-Regulation</strong> — Not suppressing feelings — choosing how and when to express them constructively. The pause is the practice.</span></div><div class="mi"><span aria-hidden="true">🔥</span><span><strong>Motivation</strong> — Driven by internal standards. Caring about the quality of the work, not just the grade or the recognition.</span></div><div class="mi"><span aria-hidden="true">❤️</span><span><strong>Empathy</strong> — Understanding others' experience accurately, not just sympathizing. Stepping into perspective, not just adjacent to it.</span></div><div class="mi"><span aria-hidden="true">🤝</span><span><strong>Social Skills</strong> — Managing relationships effectively, communicating with precision, inspiring without requiring authority to do it.</span></div></div><div class="ms"><div class="ms-title">Reflection Protocol</div><div class="rq">"When did you last feel a strong emotional reaction during a HOSA event? What happened to your thinking in that moment? What would high-EQ behavior look like if you could replay that scene?"</div></div>`},
+  mindset:{head:`<div style="font-size:32px;margin-bottom:8px;" aria-hidden="true">🌱</div><h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;">Growth vs. Fixed Mindset</h2><div style="font-size:12px;color:var(--text-3);margin-top:3px;">Carol Dweck · Mindset: The New Psychology of Success (2006)</div>`,
+  body:`<div class="ms"><div class="ms-title">The Brain Science</div><p style="font-size:13px;color:var(--text-2);line-height:1.7;">Neuroplasticity research confirms that your brain forms new synaptic connections every time you learn something genuinely difficult. The act of struggle — not the act of succeeding — is what triggers growth. A fixed mindset avoids struggle because failure feels like evidence of permanent limitation. A growth mindset seeks appropriate challenges because struggle is understood as the mechanism of improvement. Dweck's longitudinal studies showed measurably greater academic gains in students explicitly taught growth mindset versus control groups.</p></div><div class="ms"><div class="ms-title">The Most Important Word</div><p style="font-size:13px;color:var(--text-2);line-height:1.7;"><strong>"Yet."</strong> "I'm not good at this yet" activates a completely different neural and motivational response than "I'm not good at this." The first frames a current state with an implied trajectory. The second closes the door. The difference is one word — and research shows it changes behavior.</p></div><div class="ms"><div class="ms-title">In Your HOSA Experience</div><div class="mi"><span aria-hidden="true">🌱</span><span>Not placing at a competition: fixed says "I'm just not talented." Growth asks "What specifically can I work on before the next one?"</span></div><div class="mi"><span aria-hidden="true">🌱</span><span>When feedback stings: fixed hears "you're not good enough." Growth hears "here is a specific path to better."</span></div><div class="mi"><span aria-hidden="true">🌱</span><span>When someone else succeeds: fixed feels threatened. Growth gets curious about how they got there.</span></div></div><div class="ms"><div class="ms-title">Reflection Protocol</div><div class="rq">"Complete this sentence honestly: 'I'm not good at ___ yet. Here's what I'm actively doing to build it:'"</div></div>`},
+  ei12:{head:`<div style="font-size:32px;margin-bottom:8px;" aria-hidden="true">💛</div><h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;">12 Real-World Signs of EI</h2><div style="font-size:12px;color:var(--text-3);margin-top:3px;">Self-assessment checklist — how many can you honestly claim?</div>`,
+  body:`<div class="ms"><div class="ms-title">All 12 Signs</div><div class="mi"><span>1</span><span><strong>You pause before reacting</strong> — Space between stimulus and response is a trainable skill, not a personality trait.</span></div><div class="mi"><span>2</span><span><strong>You name emotions precisely</strong> — Not "I feel bad" but "I feel frustrated because I expected more support and it didn't come."</span></div><div class="mi"><span>3</span><span><strong>You listen to understand</strong> — Not to respond, correct, or wait your turn. The difference is audible to anyone in the conversation.</span></div><div class="mi"><span>4</span><span><strong>You don't hold grudges</strong> — You extract the learning and move forward. Resentment is stored pain — it costs you more than it costs the other person.</span></div><div class="mi"><span>5</span><span><strong>You notice others' moods</strong> — You read the room before the person speaks. This is empathy in its most practical form.</span></div><div class="mi"><span>6</span><span><strong>You own your mistakes fully</strong> — No blame-shifting, no minimizing. "That was my fault, and here's what I'm doing about it."</span></div><div class="mi"><span>7</span><span><strong>You set and communicate limits</strong> — You know your capacity and communicate it clearly before you're already past it.</span></div><div class="mi"><span>8</span><span><strong>You're genuinely curious about others</strong> — You ask questions because you actually want to know, not because it's polite.</span></div><div class="mi"><span>9</span><span><strong>You handle criticism without collapsing</strong> — The critique is about your work or behavior, not your worth as a person.</span></div><div class="mi"><span>10</span><span><strong>You know your triggers</strong> — You know what sets you off, under what conditions, and why. That knowledge is protective.</span></div><div class="mi"><span>11</span><span><strong>You adapt to different people</strong> — Different communication styles for different contexts isn't inauthenticity — it's social intelligence.</span></div><div class="mi"><span>12</span><span><strong>You find meaning in difficult things</strong> — You can hold difficulty and purpose at the same time. That's the signature of resilient healthcare providers.</span></div></div>`},
+  reputation:{head:`<div style="font-size:32px;margin-bottom:8px;" aria-hidden="true">⚠️</div><h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;">8 Reputation-Affecting Habits</h2><div style="font-size:12px;color:var(--text-3);margin-top:3px;">The psychology of how trust is built and lost — and how to repair it</div>`,
+  body:`<div class="ms"><div class="ms-title">Why Reputation Matters in Healthcare</div><p style="font-size:13px;color:var(--text-2);line-height:1.7;">In clinical environments, reputation precedes you into every room. Colleagues, supervisors, and patients all operate on pattern recognition — they read your reliability, your attitude, and your character from accumulated interactions. These eight habits quietly erode trust before you've even made an intentional impression.</p></div><div class="ms"><div class="ms-title">The 8 Habits</div><div class="mi"><span>1</span><span><strong>Constant complaining without solutions</strong> — People associate the complainer with the problem. You become known as someone who finds issues, not someone who solves them.</span></div><div class="mi"><span>2</span><span><strong>Taking credit for others' contributions</strong> — Once overlooked, it might be an accident. Twice, it defines you. Generosity with credit costs nothing and builds everything.</span></div><div class="mi"><span>3</span><span><strong>Consistent lateness</strong> — Signals that your time is more valuable than others'. In healthcare, lateness has direct patient consequences.</span></div><div class="mi"><span>4</span><span><strong>Making excuses for mistakes</strong> — When excuses become the default, people stop trusting your accountability. Own it, fix it, move forward.</span></div><div class="mi"><span>5</span><span><strong>Gossiping</strong> — When you speak badly about others, listeners wonder what you say about them. It signals conditional loyalty.</span></div><div class="mi"><span>6</span><span><strong>Overpromising and underdelivering</strong> — Promise less, deliver more. Reliability is the foundation of professional reputation.</span></div><div class="mi"><span>7</span><span><strong>Dismissing ideas without engagement</strong> — "That won't work" without engaging shuts down the people whose ideas you need most.</span></div><div class="mi"><span>8</span><span><strong>Not following through</strong> — Every unfulfilled commitment is a withdrawal from your credibility account. Enough withdrawals and the account is empty.</span></div></div>`},
+  bmw:{head:`<div style="font-size:32px;margin-bottom:8px;" aria-hidden="true">🎤</div><h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;">BMW Speaker Model</h2><div style="font-size:12px;color:var(--text-3);margin-top:3px;">Oliver Aust · Body, Mind, Words — the full protocol</div>`,
+  body:`<div class="ms"><div class="ms-title">Body — Physical Presence</div><div class="mi"><span aria-hidden="true">🫁</span><span>Control breathing first — a slow 4-count inhale through the nose slows your heart rate and signals safety to your nervous system before you speak</span></div><div class="mi"><span aria-hidden="true">🧍</span><span>Expansive posture before high-stakes moments — Cuddy's research shows postural expansion measurably changes cortisol and testosterone, affecting how confident you feel and appear</span></div><div class="mi"><span aria-hidden="true">👁️</span><span>Make real, individual eye contact — not scanning, not floor-staring, but landing on specific people for 2–3 seconds each</span></div></div><div class="ms"><div class="ms-title">Mind — The Reframe</div><div class="mi"><span aria-hidden="true">🎯</span><span>Remind yourself: you are the expert on your own experience and perspective</span></div><div class="mi"><span aria-hidden="true">🎁</span><span>Shift from "will they like me?" to "what can I give them?" — this single reframe reduces performance anxiety by removing the self-focus that generates it</span></div><div class="mi"><span aria-hidden="true">✨</span><span>Visualize the feeling of delivering well, not just the outcome — kinesthetic visualization activates the same neural pathways as actual rehearsal</span></div></div><div class="ms"><div class="ms-title">Words — Craft the Delivery</div><div class="mi"><span aria-hidden="true">🎬</span><span>Practice aloud, not in your head — the speech in your head is always better than the first time you say it. Record yourself at least once.</span></div><div class="mi"><span aria-hidden="true">🔑</span><span>Your opening creates the frame; your close creates the memory. Write both before anything else.</span></div><div class="mi"><span aria-hidden="true">📖</span><span>One well-chosen story carries more persuasive weight than any statistic — because stories activate the listener's mirror neurons and simulate experience</span></div></div>`},
+  emotions:{head:`<div style="font-size:32px;margin-bottom:8px;" aria-hidden="true">💛</div><h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;">Supporting Others' Emotions</h2><div style="font-size:12px;color:var(--text-3);margin-top:3px;">Mica Vaipan · What to ask and what not to say — all 8 emotions</div>`,
+  body:`<div class="ms"><div class="ms-title">Why This Matters in Healthcare</div><p style="font-size:13px;color:var(--text-2);line-height:1.7;">Saying the wrong thing to someone in emotional distress doesn't just fail to help — it can actively make things worse by signaling that their experience is invalid or misunderstood. In clinical settings, patient trust collapses within seconds of an invalidating response. These protocols give you language that opens rather than closes the conversation.</p></div><div class="ms"><div class="ms-title">All 8 Emotions</div><div class="mi"><span aria-hidden="true">😠</span><span><strong>Anger:</strong> Ask "What boundary do you feel was crossed?" — Not: "It's not a big deal" or "Calm down."</span></div><div class="mi"><span aria-hidden="true">😔</span><span><strong>Sadness:</strong> Ask "What loss or unmet expectation are you experiencing?" — Not: "It could be worse."</span></div><div class="mi"><span aria-hidden="true">😰</span><span><strong>Anxiety:</strong> Ask "What worries you most? What's actually in your control?" — Not: "Just relax."</span></div><div class="mi"><span aria-hidden="true">😤</span><span><strong>Frustration:</strong> Ask "What's at stake that you care deeply about?" — Not: "Just let it go."</span></div><div class="mi"><span aria-hidden="true">😓</span><span><strong>Overwhelm:</strong> Ask "What's one thing we could remove from your plate right now?" — Not: "Everyone's busy."</span></div><div class="mi"><span aria-hidden="true">😶</span><span><strong>Shame:</strong> Ask "What story are you telling yourself about what happened?" — Not: "You shouldn't feel that way."</span></div><div class="mi"><span aria-hidden="true">😟</span><span><strong>Fear:</strong> Ask "What's the worst that could realistically happen — and could you handle it?" — Not: "Don't be scared."</span></div><div class="mi"><span aria-hidden="true">😔</span><span><strong>Disappointment:</strong> Ask "What were you expecting that didn't happen?" — Not: "You should have known better."</span></div></div>`},
+  storytell:{head:`<div style="font-size:32px;margin-bottom:8px;" aria-hidden="true">📖</div><h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;">Storytell Like a Leader</h2><div style="font-size:12px;color:var(--text-3);margin-top:3px;">5 frameworks — when to use each one</div>`,
+  body:`<div class="ms"><div class="ms-title">STARR — For Interviews and Reflections</div><div class="mi"><span>S</span><span><strong>Situation</strong> — Set the context and stakes briefly. One or two sentences max.</span></div><div class="mi"><span>T</span><span><strong>Task</strong> — Define your specific role or goal in that situation.</span></div><div class="mi"><span>A</span><span><strong>Action</strong> — Describe specifically what you did and why you made those choices.</span></div><div class="mi"><span>R</span><span><strong>Result</strong> — What changed? What was the measurable outcome?</span></div><div class="mi"><span>R</span><span><strong>Reflection</strong> — What did you learn and what would you repeat or change?</span></div></div><div class="ms"><div class="ms-title">ABT — For Quick, Compelling Updates</div><p style="font-size:13px;color:var(--text-2);line-height:1.7;">"We are doing [X] <strong>AND</strong> we have achieved [Y], <strong>BUT</strong> we face this challenge, <strong>THEREFORE</strong> we need to do [Z]." The simplest structure that creates narrative tension and drives people toward action. Used in science communication and executive briefings because it maps to how the brain processes story.</p></div><div class="ms"><div class="ms-title">Golden Circle — For Inspiring Others</div><p style="font-size:13px;color:var(--text-2);line-height:1.7;">Start with <strong>Why</strong> (what you believe), then <strong>How</strong> (your approach), then <strong>What</strong> (the specifics). Most people start with What. Sinek's research shows that the most inspiring communicators — from MLK to healthcare advocates — start with Why, because people connect with purpose before they connect with plans. The limbic brain processes Why; the neocortex processes What.</p></div>`}
+};
+function openM(key){
+  const m=MODALS[key];
+  if(!m)return;
+  document.getElementById('mHead').innerHTML=m.head;
+  document.getElementById('mBody').innerHTML=m.body;
+  const ov=document.getElementById('modalOv');
+  ov.classList.add('on');
+  ov.querySelector('.mc').focus();
+}
+function closeModal(){
+  document.getElementById('modalOv').classList.remove('on');
+}
+
+document.addEventListener('DOMContentLoaded',()=>{buildGlossary();buildComps();});
+</script>
+</body>
+</html>
