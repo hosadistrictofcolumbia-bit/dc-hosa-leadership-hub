@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 196" role="img" aria-label="Four rungs of handing off a task: the officer's share shrinks and the member's grows until the member does it alone">
+<g class="fig-g">
+<text x="140" y="16" class="hd">Officer</text><text x="600" y="16" text-anchor="end" class="hd">Member</text>
+<g transform="translate(0,26)"><text x="20" y="20" class="lb">1</text><rect x="140" y="4" width="380" height="24" rx="6" class="ac-fill"/><rect x="520" y="4" width="80" height="24" rx="6" class="lt"/><text x="330" y="21" text-anchor="middle" class="sm inv">you do it — narrating the decisions</text><text x="560" y="21" text-anchor="middle" class="sm">they watch</text></g>
+<g transform="translate(0,64)"><text x="20" y="20" class="lb">2</text><rect x="140" y="4" width="230" height="24" rx="6" class="ac-fill"/><rect x="370" y="4" width="230" height="24" rx="6" class="lt"/><text x="255" y="21" text-anchor="middle" class="sm inv">beside them</text><text x="485" y="21" text-anchor="middle" class="sm">they drive</text></g>
+<g transform="translate(0,102)"><text x="20" y="20" class="lb">3</text><rect x="140" y="4" width="80" height="24" rx="6" class="ac-fill"/><rect x="220" y="4" width="380" height="24" rx="6" class="lt"/><text x="180" y="21" text-anchor="middle" class="sm inv">you watch</text><text x="410" y="21" text-anchor="middle" class="sm">they do it — you say nothing unless asked</text></g>
+<g transform="translate(0,140)"><text x="20" y="20" class="lb">4</text><rect x="140" y="4" width="460" height="24" rx="6" class="lt"/><text x="370" y="21" text-anchor="middle" class="sm">they do it and report back — you are not in the room</text></g>
+<text x="80" y="66" text-anchor="middle" class="sm">the rung</text><text x="80" y="80" text-anchor="middle" class="sm">most skip</text><line x1="80" y1="86" x2="80" y2="112" class="ln ac-st"/>
+<text x="370" y="188" text-anchor="middle" class="sm">only rung 4 is delegation — the first three are training</text>
+</g></svg>

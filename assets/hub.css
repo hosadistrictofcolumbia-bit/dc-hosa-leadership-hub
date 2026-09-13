@@ -1,0 +1,241 @@
+/* DC HOSA Leadership Hub — one type system, one neutral palette, one accent per domain.
+   Self-hosted type: no external requests, works offline and on locked-down school networks. */
+
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:100 900;font-display:swap;
+  src:url('fonts/fraunces-latin.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;
+  src:url('fonts/inter-latin.woff2') format('woff2');}
+
+:root{
+  --ink:#15181d; --ink-2:#3b414b; --ink-3:#6b7280;
+  --paper:#fbfaf8; --paper-2:#f3f1ec; --rule:#e2ded6;
+  --accent:#0e6b5e;
+  --display:'Fraunces',Georgia,'Times New Roman',serif;
+  --text:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --wrap:1080px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--text);background:var(--paper);color:var(--ink);line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+
+/* header */
+.top{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:50}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:900;font-size:19px;letter-spacing:-.3px;text-decoration:none}
+.brand span{color:var(--ink-3);font-weight:400}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav a{text-decoration:none;font-size:13px;font-weight:500;color:var(--ink-2);padding:6px 11px;border-radius:7px}
+.nav a:hover{background:var(--paper-2)}
+.nav a[aria-current]{background:var(--accent);color:#fff}
+
+/* hero */
+.hero{padding:64px 0 40px;border-bottom:1px solid var(--rule)}
+.hero h1{font-family:var(--display);font-weight:900;font-size:clamp(38px,6vw,64px);line-height:1.02;letter-spacing:-1.5px;max-width:16ch}
+.hero p{margin-top:16px;font-size:17px;color:var(--ink-2);max-width:58ch}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+
+/* ladder */
+.ladder{margin:44px 0 12px;overflow-x:auto}
+.ladder table{border-collapse:collapse;width:100%;min-width:760px}
+.ladder th,.ladder td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--rule);vertical-align:top}
+.ladder thead th{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.ladder thead th small{display:block;text-transform:none;letter-spacing:0;font-weight:400;font-size:12px;color:var(--ink-3);margin-top:4px}
+.ladder td.dom{width:190px}
+.ladder td.dom a{font-family:var(--display);font-weight:700;font-size:19px;text-decoration:none}
+.ladder td.dom p{font-size:12.5px;color:var(--ink-3);margin-top:4px;line-height:1.45}
+.cellcount{font-family:var(--display);font-weight:900;font-size:22px;line-height:1}
+.cellcount.zero{color:var(--rule)}
+.cellnote{font-size:11.5px;color:var(--ink-3);margin-top:3px}
+
+/* section heads */
+.sec{padding:52px 0}
+.sec+.sec{border-top:1px solid var(--rule)}
+.sec h2{font-family:var(--display);font-weight:900;font-size:30px;letter-spacing:-.6px}
+.sec .lede{color:var(--ink-2);margin-top:8px;max-width:62ch}
+.levelhead{display:flex;align-items:baseline;gap:12px;margin:38px 0 16px;padding-bottom:9px;border-bottom:2px solid var(--accent)}
+.levelhead h3{font-family:var(--display);font-weight:900;font-size:22px}
+.levelhead .q{font-size:13px;color:var(--ink-3)}
+
+/* card */
+.card{border:1px solid var(--rule);border-radius:13px;background:#fff;padding:24px 26px;margin-bottom:16px}
+.card header{border-bottom:1px solid var(--paper-2);padding-bottom:14px;margin-bottom:16px}
+.card h4{font-family:var(--display);font-weight:900;font-size:23px;letter-spacing:-.4px;line-height:1.15}
+.badges{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.badge{font-size:10.5px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;
+  padding:3px 9px;border-radius:20px;background:var(--paper-2);color:var(--ink-2)}
+.badge.lvl{background:var(--accent);color:#fff}
+.badge.time{background:transparent;border:1px solid var(--rule);color:var(--ink-3)}
+.why{font-size:15.5px;color:var(--ink-2)}
+.part{margin-top:18px}
+.part h5{font-family:var(--display);font-weight:700;font-size:16.5px;margin-bottom:5px}
+.part p{font-size:14.5px;color:var(--ink-2)}
+.part ul{margin:9px 0 0 0;padding-left:0;list-style:none}
+.part li{font-size:14px;color:var(--ink-2);padding:7px 0 7px 20px;position:relative;border-top:1px solid var(--paper-2)}
+.part li::before{content:'';position:absolute;left:4px;top:15px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.steps{margin-top:20px;background:var(--paper-2);border-radius:10px;padding:16px 18px}
+.steps h5{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:9px}
+.steps ol{margin:0;padding-left:19px}
+.steps li{font-size:14.5px;margin-bottom:6px}
+.where{margin-top:16px;font-size:13.5px;color:var(--ink-3)}
+.where b{color:var(--ink-2);font-weight:600}
+details{margin-top:12px;border-top:1px solid var(--paper-2);padding-top:11px}
+summary{cursor:pointer;font-size:12.5px;font-weight:600;color:var(--accent);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸ ';display:inline-block;transition:transform .15s}
+details[open] summary::before{content:'▾ '}
+details .body{font-size:14px;color:var(--ink-2);margin-top:9px}
+.grade{display:inline-block;font-weight:700;font-size:11px;letter-spacing:.5px;padding:2px 7px;border-radius:4px;margin-right:7px}
+.grade.R{background:#dff0e6;color:#14532d}
+.grade.P{background:#fdf0d9;color:#7c4a03}
+.grade.C{background:#fbe1e1;color:#7f1d1d}
+.caveat{margin-top:8px;padding:9px 12px;border-left:3px solid #e0a800;background:#fffbf0;font-size:13.5px;color:var(--ink-2)}
+.printbtn{margin-top:16px;font-family:var(--text);font-size:13px;font-weight:600;padding:8px 15px;border-radius:20px;
+  border:1px solid var(--rule);background:#fff;cursor:pointer;color:var(--ink-2)}
+.printbtn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* figures — inline SVG, coloured by the domain accent, vector in print */
+.fig{margin:18px 0 8px}
+.fig svg{display:block;width:100%;max-width:560px;height:auto;font-family:var(--text)}
+.fig figcaption{font-size:12px;color:var(--ink-3);margin-top:6px}
+.fig text{fill:var(--ink)}
+.fig .bx{fill:#fff;stroke:var(--rule);stroke-width:1.5}
+.fig .ac{fill:var(--accent)} .fig .ac-fill{fill:var(--accent);stroke:var(--accent)}
+.fig .ac-st{stroke:var(--accent);stroke-width:2.5}
+.fig .mid{fill:var(--ink-3)} .fig .mid-st{stroke:var(--ink-3);stroke-width:2.5}
+.fig .ln{stroke:var(--ink-3);stroke-width:1.5;fill:none} .fig .dash{stroke-dasharray:4 4}
+.fig .bar{fill:var(--ink)}
+.fig .rail{stroke:var(--ink-2);stroke-width:4} .fig .rung{stroke:var(--ink-2);stroke-width:5;stroke-linecap:round}
+.fig .ring{fill:var(--accent);fill-opacity:.07;stroke:var(--accent);stroke-width:1.5}
+.fig .num{font-family:var(--display);font-weight:900;font-size:17px}
+.fig .lb{font-size:13.5px;font-weight:600} .fig .sm{font-size:12px;fill:var(--ink-3)}
+.fig .hd{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;fill:var(--ink-2)}
+.fig .tag{font-size:11px;fill:var(--ink-3)} .fig .inv{fill:#fff}
+.fig .lt{fill:var(--paper-2);stroke:var(--rule);stroke-width:1} .fig .ac-lt{fill:var(--accent);fill-opacity:.14;stroke:var(--accent);stroke-width:1;stroke-opacity:.4}
+
+/* filters */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 26px;padding-bottom:22px;border-bottom:1px solid var(--rule)}
+.filters select,.filters button{font-family:var(--text);font-size:13px;padding:8px 12px;border:1px solid var(--rule);
+  border-radius:8px;background:#fff;color:var(--ink-2)}
+.filters button{cursor:pointer;font-weight:600}
+.count{font-size:13px;color:var(--ink-3);margin-bottom:14px}
+.empty{border:1px dashed var(--rule);border-radius:12px;padding:30px;text-align:center;color:var(--ink-3);font-size:14.5px}
+
+footer.foot{border-top:1px solid var(--rule);margin-top:60px;padding:34px 0 52px;font-size:12.5px;color:var(--ink-3)}
+footer.foot a{color:var(--ink-2)}
+footer.foot p+p{margin-top:5px}
+
+.printfoot{display:none}
+#printhost{display:none}
+@page{margin:0.45in 0.6in 0.5in}
+@media print{
+  /* ---- shared: strip the chrome ---- */
+  .top,.filters,.printbtn,.nav,footer.foot,.hero .eyebrow,#count,#none{display:none!important}
+  html{font-size:10.5pt}
+  body{background:#fff;color:#000;line-height:1.38}
+  a{text-decoration:none;color:inherit}
+  details{break-inside:avoid;border-top:1px solid #ccc;padding-top:5pt;margin-top:7pt;display:block}
+  details .body{display:block;margin-top:4pt}
+  summary{break-after:avoid;color:#000;font-size:8pt;letter-spacing:1.2pt;text-transform:uppercase;font-weight:700;pointer-events:none}
+  summary::before,summary::after{content:''!important}
+  .grade{border:1px solid #888;background:#fff!important;color:#000!important}
+  .caveat{border-left:2pt solid #888;background:#fff;padding:4pt 8pt}
+
+  /* ---- whole-page print (Cmd+P without the button): compact, no card gets split ---- */
+  .wrap{max-width:100%;padding:0}
+  .hero{padding:0 0 10pt;border-bottom:1pt solid #000}
+  .hero h1{font-size:22pt;letter-spacing:-.5pt;max-width:none}
+  .hero p{font-size:10.5pt;margin-top:4pt;max-width:none}
+  .sec{padding:12pt 0}
+  .levelhead{margin:14pt 0 6pt;padding-bottom:3pt;border-bottom:1.5pt solid #000;break-after:avoid}
+  .levelhead h3{font-size:14pt}
+  .card{border:1pt solid #999;border-radius:0;padding:10pt 12pt;margin-bottom:10pt;break-inside:avoid;box-shadow:none}
+  .card h4{font-size:15pt}
+  .badge{border:1px solid #999;background:#fff!important;color:#000!important;font-size:6.5pt;padding:1pt 5pt}
+  .why{font-size:10.5pt}
+  .part{margin-top:8pt}.part h5{font-size:11pt;margin-bottom:2pt}
+  .part li{font-size:9.5pt;padding:3pt 0 3pt 12pt;border-top:1px solid #ddd}
+  .part li::before{width:3pt;height:3pt;top:8pt;left:2pt;background:#000}
+  .steps{background:#fff;border:1px solid #999;border-radius:0;padding:7pt 10pt;margin-top:9pt;break-inside:avoid}
+  .steps h5{font-size:7.5pt;margin-bottom:3pt}.steps li{font-size:10pt;margin-bottom:2pt}
+  .where{font-size:9.5pt;margin-top:7pt}
+  .ladder table{min-width:0}.ladder th,.ladder td{padding:5pt 6pt;border-bottom:1px solid #999}
+  .cellcount{font-size:14pt}
+
+  /* ---- single-card print via the button: the card IS the page ---- */
+  body.printing > *:not(#printhost){display:none!important}
+  body.printing #printhost{display:block}
+  body.printing .print-target{width:100%;margin:0;padding:0;border:0;box-shadow:none;border-radius:0;break-inside:auto}
+  body.printing .print-target header{border-bottom:1.5pt solid #000;padding-bottom:7pt;margin-bottom:9pt}
+  body.printing .print-target h4{font-size:21pt;letter-spacing:-.4pt;line-height:1.08}
+  body.printing .print-target .badges{margin-top:6pt}
+  body.printing .print-target .why{font-size:11pt;line-height:1.38}
+  body.printing .print-target .fig{margin:8pt 0 4pt;break-inside:avoid}
+  body.printing .print-target .fig svg{max-width:5.6in}
+  /* cards that carry a figure trade a little type size for the diagram so they still fit a sheet */
+  body.printing .print-target[data-fig="1"] h4{font-size:18pt}
+  body.printing .print-target[data-fig="1"] header{padding-bottom:5pt;margin-bottom:7pt}
+  body.printing .print-target[data-fig="1"] .why{font-size:10pt;line-height:1.32}
+  body.printing .print-target[data-fig="1"] .fig{margin:6pt 0 2pt}
+  body.printing .print-target[data-fig="1"] .fig svg{max-width:5.2in}
+  body.printing .print-target[data-fig="1"] .part h5{font-size:11pt}
+  body.printing .print-target[data-fig="1"] .part p{font-size:9.75pt}
+  body.printing .print-target[data-fig="1"] .part li{font-size:9.5pt;padding:2pt 0 2pt 13pt}
+  body.printing .print-target[data-fig="1"] .part{margin-top:5pt}
+  body.printing .print-target[data-fig="1"] .steps{margin-top:7pt;padding:6pt 10pt}
+  body.printing .print-target[data-fig="1"] .steps li{font-size:10pt;margin-bottom:2pt}
+  body.printing .print-target[data-fig="1"] .where{font-size:9.25pt;margin-top:5pt}
+  body.printing .print-target[data-fig="1"] details{margin-top:5pt;padding-top:4pt}
+  body.printing .print-target[data-fig="1"] details .body{font-size:9.5pt}
+  .fig .bx{stroke:#999} .fig .ln,.fig .mid-st{stroke:#666} .fig .mid{fill:#666}
+  body.printing .print-target .part h5{font-size:12pt}
+  body.printing .print-target .part p{font-size:10.5pt}
+  body.printing .print-target .part li{font-size:10pt;padding:3pt 0 3pt 13pt}
+  body.printing .print-target .part{break-inside:avoid;margin-top:7pt}
+  body.printing .print-target .steps{margin-top:9pt;padding:8pt 12pt}
+  body.printing .print-target .steps li{font-size:11pt;margin-bottom:3pt}
+  body.printing .print-target .where{font-size:9.75pt;margin-top:7pt}
+  body.printing .print-target details{margin-top:7pt;padding-top:5pt}
+  body.printing .print-target details .body{font-size:10pt}
+  body.printing .printtable{width:100%;border-collapse:collapse;border-spacing:0}
+  body.printing .printtable td{padding:0;vertical-align:top}
+  body.printing .printtable tfoot{display:table-footer-group}
+  body.printing .printfoot{display:block;margin:0;padding:6pt 0 0;border-top:1px solid #999;font-size:7pt;color:#555;letter-spacing:.2pt}
+
+  /* ---- portrait, figure cards only: the diagram spans the sheet, then a two-column body ---- */
+  @media (orientation:portrait){
+    body.printing .print-target[data-fig="1"] .cols{display:grid;grid-template-columns:1.15fr 1fr;column-gap:0.4in;align-items:start}
+    body.printing .print-target[data-fig="1"] header,body.printing .print-target[data-fig="1"] .why,body.printing .print-target[data-fig="1"] .fig{grid-column:1/-1}
+    body.printing .print-target[data-fig="1"] .fig{margin:6pt 0 8pt}
+    body.printing .print-target[data-fig="1"] .fig svg{max-width:5.6in;margin:0 auto}
+    body.printing .print-target[data-fig="1"] .colA{grid-column:1}
+    body.printing .print-target[data-fig="1"] .colB{grid-column:2;border-left:1px solid #ccc;padding-left:0.28in;margin-left:-0.2in}
+    body.printing .print-target[data-fig="1"] .part:first-child{margin-top:0}
+    body.printing .print-target[data-fig="1"] .steps{margin-top:0}
+  }
+
+  /* ---- landscape: a fixed two-column grid — read on the left, act on the right.
+          Deterministic in paged media; CSS multicol is not. ---- */
+  @media (orientation:landscape){
+    body.printing .print-target .cols{display:grid;grid-template-columns:1.15fr 1fr;column-gap:0.45in;align-items:start}
+    body.printing .print-target header,body.printing .print-target .why{grid-column:1/-1}
+    body.printing .print-target .why{font-size:10.5pt;margin-bottom:4pt}
+    body.printing .print-target .fig{grid-column:1;margin-top:2pt}
+    body.printing .print-target .colA{grid-column:1}
+    body.printing .print-target .colB{grid-column:2;grid-row:3/5;border-left:1px solid #ccc;padding-left:0.3in;margin-left:-0.2in}
+    body.printing .print-target .part{margin-top:6pt}
+    body.printing .print-target .part:first-child{margin-top:0}
+    body.printing .print-target .part h5{font-size:11pt}
+    body.printing .print-target .part li{font-size:9.75pt;padding:3pt 0 3pt 12pt}
+    body.printing .print-target .steps{margin-top:0;break-inside:avoid}
+    body.printing .print-target .steps li{font-size:10.25pt}
+    body.printing .print-target details{break-inside:avoid}
+  }
+}
+@media(max-width:640px){
+  .hero{padding:40px 0 28px}
+  .card{padding:20px 18px}
+  .wrap{padding:0 18px}
+}

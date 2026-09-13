@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 214" role="img" aria-label="Four quadrants of participation — competition, leadership, community service, professional development — with a target of three by May">
+<g class="fig-g">
+<rect x="130" y="10" width="200" height="92" rx="8" class="bx"/><text x="230" y="46" text-anchor="middle" class="lb">Competition</text><text x="230" y="62" text-anchor="middle" class="sm">entered an event</text>
+<rect x="340" y="10" width="200" height="92" rx="8" class="bx"/><text x="440" y="46" text-anchor="middle" class="lb">Leadership</text><text x="440" y="62" text-anchor="middle" class="sm">a role, a committee, or one meeting</text>
+<rect x="130" y="112" width="200" height="92" rx="8" class="bx"/><text x="230" y="148" text-anchor="middle" class="lb">Community service</text><text x="230" y="164" text-anchor="middle" class="sm">one project with a real partner</text>
+<rect x="340" y="112" width="200" height="92" rx="8" class="bx"/><text x="440" y="148" text-anchor="middle" class="lb">Professional development</text><text x="440" y="164" text-anchor="middle" class="sm">an interview, a shadow, a session</text>
+<text x="62" y="92" text-anchor="middle" class="sm">at least</text><text x="62" y="126" text-anchor="middle" class="num" style="font-size:34px">3</text><text x="62" y="146" text-anchor="middle" class="sm">by May</text>
+<text x="590" y="96" text-anchor="middle" class="sm">breadth is</text><text x="590" y="111" text-anchor="middle" class="sm">what tracked</text><text x="590" y="126" text-anchor="middle" class="sm">with outcomes</text>
+</g></svg>

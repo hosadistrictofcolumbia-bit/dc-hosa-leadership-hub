@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250" role="img" aria-label="Conflict triage: decide whether it is task, process or relationship conflict, and each routes to a different response">
+<defs><marker id="tr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="mid"/></marker><marker id="ta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="ac"/></marker></defs>
+<g class="fig-g">
+<g transform="translate(230,8)"><rect width="180" height="42" rx="8" class="bx ac-fill"/><text x="90" y="19" text-anchor="middle" class="lb inv">Which kind is this?</text><text x="90" y="34" text-anchor="middle" class="sm inv">answer before responding</text></g>
+<line x1="320" y1="52" x2="120" y2="86" class="ln" marker-end="url(#tr)"/><line x1="320" y1="52" x2="320" y2="86" class="ln" marker-end="url(#tr)"/><line x1="320" y1="52" x2="520" y2="86" class="ln" marker-end="url(#tr)"/>
+<g transform="translate(30,90)"><rect width="180" height="40" rx="8" class="bx"/><text x="90" y="18" text-anchor="middle" class="lb">Task</text><text x="90" y="32" text-anchor="middle" class="sm">what are we doing?</text></g>
+<g transform="translate(230,90)"><rect width="180" height="40" rx="8" class="bx"/><text x="90" y="18" text-anchor="middle" class="lb">Process</text><text x="90" y="32" text-anchor="middle" class="sm">how are we doing it?</text></g>
+<g transform="translate(430,90)"><rect width="180" height="40" rx="8" class="bx"/><text x="90" y="18" text-anchor="middle" class="lb">Relationship</text><text x="90" y="32" text-anchor="middle" class="sm">how do we feel about each other?</text></g>
+<line x1="120" y1="132" x2="120" y2="156" class="ln" marker-end="url(#tr)"/><line x1="320" y1="132" x2="320" y2="156" class="ln" marker-end="url(#tr)"/><line x1="520" y1="132" x2="520" y2="156" class="ln" marker-end="url(#tr)"/>
+<g transform="translate(30,160)"><rect width="180" height="40" rx="8" class="lt"/><text x="90" y="18" text-anchor="middle" class="lb">structured debate</text><text x="90" y="32" text-anchor="middle" class="sm">both positions, then the rule</text></g>
+<g transform="translate(230,160)"><rect width="180" height="40" rx="8" class="lt"/><text x="90" y="18" text-anchor="middle" class="lb">charter amendment</text><text x="90" y="32" text-anchor="middle" class="sm">the missing rule, written</text></g>
+<g transform="translate(430,160)"><rect width="180" height="40" rx="8" class="lt"/><text x="90" y="18" text-anchor="middle" class="lb">private conversation</text><text x="90" y="32" text-anchor="middle" class="sm">never in the meeting</text></g>
+<path d="M470 202 C450 236, 260 236, 232 206" class="ln ac-st dash" fill="none" marker-end="url(#ta)"/>
+<text x="350" y="244" text-anchor="middle" class="sm">most relationship complaints have a task or process complaint underneath — find it and treat that</text>
+</g></svg>

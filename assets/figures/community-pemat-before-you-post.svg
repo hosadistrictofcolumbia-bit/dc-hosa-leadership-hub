@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 230" role="img" aria-label="Two scores, understandability and actionability, as a two-by-two; aim for the top right">
+<g class="fig-g">
+<line x1="140" y1="200" x2="580" y2="200" class="ln"/><line x1="140" y1="200" x2="140" y2="20" class="ln"/>
+<text x="360" y="222" text-anchor="middle" class="hd">Understandability →</text>
+<text x="118" y="110" text-anchor="middle" transform="rotate(-90 118 110)" class="hd">Actionability →</text>
+<rect x="141" y="21" width="219" height="89" class="lt"/><rect x="360" y="21" width="219" height="89" class="ac-lt"/><rect x="141" y="110" width="219" height="89" class="lt"/><rect x="360" y="110" width="219" height="89" class="lt"/>
+<text x="250" y="60" text-anchor="middle" class="lb">clear ask, murky message</text><text x="250" y="76" text-anchor="middle" class="sm">they act on something they misread</text>
+<text x="470" y="58" text-anchor="middle" class="lb">aim here</text><text x="470" y="74" text-anchor="middle" class="sm">they get it, and they know</text><text x="470" y="89" text-anchor="middle" class="sm">exactly what to do next</text>
+<text x="250" y="150" text-anchor="middle" class="lb">most first drafts</text><text x="250" y="166" text-anchor="middle" class="sm">too much text, no verb</text>
+<text x="470" y="150" text-anchor="middle" class="lb">clear, but it ends at awareness</text><text x="470" y="166" text-anchor="middle" class="sm">the usual chapter flyer</text>
+</g></svg>

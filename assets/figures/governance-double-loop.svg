@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" role="img" aria-label="Single-loop learning fixes the action; double-loop learning goes back further and changes the assumption that produced it">
+<defs><marker id="dl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ac"/></marker><marker id="dg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="mid"/></marker></defs>
+<g class="fig-g">
+<g transform="translate(40,70)"><rect width="150" height="50" rx="8" class="bx"/><text x="75" y="22" text-anchor="middle" class="lb">Assumption</text><text x="75" y="38" text-anchor="middle" class="sm">how the system is set up</text></g>
+<line x1="192" y1="95" x2="238" y2="95" class="ln" marker-end="url(#dg)"/>
+<g transform="translate(240,70)"><rect width="150" height="50" rx="8" class="bx"/><text x="75" y="22" text-anchor="middle" class="lb">Action</text><text x="75" y="38" text-anchor="middle" class="sm">what we do about it</text></g>
+<line x1="392" y1="95" x2="438" y2="95" class="ln" marker-end="url(#dg)"/>
+<g transform="translate(440,70)"><rect width="150" height="50" rx="8" class="bx"/><text x="75" y="22" text-anchor="middle" class="lb">Result</text><text x="75" y="38" text-anchor="middle" class="sm">the problem, again</text></g>
+<path d="M515 122 C515 160, 315 160, 315 124" class="ln mid-st" fill="none" marker-end="url(#dg)"/>
+<text x="415" y="168" text-anchor="middle" class="sm">single loop — fix the instance, keep the assumption</text>
+<path d="M545 68 C545 14, 115 14, 115 66" class="ln ac-st" fill="none" marker-end="url(#dl)"/>
+<text x="330" y="24" text-anchor="middle" class="lb">double loop — ask what produced it, change that</text>
+<text x="330" y="190" text-anchor="middle" class="sm">the third time the same issue arrives from a different chapter, switch loops</text>
+</g></svg>

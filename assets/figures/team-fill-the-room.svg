@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 236" role="img" aria-label="The recruitment funnel: hears about it, attends once, joins, engages, leads — with the cost that makes people leave at each stage">
+<g class="fig-g">
+<text x="30" y="16" class="hd">Stage</text><text x="400" y="16" class="hd">The cost that loses them</text>
+<polygon points="30,28 340,28 320,66 50,66" class="ac-lt"/><text x="185" y="52" text-anchor="middle" class="lb">hears about it</text><text x="400" y="52" class="sm">knows nobody who will be there</text>
+<polygon points="50,70 320,70 300,108 70,108" class="ac-lt"/><text x="185" y="94" text-anchor="middle" class="lb">attends once</text><text x="400" y="94" class="sm">dues, and nobody said what they buy</text>
+<polygon points="70,112 300,112 280,150 90,150" class="ac-lt"/><text x="185" y="136" text-anchor="middle" class="lb">joins</text><text x="400" y="136" class="sm">meeting time collides with the bus</text>
+<polygon points="90,154 280,154 260,192 110,192" class="ac-lt"/><text x="185" y="178" text-anchor="middle" class="lb">engages</text><text x="400" y="178" class="sm">fear of being the only one who cares</text>
+<polygon points="110,196 260,196 245,228 125,228" class="ac-fill"/><text x="185" y="217" text-anchor="middle" class="lb inv">leads</text><text x="400" y="217" class="sm">— and invites the next one, by name</text>
+</g></svg>

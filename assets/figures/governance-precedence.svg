@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 236" role="img" aria-label="The ladder of precedence: privileged motions outrank subsidiary motions, which outrank the main motion">
+<defs><marker id="up" viewBox="0 0 10 10" refX="5" refY="1" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 10L5 0L10 10z" class="ac"/></marker></defs>
+<g class="fig-g">
+<g transform="translate(140,10)"><rect width="360" height="58" rx="8" class="bx ac-fill"/><text x="180" y="20" text-anchor="middle" class="lb inv">Privileged</text><text x="180" y="36" text-anchor="middle" class="sm inv">about the assembly itself, not the business</text><text x="180" y="51" text-anchor="middle" class="sm inv">adjourn · recess · question of privilege · orders of the day</text></g>
+<g transform="translate(140,80)"><rect width="360" height="88" rx="8" class="bx"/><text x="180" y="20" text-anchor="middle" class="lb">Subsidiary</text><text x="180" y="36" text-anchor="middle" class="sm">about the main motion — highest first</text><text x="180" y="52" text-anchor="middle" class="sm">lay on the table · previous question · limit debate</text><text x="180" y="67" text-anchor="middle" class="sm">postpone to a time · refer to committee · amend</text><text x="180" y="82" text-anchor="middle" class="sm">postpone indefinitely</text></g>
+<g transform="translate(140,180)"><rect width="360" height="44" rx="8" class="bx"/><text x="180" y="20" text-anchor="middle" class="lb">Main motion</text><text x="180" y="36" text-anchor="middle" class="sm">the proposal — everything above exists to handle it</text></g>
+<path d="M110 218 L110 26" class="ln ac-st" marker-end="url(#up)"/>
+<text x="96" y="122" text-anchor="middle" transform="rotate(-90 96 122)" class="sm">higher outranks lower</text>
+<text x="572" y="112" text-anchor="middle" class="sm">incidental motions</text><text x="572" y="127" text-anchor="middle" class="sm">have no rank —</text><text x="572" y="142" text-anchor="middle" class="sm">decided as they arise</text>
+</g></svg>

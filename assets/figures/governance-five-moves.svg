@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 132" role="img" aria-label="The five moves in order: move, second, debate, amend, vote">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ac"/></marker></defs>
+<g class="fig-g">
+<g transform="translate(6,22)"><rect class="bx" width="108" height="58" rx="10"/><text x="54" y="26" text-anchor="middle" class="num">1</text><text x="54" y="46" text-anchor="middle" class="lb">Move it</text></g>
+<line x1="118" y1="51" x2="136" y2="51" class="ln" marker-end="url(#ar)"/>
+<g transform="translate(138,22)"><rect class="bx" width="108" height="58" rx="10"/><text x="54" y="26" text-anchor="middle" class="num">2</text><text x="54" y="46" text-anchor="middle" class="lb">Second it</text></g>
+<line x1="250" y1="51" x2="268" y2="51" class="ln" marker-end="url(#ar)"/>
+<g transform="translate(270,22)"><rect class="bx" width="108" height="58" rx="10"/><text x="54" y="26" text-anchor="middle" class="num">3</text><text x="54" y="46" text-anchor="middle" class="lb">Debate it</text></g>
+<line x1="382" y1="51" x2="400" y2="51" class="ln" marker-end="url(#ar)"/>
+<g transform="translate(402,22)"><rect class="bx" width="108" height="58" rx="10"/><text x="54" y="26" text-anchor="middle" class="num">4</text><text x="54" y="46" text-anchor="middle" class="lb">Amend it</text></g>
+<line x1="514" y1="51" x2="532" y2="51" class="ln" marker-end="url(#ar)"/>
+<g transform="translate(534,22)"><rect class="bx ac-fill" width="100" height="58" rx="10"/><text x="50" y="26" text-anchor="middle" class="num inv">5</text><text x="50" y="46" text-anchor="middle" class="lb inv">Vote it</text></g>
+<path d="M324 88 C324 108, 456 108, 456 88" class="ln dash" fill="none"/>
+<text x="390" y="122" text-anchor="middle" class="sm">an amendment is voted before the motion it changes</text>
+</g></svg>

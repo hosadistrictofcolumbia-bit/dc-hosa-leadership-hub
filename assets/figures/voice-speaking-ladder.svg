@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 230" role="img" aria-label="A four-rung ladder: announcement, committee report, topic presentation, judged mock; one criterion per rung">
+<g class="fig-g">
+<line x1="120" y1="18" x2="120" y2="215" class="rail"/><line x1="240" y1="18" x2="240" y2="215" class="rail"/>
+<g><line x1="120" y1="190" x2="240" y2="190" class="rung"/><text x="104" y="195" text-anchor="end" class="lb">1</text><text x="260" y="186" class="lb">Chapter announcement</text><text x="260" y="202" class="sm">30 sec · no filler in the first sentence</text></g>
+<g><line x1="120" y1="140" x2="240" y2="140" class="rung"/><text x="104" y="145" text-anchor="end" class="lb">2</text><text x="260" y="136" class="lb">Committee report</text><text x="260" y="152" class="sm">2 min · opens with the recommendation</text></g>
+<g><line x1="120" y1="90"  x2="240" y2="90"  class="rung"/><text x="104" y="95"  text-anchor="end" class="lb">3</text><text x="260" y="86"  class="lb">Topic presentation</text><text x="260" y="102" class="sm">5 min · one idea per slide, three eye-contact zones</text></g>
+<g><line x1="120" y1="40"  x2="240" y2="40"  class="rung ac-st"/><text x="104" y="45"  text-anchor="end" class="lb">4</text><text x="260" y="36"  class="lb">Judged mock</text><text x="260" y="52"  class="sm">event format · scored on the rating sheet</text></g>
+<text x="40" y="118" text-anchor="middle" transform="rotate(-90 40 118)" class="sm">one criterion per rung</text>
+</g></svg>

@@ -1,0 +1,3279 @@
+{
+  "meta": {
+    "product": "DC HOSA Leadership Hub",
+    "year": "2026-27",
+    "generated_note": "index.html, the five domain pages and tools.html are GENERATED. Never hand-edit them. Edit this file and run: python3 build/build.py"
+  },
+  "levels": [
+    {
+      "id": 1,
+      "name": "Lead Yourself",
+      "question": "What do I do?"
+    },
+    {
+      "id": 2,
+      "name": "Lead a Team",
+      "question": "How do I get a group to do it?"
+    },
+    {
+      "id": 3,
+      "name": "Lead Beyond",
+      "question": "How do I change something outside this room?"
+    }
+  ],
+  "domains": [
+    {
+      "id": "self",
+      "name": "Self",
+      "accent": "#0e6b5e",
+      "blurb": "Knowing your strengths, setting goals that survive contact, staying steady."
+    },
+    {
+      "id": "voice",
+      "name": "Voice",
+      "accent": "#9a5b12",
+      "blurb": "Being understood — speaking, presenting, writing, advocating."
+    },
+    {
+      "id": "team",
+      "name": "Team",
+      "accent": "#1f5c9e",
+      "blurb": "Working with people, and getting a group to function."
+    },
+    {
+      "id": "governance",
+      "name": "Governance",
+      "accent": "#6b3f9e",
+      "blurb": "Running meetings, and understanding how the organization works."
+    },
+    {
+      "id": "community",
+      "name": "Community",
+      "accent": "#a63d4e",
+      "blurb": "Health literacy, service, and acting on what a neighbourhood needs."
+    }
+  ],
+  "audiences": [
+    "member",
+    "chapter officer",
+    "advisor",
+    "state officer",
+    "state staff"
+  ],
+  "cards": [
+    {
+      "id": "self-why-you-show-up",
+      "title": "Why You Show Up",
+      "domain": "self",
+      "level": 1,
+      "pillar": "EMPOWER",
+      "minutes": 20,
+      "audiences": [
+        "member",
+        "chapter officer"
+      ],
+      "why": "People do not keep showing up because they were told to. Three things keep them coming back — having some say in what they do, feeling like they are getting better at it, and belonging to the people doing it. Take any one away and attendance drops, whatever the programming looks like.",
+      "parts": [
+        {
+          "heading": "Autonomy — having some say",
+          "body": "Ask who wants to own something before assigning it. Share the goal and the constraints, then leave the method to them.",
+          "items": [
+            "\"I'd like someone to lead the community service planning — who wants to own this, and what would you need?\" rather than \"Alex, you're doing community service planning.\"",
+            "\"What do you think we should do here?\" before \"Here's what I think we should do.\"",
+            "Kills it: micromanaging a task you delegated, overriding a decision without explaining why, handing out yes/no jobs that are never real ownership."
+          ]
+        },
+        {
+          "heading": "Competence — getting visibly better",
+          "body": "Calibrate the task just above where someone currently is. Too easy and they drift; too hard and they shut down.",
+          "items": [
+            "Stretch assignments for members who have mastered their current role — with the support said out loud.",
+            "Break big tasks down for new members. Small wins are what build the base.",
+            "Name specific growth in public: \"I want everyone to know how that was handled this week — that was not easy, and it was excellent.\""
+          ]
+        },
+        {
+          "heading": "Relatedness — belonging to the people",
+          "body": "Members who feel they belong show up, contribute, and recruit. Members who do not quietly disappear.",
+          "items": [
+            "Learn every member's name and one specific thing about them within three meetings.",
+            "Connect members to each other, not only to you: \"Have you met — you two should talk about this.\"",
+            "Make the mission concrete: name the ward, the event, the people reached. Specificity beats abstraction.",
+            "Missing two consecutive meetings with no contact is a belonging signal, not an attendance one. Reach out personally within 48 hours."
+          ]
+        }
+      ],
+      "steps": [
+        "Pick one member who has been doing the same task for more than two months. Decide whether they are still growing.",
+        "Look at your last three chapter decisions and count how much of the input was yours versus the team's.",
+        "Transfer one decision to a member this week, and say what the constraints are rather than how to do it."
+      ],
+      "worksheet": false,
+      "where": "Officer team meetings, and the recruitment conversation in the first month of the year.",
+      "coach": "Officers hear this as three things to add. It is usually one thing to stop. Ask which of the three they already do well, and protect that before adding another.",
+      "grounding": {
+        "model": "Self-Determination Theory — autonomy, competence, relatedness",
+        "grade": "R",
+        "citation": "Deci & Ryan. Relatedness section draws on Baumeister & Leary (1995); the challenge-skill calibration draws on Csikszentmihalyi.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "Ported 12 Sep 2026 from officers.html — the autonomy, competence and relatedness modals, collapsed into one card."
+    },
+    {
+      "id": "self-not-yet",
+      "title": "Not Yet",
+      "domain": "self",
+      "level": 1,
+      "pillar": "EMPOWER",
+      "minutes": 10,
+      "audiences": [
+        "member",
+        "chapter officer"
+      ],
+      "why": "How you explain a setback to yourself decides what you do next. Treating it as a fixed limit closes the door. Treating it as a current state with a trajectory keeps it open, and the difference often comes down to one word.",
+      "parts": [
+        {
+          "heading": "The word",
+          "body": "\"I'm not good at this yet.\" The word yet frames a current state with an implied path. Without it, the sentence is a verdict.",
+          "items": []
+        },
+        {
+          "heading": "Where it shows up in HOSA",
+          "body": "",
+          "items": [
+            "Not placing at a competition — \"I'm just not talented\" versus \"what specifically can I work on before the next one?\"",
+            "When feedback stings — hearing \"you're not good enough\" versus hearing a specific path to better.",
+            "When someone else succeeds — feeling threatened versus getting curious about how they got there."
+          ]
+        }
+      ],
+      "steps": [
+        "Finish this sentence honestly: \"I'm not good at ___ yet.\"",
+        "Write the one thing you are actively doing to build it. If nothing, that is the real finding."
+      ],
+      "worksheet": false,
+      "where": "After any competition result, and in the first officer debrief of the year.",
+      "coach": "Do not use this to talk a member out of disappointment. Let the disappointment be real first — the reframe only works after it has been heard.",
+      "grounding": {
+        "model": "Mindset — Carol Dweck",
+        "grade": "R",
+        "citation": "Dweck, Mindset: The New Psychology of Success.",
+        "caveat": "Large replication studies have found growth-mindset interventions produce small average effects, smaller than the original work suggested. Present it as a useful reframe, not as a reliable performance lever."
+      },
+      "ce": null,
+      "provenance": "Ported 12 Sep 2026 from members.html growth-mindset modal. Neuroplasticity and longitudinal-gains claims removed as overstated; caveat added per the R/P/C rule."
+    },
+    {
+      "id": "team-debrief",
+      "title": "The Debrief",
+      "domain": "team",
+      "level": 1,
+      "pillar": "BUILD",
+      "minutes": 20,
+      "audiences": [
+        "chapter officer",
+        "advisor",
+        "state officer"
+      ],
+      "why": "Experience on its own does not teach. A competition where everyone performs and then moves on produces far less than the same competition followed by twenty structured minutes. Most of the learning from a HOSA event is in the debrief, not the event.",
+      "parts": [
+        {
+          "heading": "Timing",
+          "body": "Three windows, each doing a different job.",
+          "items": [
+            "Within 24 hours — how did it feel. This has to happen while the feeling is still fresh.",
+            "Within 48 hours — what worked, what changes, what the specific next step is.",
+            "Within a week — each participant writes their own reflection down."
+          ]
+        },
+        {
+          "heading": "Who runs it",
+          "body": "The person leading facilitates rather than evaluates. Ask questions, name what you observed, and hold back recommendations until after the group has done its own analysis.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Book the 48-hour slot before the event happens, not after.",
+        "Open by stating one thing you personally got wrong, before anyone else speaks.",
+        "Close with one named change, one owner, and one date."
+      ],
+      "worksheet": true,
+      "where": "After SLC, after any chapter event, and after an officer team misses something.",
+      "coach": "The chair naming their own mistake first is the mechanism, not a nicety. Teams read whether it is safe to be honest from what the person in charge does in the first sixty seconds.",
+      "grounding": {
+        "model": "Psychological safety and the failure debrief",
+        "grade": "R",
+        "citation": "Edmondson (1999), Administrative Science Quarterly. Reflection-on-experience framing after Kolb (1984); written reflection after Pennebaker (1997).",
+        "caveat": "The retention comparison between written and verbal reflection that appeared in the original build has been removed — the figure could not be sourced."
+      },
+      "ce": null,
+      "provenance": "Ported 12 Sep 2026 from advisors.html structured-debrief modal, reframed from an advisor-only tool into a card with a coach note."
+    },
+    {
+      "id": "governance-five-moves",
+      "title": "The Five Moves",
+      "domain": "governance",
+      "level": 1,
+      "pillar": "BUILD",
+      "minutes": 20,
+      "audiences": [
+        "member",
+        "chapter officer"
+      ],
+      "why": "Almost everything a chapter decides can be handled with five moves. Learn those five, use them on one real decision at every meeting, and you can function in any deliberative body — including the ILC Business Session — without ever memorising the rest of the book.",
+      "parts": [
+        {
+          "heading": "The five, in order",
+          "body": "",
+          "items": [
+            "Move it — “I move that…” One sentence, stated as the thing you want the chapter to do.",
+            "Second it — a second means one other person thinks it is worth discussing. It is not agreement.",
+            "Debate it — the chair recognises speakers; each speaker addresses the chair; nobody speaks twice until everyone who wants to has spoken once.",
+            "Amend it — insert words, strike words, or strike and insert. An amendment is voted on before the motion it changes.",
+            "Vote it — a voice vote first. If the result is in doubt, anyone may call for a division, which is a show of hands or standing count."
+          ]
+        },
+        {
+          "heading": "What each move is for",
+          "body": "The test asks purpose, not vocabulary. A move you can name but cannot place is not yet learned.",
+          "items": [
+            "A motion exists so the chapter debates one clear proposal rather than a topic.",
+            "A second exists so one person cannot consume the meeting alone.",
+            "Debate rules exist so the quietest member gets a turn before the loudest gets a second one.",
+            "Amendment exists so a nearly-right proposal gets fixed instead of killed.",
+            "Division exists so a close vote is counted rather than guessed."
+          ]
+        }
+      ],
+      "steps": [
+        "At the next chapter meeting, take one decision the chapter genuinely needs to make and run it using only these five moves. Not a simulation — a real decision.",
+        "Print the card. Keep it at the officer table for the first three meetings, then take it away.",
+        "Once a month, ask a member at random to name the five moves in order. Spacing, not review, is what makes it stick."
+      ],
+      "worksheet": true,
+      "where": "Every chapter business meeting. You will already be ready for the Parliamentary Procedure band of Organizational Leadership, and for the floor at ILC.",
+      "coach": "The instinct is to teach the whole procedure in September. Do not. Five moves, retrieved monthly on real business, outperforms one comprehensive workshop that nobody retains by October. If a member asks about a motion not on this card, that is the signal to move them to Lead a Team, not to expand this card.",
+      "grounding": {
+        "model": "Robert’s Rules of Order Newly Revised, 12th edition; RONR In Brief, 3rd edition",
+        "grade": "R",
+        "citation": "RONR 12th ed. (effective 1 September 2020; a revised printing issued June 2026 is the same edition). The tiered, spaced-retrieval design follows Dunlosky et al. (2013), Psychological Science in the Public Interest — practice testing and distributed practice rated high utility; massed single-session instruction rated low.",
+        "caveat": null
+      },
+      "ce": "Organizational Leadership · Parliamentary Procedure · 24%",
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §2.1 Tier 1."
+    },
+    {
+      "id": "governance-quorum-and-order",
+      "title": "Quorum and the Order of Business",
+      "domain": "governance",
+      "level": 1,
+      "pillar": "BUILD",
+      "minutes": 15,
+      "audiences": [
+        "member",
+        "chapter officer"
+      ],
+      "why": "Two things decide whether a meeting can act at all and what it does first. A chapter that skips them makes decisions that can be challenged later, and wastes the first twenty minutes every time.",
+      "parts": [
+        {
+          "heading": "Quorum",
+          "body": "The minimum number of members who must be present for the chapter to conduct business. It is set in the chapter’s bylaws — if yours do not say, the default under RONR is a majority of members. Without quorum a meeting can hear reports and set a next date; it cannot decide anything.",
+          "items": [
+            "The chair confirms quorum at the start, out loud, and the secretary records it.",
+            "If members leave and quorum is lost, business stops. Anything decided after that point can be challenged.",
+            "Know your number. If your chapter has never checked its bylaws for this, that is the first action."
+          ]
+        },
+        {
+          "heading": "The standard order of business",
+          "body": "RONR’s default sequence. A chapter may adopt its own, but this is what an unfamiliar chair should reach for.",
+          "items": [
+            "Reading and approval of minutes",
+            "Reports of officers, boards and standing committees",
+            "Reports of special committees",
+            "Special orders — business previously scheduled for this meeting",
+            "Unfinished business and general orders — anything carried over",
+            "New business"
+          ]
+        }
+      ],
+      "steps": [
+        "Find the quorum number in your chapter bylaws. If there is no bylaws document, that is a Lead Beyond problem — flag it to your advisor now.",
+        "Put the six-line order of business at the top of the next agenda, verbatim.",
+        "Have the chair state quorum before the first item, every meeting, until it is a habit."
+      ],
+      "worksheet": false,
+      "where": "The first two minutes of every meeting. Also a direct test item in the Organizational Leadership parliamentary band.",
+      "coach": "Chapters that ‘never seem to get through the agenda’ almost always lack an order of business, not time. Ask to see the last three agendas before offering any other advice.",
+      "grounding": {
+        "model": "RONR In Brief, 3rd edition — quorum; standard order of business",
+        "grade": "R",
+        "citation": "Robert’s Rules of Order Newly Revised In Brief, 3rd ed.; RONR 12th ed. §3 (quorum), §41 (order of business).",
+        "caveat": null
+      },
+      "ce": "Organizational Leadership · Parliamentary Procedure · 24%",
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §2.1 Tier 1."
+    },
+    {
+      "id": "governance-who-governs-what",
+      "title": "Who Governs What",
+      "domain": "governance",
+      "level": 1,
+      "pillar": "BUILD",
+      "minutes": 20,
+      "audiences": [
+        "member",
+        "chapter officer",
+        "state officer"
+      ],
+      "why": "‘HOSA says’ is not a sentence. There are four levels, each decides different things, and most of the confusion in a chapter — who to ask, who can change a rule, why a deadline in DC differs from the one on hosa.org — comes from not holding the map. This card is the map.",
+      "parts": [
+        {
+          "heading": "The four levels",
+          "body": "",
+          "items": [
+            "HOSA Inc. — the corporate entity. A Board of Directors and a Headquarters staff. Sets the competitive event guidelines, the Bylaws, affiliation, and ILC. Not a student body.",
+            "International Executive Council — the elected student officers of International HOSA. Represent members, run the ILC business session, do not set policy on their own.",
+            "Chartered Association — DC HOSA. The State Advisor, state staff, and the State Executive Council. Runs the state calendar, SLC, cut scores, the DC internal ILC deadline, and any DC divergence from the international model.",
+            "Local Chapter — your school. The chapter advisor, chapter officers, and members. Decides its own meetings, projects, events entered, and whether it affiliates."
+          ]
+        },
+        {
+          "heading": "What each cannot decide",
+          "body": "The part that prevents most mistakes.",
+          "items": [
+            "A Local Chapter cannot change a competitive event rule or a state deadline. Ask; do not assume.",
+            "The State Executive Council cannot change the DC HOSA Bylaws or Standing Rules on its own — those change by the process written into them.",
+            "The International Executive Council does not write the event guidelines. HOSA Inc. does.",
+            "DC HOSA can set an earlier deadline than International HOSA, and does — the DC internal ILC deadline is earlier than the international one so the State Advisor can review every submission while problems are still fixable."
+          ]
+        },
+        {
+          "heading": "The words",
+          "body": "Precision here is not pedantry; it is how you know which level you are talking to.",
+          "items": [
+            "International HOSA, never “national HOSA” or “nationals”.",
+            "ILC — International Leadership Conference. There is no NLC.",
+            "Chartered Association, not “state chapter”. Local Chapter, not “club”.",
+            "State Executive Council or SEC, not “state board”."
+          ]
+        }
+      ],
+      "steps": [
+        "Take the last three questions your chapter sent up the chain. For each, name the level that actually decides it.",
+        "Put the four-level map on the wall at your next officer meeting and leave it there.",
+        "Before the next “can we…” question leaves the chapter, check which level owns it."
+      ],
+      "worksheet": true,
+      "where": "Every time a question leaves the chapter. It is also the HOSA Inc. and Organizational Structure bands of Organizational Leadership together — 28% of that test.",
+      "coach": "When an officer uses “nationals” or “HOSA said”, do not correct the word — ask which of the four levels they mean. The word fixes itself once the map is held.",
+      "grounding": {
+        "model": "HOSA organisational structure — HOSA Handbook Sections A–C; HOSA Bylaws",
+        "grade": "R",
+        "citation": "HOSA Handbook Sections A, B and C; HOSA Bylaws (current edition at hosa.org). DC divergences per DC-FACTS.md. Structure drawn from the hosa.org website is volatile — date anything taken from it.",
+        "caveat": "Specific office names and board composition change. Verify against hosa.org before each affiliation year rather than trusting this card’s wording."
+      },
+      "ce": "Organizational Leadership · HOSA Inc. + Structure · 28%",
+      "provenance": "New card, 12 Sep 2026, from OrgLeadership CE Module OL-3 and OL-4. Built partly to fix the cause of the ‘national HOSA’ error class found in the 8 Sep reconciliation."
+    },
+    {
+      "id": "governance-chair-a-meeting",
+      "title": "Chair a Meeting That Ends on Time",
+      "domain": "governance",
+      "level": 2,
+      "pillar": "BUILD",
+      "minutes": 30,
+      "audiences": [
+        "chapter officer",
+        "state officer"
+      ],
+      "why": "Most chapter meetings are not too long because there is too much to do. They are too long because the agenda is a list of nouns, nobody knows what a decision looks like, and the first two minutes were lost. All three are fixable before the meeting starts.",
+      "parts": [
+        {
+          "heading": "Agenda as questions",
+          "body": "Rewrite every agenda line from a topic into the question the chapter has to answer.",
+          "items": [
+            "“Fundraiser” becomes “Do we commit to a February fundraiser, and who leads it?”",
+            "“SLC” becomes “Which events are we entering, and by when do we need names?”",
+            "If a line cannot be turned into a question, it is an announcement. It goes in an email, not on the agenda. This one conversion removes about a third of most chapter agendas."
+          ]
+        },
+        {
+          "heading": "The first two minutes",
+          "body": "How the chair opens sets the whole meeting. Research on workplace meetings finds the chair’s opening behaviour has a disproportionate effect on what follows.",
+          "items": [
+            "Start at the stated time, even if the room is half full. The people who are on time are the ones you are rewarding.",
+            "State quorum, state the end time, state what the meeting must decide today.",
+            "Say one specific thing that went well since the last meeting, with a name attached."
+          ]
+        },
+        {
+          "heading": "The parking lot",
+          "body": "A visible list for things raised that are not today’s question. Revisited before adjournment, never silently dropped.",
+          "items": [
+            "Write it where everyone can see it, not in the chair’s notes.",
+            "In the last three minutes, read it aloud and assign each item to a date or a person.",
+            "An item parked three meetings running is a decision the chapter is avoiding. Name that."
+          ]
+        }
+      ],
+      "steps": [
+        "Take your next agenda and rewrite every line as a question. Delete the ones that cannot be.",
+        "Write the opening — quorum, end time, the decisions — on the top of the page and read it.",
+        "Put a parking lot on the whiteboard before anyone arrives."
+      ],
+      "worksheet": true,
+      "where": "Every chapter meeting you chair. The written script is also what a chair uses in the Parliamentary Procedure team event.",
+      "coach": "Watch the opening, not the middle. If a chair drifts into the first item without stating quorum, end time and today’s decisions, the meeting is already lost and no amount of agenda discipline recovers it.",
+      "grounding": {
+        "model": "Meeting science — Rogelberg",
+        "grade": "R",
+        "citation": "Rogelberg, The Surprising Science of Meetings (2019) and the underlying organisational-psychology research programme. Most of it was conducted on adult workplace meetings; label it as such.",
+        "caveat": "Evidence base is adult workplace meetings, not student organisations. The mechanisms transfer; the effect sizes may not."
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §2.2. Absorbs the officer and SEC Meeting Agenda Templates from the old build, collapsed to one (salvage audit §2, §4)."
+    },
+    {
+      "id": "governance-one-motion-a-month",
+      "title": "One Motion a Month",
+      "domain": "governance",
+      "level": 2,
+      "pillar": "BUILD",
+      "minutes": 15,
+      "audiences": [
+        "chapter officer"
+      ],
+      "why": "Officers need more than the Five Moves, but they do not need all of it in September. One new motion class each month, used on real business that month, and by February the officer team can run any meeting the chapter will ever hold.",
+      "parts": [
+        {
+          "heading": "The drip",
+          "body": "Each month adds one thing and uses it on one real item. An advisor can drop this into a chapter calendar unmodified.",
+          "items": [
+            "September — the order of business; the chair’s written script; the quorum call. An officer chairs from the script.",
+            "October — Amend (including amending an amendment); Refer to committee. Refer one real decision to a committee.",
+            "November — Postpone to a certain time; Previous Question, which closes debate. Close debate properly on one item.",
+            "December — Minutes to RONR standard; the treasurer’s report. The secretary drafts minutes in competition format.",
+            "January — Precedence: why motions rank, and how to read the ladder. The chair handles a motion made out of order.",
+            "February — Committee reports, and the difference between a report and a recommendation. A committee reports and moves adoption."
+          ]
+        },
+        {
+          "heading": "What each motion is for",
+          "body": "The Organizational Leadership test asks purpose. So does real life.",
+          "items": [
+            "Amend — the proposal is nearly right. Fix it rather than kill it.",
+            "Refer to committee — the chapter does not have enough information to decide today. Send it to people who will get the information.",
+            "Postpone to a certain time — the chapter has the information but not the right people or moment. Name the meeting it comes back to.",
+            "Previous Question — everyone has been heard and the debate is now repeating. Requires two-thirds, because ending debate early is a serious thing to do to a minority.",
+            "Postpone Indefinitely — dispose of a motion the chapter does not want to vote on directly. The polite kill."
+          ]
+        },
+        {
+          "heading": "The cold-call",
+          "body": "At the top of each officer meeting, four questions on the material from two months ago. Not last month. Two months. That gap is the intervention.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Print the six-month table and put it in the chapter calendar today.",
+        "Assign one officer to chair each month’s meeting from the script — rotate, so nobody hides behind the president.",
+        "Start the cold-call in November. Four questions, October material. Keep it under three minutes."
+      ],
+      "worksheet": true,
+      "where": "Officer meetings, September to February. By March the secretary’s December minutes are already a Parliamentary Procedure competition asset.",
+      "coach": "The temptation is to skip ahead when a keen officer asks. Resist it — the schedule is the point. If they want more, point them at Precedence in Lead Beyond and let them read ahead on their own time.",
+      "grounding": {
+        "model": "RONR 12th ed. subsidiary motions; spaced retrieval",
+        "grade": "R",
+        "citation": "RONR 12th ed. §§10–17 (subsidiary motions); Dunlosky et al. (2013) on distributed practice and practice testing.",
+        "caveat": null
+      },
+      "ce": "Organizational Leadership · Parliamentary Procedure · 24%",
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §2.1 Tier 2 and the OL module’s ‘purpose column’ recommendation (OL-2)."
+    },
+    {
+      "id": "governance-minutes-and-decision-log",
+      "title": "Minutes, and the Decision Log",
+      "domain": "governance",
+      "level": 2,
+      "pillar": "BUILD",
+      "minutes": 20,
+      "audiences": [
+        "chapter officer"
+      ],
+      "why": "Minutes and a decision log are two different documents that chapters keep trying to make into one. Minutes are the governance record — formal, RONR-shaped, and what the Parliamentary Procedure event asks you to produce. The decision log is working memory. Combining them produces minutes nobody reads and decisions nobody can find.",
+      "parts": [
+        {
+          "heading": "Minutes — what goes in",
+          "body": "RONR minutes record what was done, not what was said.",
+          "items": [
+            "Kind of meeting, name of the body, date, time, place; whether the chair and secretary were present; whether the previous minutes were approved.",
+            "Every main motion, exactly as adopted or as it stood when disposed of, with the name of the mover and the result.",
+            "Points of order and appeals, with the chair’s ruling.",
+            "Not: who said what in debate, the secretary’s opinion, or a summary of the discussion."
+          ]
+        },
+        {
+          "heading": "The decision log — one line each",
+          "body": "Lives beside the minutes. Date, decision, who decided, why, and the date it should be revisited.",
+          "items": [
+            "“14 Oct — February fundraiser is a bake sale, not a fun run. Officer team. Fun run needs a permit we cannot get by then. Revisit 1 Dec.”",
+            "Anyone can search it. Nobody has to read a whole meeting’s minutes to find out why the chapter stopped doing something in 2024.",
+            "The revisit date is what makes it a log rather than a list. A decision with no revisit date is a decision the chapter will relitigate."
+          ]
+        }
+      ],
+      "steps": [
+        "Split your current record into two files today, if it is one.",
+        "For the next meeting, have the secretary produce minutes in the RONR format on the printed template.",
+        "Start the decision log with the last five decisions you can remember. Add revisit dates."
+      ],
+      "worksheet": true,
+      "where": "Every meeting. The December minutes from One Motion a Month are the same document the Parliamentary Procedure team brings to the prep room.",
+      "coach": "Ask to see the decision log before asking about the chapter’s problems. A chapter with no log will describe the same three arguments every year and call them new.",
+      "grounding": {
+        "model": "RONR 12th ed. — minutes; decision records as organisational memory",
+        "grade": "R",
+        "citation": "RONR 12th ed. §48 (minutes and reports of officers). The separate decision-log practice is a practitioner convention; label it as such.",
+        "caveat": null
+      },
+      "ce": "Parliamentary Procedure",
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §2.4 and Audience Tool Addendum O6."
+    },
+    {
+      "id": "governance-virtual-meetings",
+      "title": "Virtual Meetings That Do Not Exhaust People",
+      "domain": "governance",
+      "level": 2,
+      "pillar": "BUILD",
+      "minutes": 10,
+      "audiences": [
+        "chapter officer",
+        "state officer",
+        "advisor",
+        "state staff"
+      ],
+      "why": "Video-call fatigue is not a character flaw and it is not solved by telling people to focus. It has four identified causes, and every one of them has a mechanical fix in the meeting settings. This is rare among wellbeing topics — the advice is technical rather than exhortative.",
+      "parts": [
+        {
+          "heading": "Four causes, four fixes",
+          "body": "",
+          "items": [
+            "Excessive close-up eye contact → use speaker view rather than gallery for groups over eight, and let people sit back from the camera.",
+            "The load of watching yourself constantly → hide self-view. This one setting does more than any other.",
+            "Reduced mobility → forty-five minute cap with a hard stop; audio-only segments for discussion-heavy blocks so people can move.",
+            "Constantly performing attentiveness → the chair asks questions by name, so members are not signalling engagement to the whole grid at once."
+          ]
+        },
+        {
+          "heading": "The six-line norms card",
+          "body": "Post it once. Enforce it by the chair’s behaviour, not by announcement.",
+          "items": [
+            "Self-view hidden.",
+            "Speaker view for groups above eight.",
+            "Forty-five minutes, hard stop.",
+            "Camera-optional windows named in the agenda, not granted ad hoc.",
+            "Audio-only for discussion blocks.",
+            "Chair calls on people by name."
+          ]
+        }
+      ],
+      "steps": [
+        "Change your own settings first — self-view off, speaker view on.",
+        "Put the end time in the meeting title.",
+        "Mark the camera-optional segment on the agenda before sending it."
+      ],
+      "worksheet": true,
+      "where": "Any virtual chapter or SEC meeting. Particularly the affiliate-wide calls where people are attending from home after school.",
+      "coach": "If a virtual meeting is flagging, do not add an icebreaker. Check whether the four settings are in place. They almost never are.",
+      "grounding": {
+        "model": "Four mechanisms of videoconference fatigue — Bailenson",
+        "grade": "R",
+        "citation": "Bailenson (2021), Technology, Mind, and Behavior — theoretically derived, followed by the validated Zoom Exhaustion and Fatigue (ZEF) Scale.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §2.3."
+    },
+    {
+      "id": "governance-backwards-planned-year",
+      "title": "The Backwards-Planned Year",
+      "domain": "governance",
+      "level": 2,
+      "pillar": "BUILD",
+      "minutes": 45,
+      "audiences": [
+        "chapter officer",
+        "advisor"
+      ],
+      "why": "A chapter calendar built forward from September is a list of hopes. One built backward from the dates that are fixed — the testing window, the registration deadline, the conference — is a set of derived deadlines nobody had to argue about. The year has two peaks in DC, not one, and a chapter that plans for March has already missed the first.",
+      "parts": [
+        {
+          "heading": "Fix the anchors first",
+          "body": "Take every date from the current DC HOSA Calendar of Events and the state deadlines. Confirm them annually — they move. The 2026–27 shape:",
+          "items": [
+            "Round One testing runs in a window in late January to early February, not at the conference. This is the first peak.",
+            "Competitive event registration closes in mid-January. Count back from there to when you need names.",
+            "Round Two runs at pre-SLC offsite locations and on SLC Day 1. Offsite rounds are separate trips on separate dates.",
+            "The DC internal ILC deadline is earlier than the international one, for both registration and uploads.",
+            "Voting delegates logged by mid-November; the Standards of Excellence deadline at the end of June."
+          ]
+        },
+        {
+          "heading": "Derive everything else",
+          "body": "From each anchor, count back.",
+          "items": [
+            "Event selection → two weeks before registration closes, so there is time to fix a mismatch.",
+            "Practice runway → at least eight weeks before the testing window opens. That means a December start, not a January one.",
+            "Recruitment push → before affiliation, because affiliation numbers set what the chapter can enter.",
+            "Fundraising → autumn, and hold the reserve for the one genuinely large cost, which is ILC travel. Raise in autumn, allocate in March.",
+            "Every chapter event → four weeks out, one week out, day of, forty-eight hours after. The four-phase checklist lives on the printed sheet."
+          ]
+        }
+      ],
+      "steps": [
+        "Get this year’s DC HOSA Calendar of Events. Write the anchors on the printed sheet, with the source and date.",
+        "Derive the chapter deadlines by counting back. Do not choose any date; derive it.",
+        "Put the derived calendar and the One Motion a Month drip on the same page. They are the same year."
+      ],
+      "worksheet": true,
+      "where": "The first officer meeting of the year, and again in January when the second peak is visible.",
+      "coach": "Ask which dates on the chapter calendar were derived and which were chosen. Chosen dates are the ones that slip. If the advisor cannot name the DC testing window from memory, start there — it is the anchor everything else hangs on.",
+      "grounding": {
+        "model": "Backward design; DC HOSA competition calendar",
+        "grade": "P",
+        "citation": "Backward planning as a practitioner convention. Every date must come from the current DC HOSA Calendar of Events and DC-FACTS.md §1 and §12 — this card gives the shape, never the dates.",
+        "caveat": "Dates change every year and were amended mid-year in 2026–27. Nothing on this card is a date; it is a method for deriving them."
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Audience Tool Addendum O2. Absorbs the Event Planning Checklist from the old officers page (salvage audit map gap §6)."
+    },
+    {
+      "id": "governance-precedence",
+      "title": "Precedence — Why Motions Rank",
+      "domain": "governance",
+      "level": 3,
+      "pillar": "BUILD",
+      "minutes": 30,
+      "audiences": [
+        "chapter officer",
+        "state officer"
+      ],
+      "why": "When two motions are on the floor at once, one of them has to be handled first. The ranking is not arbitrary — each motion outranks the one below it because it asks a more urgent question. Read the ladder as a set of reasons and it becomes memorable; read it as a list and it never will be.",
+      "parts": [
+        {
+          "heading": "The ladder, top to bottom",
+          "body": "Higher outranks lower. A motion can be made while a lower one is pending; not while a higher one is.",
+          "items": [
+            "Privileged motions — about the assembly itself, not the business: fix the time to adjourn, adjourn, recess, question of privilege, call for the orders of the day.",
+            "Subsidiary motions — about the main motion: lay on the table, previous question, limit or extend debate, postpone to a certain time, refer to committee, amend, postpone indefinitely.",
+            "The main motion — the actual proposal. Lowest, because everything else exists to handle it."
+          ]
+        },
+        {
+          "heading": "Why the order is what it is",
+          "body": "",
+          "items": [
+            "Adjourn outranks everything because a body that has to leave cannot keep debating.",
+            "Previous Question outranks Amend because ‘stop talking and vote’ is a more urgent question than ‘change a word’.",
+            "Postpone Indefinitely is the lowest subsidiary because it is the least urgent thing you can do to a motion — decline to decide it.",
+            "Incidental motions — point of order, appeal, division, parliamentary inquiry — have no rank. They arise from whatever is happening and are decided immediately."
+          ]
+        },
+        {
+          "heading": "Reading a real situation",
+          "body": "A main motion is pending. Someone moves to amend. Someone else moves the previous question. Amend is pending; previous question outranks it, so it is in order and is voted first. If it passes, debate ends on the amendment and the chapter votes the amendment, then the main motion.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Draw the ladder from memory, then check it against the card.",
+        "At the next meeting where an amendment is pending, deliberately move the previous question and walk the room through what happens next.",
+        "Keep a running list of motions made out of order and what the chair should have said."
+      ],
+      "worksheet": false,
+      "where": "January of One Motion a Month, and the Parliamentary Procedure team event, where the full ladder is tested.",
+      "coach": "Nobody learns precedence from the table. They learn it from the first time a motion is ruled out of order and the chair can say why. Manufacture that moment on purpose.",
+      "grounding": {
+        "model": "RONR 12th ed. — order of precedence of motions",
+        "grade": "R",
+        "citation": "RONR 12th ed. §5 and the chart of motions; RONR In Brief 3rd ed.",
+        "caveat": null
+      },
+      "ce": "Parliamentary Procedure",
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §2.1 Tier 3."
+    },
+    {
+      "id": "governance-bylaws-and-standing-rules",
+      "title": "Bylaws and Standing Rules",
+      "domain": "governance",
+      "level": 3,
+      "pillar": "BUILD",
+      "minutes": 20,
+      "audiences": [
+        "state officer",
+        "state staff",
+        "advisor"
+      ],
+      "why": "Two documents govern DC HOSA, and they change by different processes. Knowing which one a rule lives in tells you how hard it is to change and who can do it. Officers who do not know this try to fix a bylaw problem with a motion, or wait a year to fix a standing-rule problem that could have been fixed at the next meeting.",
+      "parts": [
+        {
+          "heading": "The difference",
+          "body": "",
+          "items": [
+            "Bylaws — the constitution of the affiliate. Who is a member, what the officers are, how they are elected, how the bylaws themselves change. Amending them requires prior notice and a supermajority, and the process is written into the bylaws.",
+            "Standing rules — the operating details. Deadlines, forms, the calendar, recognition programme details. Can be adopted or amended by a majority at a meeting where they are in order, without prior notice unless the standing rules say otherwise.",
+            "Where a standing rule contradicts a bylaw, the bylaw wins. Where practice contradicts a standing rule, the standing rule is what needs amending — practice is not a rule."
+          ]
+        },
+        {
+          "heading": "The DC situation",
+          "body": "DC HOSA runs several things differently from the international model and from its own Standing Rules as currently written — competition delivery, the ILC internal deadline, several calendar dates, the Standards of Excellence deadline. Those divergences are settled decisions within the State Advisor’s authority, and they are on the list to be written into the Standing Rules. Until they are, an officer reading only the Standing Rules will be wrong about the calendar.",
+          "items": [
+            "Read the current Calendar of Events alongside the Standing Rules, not instead of them.",
+            "If a rule and the calendar disagree, ask the State Advisor which is current. Do not pick.",
+            "When you find one, log it — that list is how the amendment gets written."
+          ]
+        }
+      ],
+      "steps": [
+        "Read the DC HOSA Bylaws and Standing Rules once, start to finish. It takes under an hour.",
+        "List every place where what the affiliate actually does differs from what the Standing Rules say.",
+        "Bring the list to the State Advisor. That is a contribution, not a complaint."
+      ],
+      "worksheet": false,
+      "where": "State Executive Council orientation. Any time an officer proposes changing ‘how we do things’.",
+      "coach": "An SEC that has read the governing documents asks better questions all year. Assign the reading in the first month and check it was done — it is the highest-return hour in the officer calendar.",
+      "grounding": {
+        "model": "RONR — bylaws and rules of order; DC HOSA Bylaws and Standing Rules",
+        "grade": "R",
+        "citation": "RONR 12th ed. §2 (rules of an assembly) and §56–57 (bylaws; amending). DC HOSA Bylaws and Standing Rules v2.2; divergences per DC-FACTS.md §12 and OPEN-ITEMS.md.",
+        "caveat": "The Standing Rules amendment for the DC divergences is outstanding. This card describes the situation as of September 2026; check whether the amendment has been adopted."
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Rebuild Specification §3 Governance L3."
+    },
+    {
+      "id": "governance-delegate-role",
+      "title": "The Voting Delegate",
+      "domain": "governance",
+      "level": 3,
+      "pillar": "ADVANCE",
+      "minutes": 30,
+      "audiences": [
+        "state officer",
+        "chapter officer",
+        "advisor"
+      ],
+      "why": "A voting delegate represents the Chartered Association at the ILC business session — electing the International Executive Council and voting on anything put to the assembly. It is the most direct governance role a member can hold, and the preparation is specific, dated, and mostly done before arriving.",
+      "parts": [
+        {
+          "heading": "How delegates are chosen and how many",
+          "body": "",
+          "items": [
+            "Selection is at Chartered Association level — the State Advisor’s discretion, or as set out in the DC HOSA Bylaws or Policies and Procedures. DC HOSA has not yet written a selection method into its Standing Rules; until it does, the method is the State Advisor’s call each year.",
+            "The number is set by the division membership formula in Article V, Section 2 of the HOSA Bylaws — it steps up with membership. Confirm the current formula against the Bylaws at hosa.org each year rather than trusting a remembered figure.",
+            "Delegates are logged with International HOSA by a mid-November deadline in DC. Late is not eligible."
+          ]
+        },
+        {
+          "heading": "Sixty days out",
+          "body": "The State Advisor receives the Voting Delegate Packet from HOSA Headquarters about sixty days before ILC.",
+          "items": [
+            "Read the packet, all of it.",
+            "Read every International Executive Council candidate’s resume and watch their videos on hosa.org.",
+            "Complete the Candidate Evaluation Rubric before the conference, so you meet candidates with criteria already written."
+          ]
+        },
+        {
+          "heading": "At ILC",
+          "body": "Five things, in order.",
+          "items": [
+            "Voting Delegate Orientation.",
+            "Meet the Candidates Breakfast.",
+            "Chartered Association Caucus — optional, and this is where the delegation decides whether it votes as a block.",
+            "Business Session — the vote.",
+            "Recognition Session — ribbon, certificate and pin."
+          ]
+        },
+        {
+          "heading": "After",
+          "body": "Report back to the Chartered Association on how the delegation voted and why. A delegate who does not report has not finished the job.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Confirm with the State Advisor how DC selects its delegates this year and by what date.",
+        "Put the three dated triggers in your calendar the day you are named.",
+        "Draft the report-back before you leave the conference, while the reasoning is fresh."
+      ],
+      "worksheet": true,
+      "where": "ILC. Also the largest band of Organizational Leadership — 24% of the test is this role.",
+      "coach": "The delegate role is the cheapest real governance experience the affiliate has and most chapters treat it as a perk. Make it an application, with the rubric as part of it.",
+      "grounding": {
+        "model": "HOSA Voting Delegate process — HOSA Bylaws Article V; Organizational Leadership guideline 2026–27",
+        "grade": "R",
+        "citation": "Organizational Leadership ILC Guidelines, September 2026 (2026–27), hosa.org; HOSA Bylaws Article V, Section 2; HOSA Handbook Section B.",
+        "caveat": "The delegate-count formula and packet timing are as published in the 2026–27 guideline. Re-pull before SLC and before ILC; HOSA revises guideline files mid-season."
+      },
+      "ce": "Organizational Leadership · Voting Delegate · 24%",
+      "provenance": "New card, 12 Sep 2026, from OrgLeadership CE Module OL-1."
+    },
+    {
+      "id": "governance-evaluate-a-candidate",
+      "title": "Evaluate a Candidate",
+      "domain": "governance",
+      "level": 3,
+      "pillar": "ADVANCE",
+      "minutes": 20,
+      "audiences": [
+        "state officer",
+        "chapter officer",
+        "member"
+      ],
+      "why": "Every election is decided either against criteria written beforehand or against charisma in the moment. Writing four or five criteria before meeting anyone is the whole skill, and it transfers directly — to chapter elections, to choosing a committee chair, to hiring later in life.",
+      "parts": [
+        {
+          "heading": "Write the criteria first",
+          "body": "Before reading a single resume. Four or five, no more.",
+          "items": [
+            "What has this person actually run — not joined, run — and what happened?",
+            "Can they say what the office is accountable for, in their own words, without reading it?",
+            "Do their stated plans fit what the office can decide, or are they promising things the office cannot deliver? (See Who Governs What.)",
+            "How do they talk about the people they have led? Credit given, or credit taken?",
+            "Optional fifth, chosen by the delegation: the one thing DC HOSA specifically needs from this office this year."
+          ]
+        },
+        {
+          "heading": "Then apply them, in writing",
+          "body": "One row per candidate, one column per criterion, a mark and a line of evidence in each cell. The evidence line is what stops the mark from being a feeling.",
+          "items": [
+            "Score from the resume and video before the Meet the Candidates Breakfast.",
+            "Adjust after meeting them, and write down what changed your mind. If nothing did, the criteria worked.",
+            "A delegation that shares a rubric can caucus in ten minutes instead of an hour."
+          ]
+        },
+        {
+          "heading": "Representative, not individual",
+          "body": "A delegate votes for the Chartered Association, not for themselves. The rubric is what makes that real — it is the delegation’s judgement written down, applied by one person at the ballot.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Write your four criteria now, on the printed rubric, before opening hosa.org.",
+        "Score every candidate from the published materials.",
+        "Bring the completed rubric to the caucus."
+      ],
+      "worksheet": true,
+      "where": "ILC elections. Chapter officer elections in spring. Any time the chapter is choosing a person for a role.",
+      "coach": "Ask a delegate to show you their criteria before they show you their preferred candidate. If the criteria arrive second, they were written to justify the choice.",
+      "grounding": {
+        "model": "Structured evaluation against pre-specified criteria",
+        "grade": "P",
+        "citation": "Practitioner convention, consistent with the structured-interview and decision-hygiene literature; the specific rubric is a DC HOSA construction. Pairs with the Representation Boundaries card at Voice · Lead Beyond.",
+        "caveat": null
+      },
+      "ce": "Organizational Leadership · Voting Delegate · 24%",
+      "provenance": "New card, 12 Sep 2026, from OrgLeadership CE Module OL-1."
+    },
+    {
+      "id": "governance-office-duties",
+      "title": "Office Duties, Three Levels",
+      "domain": "governance",
+      "level": 3,
+      "pillar": "BUILD",
+      "minutes": 20,
+      "audiences": [
+        "chapter officer",
+        "state officer",
+        "member"
+      ],
+      "why": "A chapter secretary and an International HOSA officer hold offices with the same name and overlapping duties three levels apart. Seeing them side by side does two things: it makes each office’s accountability concrete, and it shows a first-year officer that the ladder they are on goes all the way up.",
+      "parts": [
+        {
+          "heading": "Local Chapter",
+          "body": "The standard officer set from HOSA Handbook Section C. Chapters may vary it in their bylaws.",
+          "items": [
+            "President — chairs meetings, holds the calendar, is the chapter’s face to the school and the affiliate.",
+            "Vice President — programme and committees; chairs in the president’s absence.",
+            "Secretary — minutes to RONR standard, the decision log, correspondence, the roster.",
+            "Treasurer — the budget one-pager, dues, the reserve for ILC, the report at every business meeting.",
+            "Reporter or Historian — the chapter’s record and its public voice.",
+            "Parliamentarian — advises the chair on procedure; the Precedence card is this office’s job."
+          ]
+        },
+        {
+          "heading": "DC HOSA State Executive Council",
+          "body": "The 2026–27 positions. Titles are set in the DC HOSA Bylaws.",
+          "items": [
+            "President — chairs the SEC, represents the affiliate, holds the portfolio charters together.",
+            "President-Elect — succession; shadows the President and takes the office the following year.",
+            "Vice President of Membership — chapter growth, retention, the affiliation push.",
+            "Vice President of Community Outreach — partners, service, the community-facing calendar.",
+            "Vice President of Public Relations — affiliate communications, the newsletter, the health literacy column.",
+            "Vice President of Middle School Development — the MS division and its pipeline into secondary chapters."
+          ]
+        },
+        {
+          "heading": "International Executive Council",
+          "body": "Elected at ILC by the voting delegates. The exact set of offices and regional structure is published at hosa.org and should be confirmed there each year rather than copied from this card.",
+          "items": [
+            "President and President-Elect — the same succession pattern as DC.",
+            "Vice Presidents by region and by division — representation of Chartered Associations and of the postsecondary/collegiate membership.",
+            "What they do: represent members, run the ILC business session, serve on committees. What they do not do: write the competitive event guidelines or the Bylaws."
+          ]
+        }
+      ],
+      "steps": [
+        "Find your office in the first column. Read the same office two columns over.",
+        "Write, in one sentence each, what your office is accountable for at your level and what the office above you is accountable for at theirs.",
+        "Bring that to your Portfolio Charter or your Transition Packet."
+      ],
+      "worksheet": true,
+      "where": "Officer orientation at chapter and state level. It is also the Executive Council band of Organizational Leadership.",
+      "coach": "The recruitment argument is sitting in this table. A chapter secretary who can see that the same office exists at ILC is a chapter secretary who might run for it. Point at it.",
+      "grounding": {
+        "model": "HOSA officer structure — Handbook Section C; DC HOSA Bylaws; hosa.org",
+        "grade": "R",
+        "citation": "HOSA Handbook Section C (chapter management); DC HOSA Bylaws v2.2 (SEC offices); International Executive Council structure at hosa.org.",
+        "caveat": "International Executive Council office titles and regional structure change. The IEC column deliberately describes the pattern rather than listing current titles — verify at hosa.org each affiliation year and update the card."
+      },
+      "ce": "Organizational Leadership · Executive Council Positions · 8%",
+      "provenance": "New card, 12 Sep 2026, from OrgLeadership CE Module OL-6. Positions only, no names, per the settled rule."
+    },
+    {
+      "id": "governance-double-loop",
+      "title": "Double-Loop Learning",
+      "domain": "governance",
+      "level": 3,
+      "pillar": "BUILD",
+      "minutes": 15,
+      "audiences": [
+        "state staff",
+        "state officer",
+        "advisor"
+      ],
+      "why": "A problem can be fixed twice. Once by fixing the instance — a chapter missed a deadline, so extend it. And once by asking why this kind of problem keeps appearing and changing the thing that produces it. State-level roles are the only ones that see the pattern across every chapter, and that view is wasted if every recurrence gets the first kind of fix.",
+      "parts": [
+        {
+          "heading": "Single loop",
+          "body": "Detect the error, fix it, carry on under the same assumptions. Fast, often necessary, and it guarantees the same problem in a different form next term.",
+          "items": [
+            "A chapter misses the registration deadline → the deadline is extended for them. Solved, this once."
+          ]
+        },
+        {
+          "heading": "Double loop",
+          "body": "Detect the error and examine the assumption that produced it. Slower, and it removes the category.",
+          "items": [
+            "A chapter misses the registration deadline → ask why chapters keep missing this particular deadline. The form is confusing, or the date collides with a predictable school event. Fix the form or move the date. Solved, for everyone, permanently."
+          ]
+        },
+        {
+          "heading": "The trigger",
+          "body": "The third time the same type of issue arrives from a different chapter, stop fixing instances. That is the signal. Log every issue resolved; the log is what makes the third time visible.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Start the pattern log — date, chapter, issue type, instance count. One line per resolved issue.",
+        "When any issue type reaches three, write one sentence stating the assumption behind the system that produced it.",
+        "Change the system once. Then watch the log for whether the category stops."
+      ],
+      "worksheet": true,
+      "where": "State staff and SEC work across chapters. Any role that hears the same complaint from more than one place.",
+      "coach": "Most people in a support role measure themselves by how fast they resolve things. This card asks them to measure how many things they made impossible to recur. Those are different numbers and the second is the one that matters.",
+      "grounding": {
+        "model": "Single-loop and double-loop learning — Argyris & Schön",
+        "grade": "R",
+        "citation": "Argyris & Schön (1978), Organizational Learning: A Theory of Action Perspective.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "Ported 12 Sep 2026 from state-staff.html — the double-loop section and the Pattern Log worksheet. Rehomed here per the salvage audit map-gap decision."
+    },
+    {
+      "id": "governance-early-adopters",
+      "title": "Early Adopters First",
+      "domain": "governance",
+      "level": 3,
+      "pillar": "CONNECT",
+      "minutes": 20,
+      "audiences": [
+        "state officer",
+        "state staff"
+      ],
+      "why": "A statewide initiative launched to every chapter at once with equal effort wastes attention on chapters that are not ready and under-supports the ones that are. Adoption follows a curve, and the curve is a plan: launch with the few who will move fast, make their success visible, and let that do the persuading.",
+      "parts": [
+        {
+          "heading": "Find the two or three",
+          "body": "",
+          "items": [
+            "Chapters with a strong advisor–SEC relationship — they respond and they trust the ask.",
+            "Chapters with a proactive officer team that has adopted a previous initiative quickly.",
+            "Not the biggest chapters. The readiest ones."
+          ]
+        },
+        {
+          "heading": "The sequence",
+          "body": "",
+          "items": [
+            "Week one — the early adopters get the ask, concentrated support, and a named SEC contact.",
+            "Weeks two to three — their early result is made visible to everyone else. Specifically: ‘this chapter is already doing it, and here is what happened’.",
+            "Then the wider rollout, which now carries social proof. The remaining chapters adopt faster because someone else has taken the risk.",
+            "Ongoing — recognition for every chapter that engages, in public and by name of chapter."
+          ]
+        },
+        {
+          "heading": "Sort the rest by relationship, not by size",
+          "body": "Before any affiliate-wide message, sort chapters into strong, developing, and strained relationships. A blanket email works for the first and fails for the other two — those need a call, and sometimes they need state staff to bridge before an SEC ask will land.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Name your two or three early adopters for the next initiative and write down why each one.",
+        "Write the week-two visibility message before you launch, so you know what success has to look like.",
+        "Sort every other chapter into the three relationship tiers on the tracker."
+      ],
+      "worksheet": true,
+      "where": "Any SEC or state-staff initiative that has to move more than a few chapters. Spark One recruitment, a service campaign, a new event push.",
+      "coach": "When an initiative stalls, the SEC’s instinct is to send a louder message to everyone. Ask instead which two chapters are already doing it and whether anyone has said so out loud.",
+      "grounding": {
+        "model": "Diffusion of Innovations — Rogers",
+        "grade": "R",
+        "citation": "Rogers (1962; 5th ed. 2003), Diffusion of Innovations — the adoption curve and the role of early adopters and observability.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "Ported 12 Sep 2026 from state-officers.html — the Early Adopter Strategy modal, the Advisor Relationship Mapping modal, and the Chapter Engagement Tracker worksheet, collapsed. Rehomed here per the salvage audit map-gap decision."
+    },
+    {
+      "id": "community-ask-me-3",
+      "title": "Ask Me 3",
+      "domain": "community",
+      "level": 1,
+      "pillar": "CONNECT",
+      "minutes": 10,
+      "audiences": [
+        "member"
+      ],
+      "why": "Three questions, asked of any provider at any appointment, turn a visit you sit through into one you understand. It is the most transferable thing in this domain — a member uses it at their own appointment, teaches it to a parent, and hands it out at a community table.",
+      "parts": [
+        {
+          "heading": "The three",
+          "body": "",
+          "items": [
+            "What is my main problem?",
+            "What do I need to do?",
+            "Why is it important for me to do this?"
+          ]
+        },
+        {
+          "heading": "How to use it",
+          "body": "",
+          "items": [
+            "Ask them out loud. Providers are trained to answer them and most are relieved to be asked.",
+            "If the answer to the second one has more than three parts, ask which one comes first.",
+            "Write the answers down before you leave the room. Not after."
+          ]
+        },
+        {
+          "heading": "Teach it to one person",
+          "body": "The card is not learned until you have handed it to someone who will use it — a parent, a grandparent, a younger sibling. That is also what the Healthy Living portfolio scores: the ability to explain a health decision to someone else.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Print the wallet card. Put it in your phone case.",
+        "Use it at your next appointment, or role-play it with a chapter partner in five minutes.",
+        "Give one card to one family member and explain why."
+      ],
+      "worksheet": true,
+      "where": "Every appointment you or your family attend. Healthy Living Round Two, where explaining a personal health decision is directly scored.",
+      "coach": "Have members practise this on each other before they take it to a real appointment. The awkwardness is in saying it aloud the first time, not in the questions.",
+      "grounding": {
+        "model": "Ask Me 3 — Institute for Healthcare Improvement",
+        "grade": "P",
+        "citation": "Ask Me 3: Good Questions for Your Good Health, developed by the Partnership for Clear Health Communication and now maintained by IHI. Practitioner tool; short enough that students use it.",
+        "caveat": null
+      },
+      "ce": "Healthy Living",
+      "provenance": "New card, 12 Sep 2026, from Health Literacy Module HL-M1."
+    },
+    {
+      "id": "community-source-check",
+      "title": "Source Check",
+      "domain": "community",
+      "level": 1,
+      "pillar": "CONNECT",
+      "minutes": 10,
+      "audiences": [
+        "member",
+        "chapter officer"
+      ],
+      "why": "Most health claims a member meets are in a feed, not a library. A four-question filter applied in thirty seconds is worth more than any lecture on misinformation, because it works at the moment the claim appears.",
+      "parts": [
+        {
+          "heading": "Four questions",
+          "body": "",
+          "items": [
+            "Who published this? A person, an organisation, a company? Can you find them outside this post?",
+            "When? Health guidance changes. A date is not optional.",
+            "What are they selling? A product, a programme, a subscription, an outrage. If you cannot tell, that is the answer.",
+            "Does MedlinePlus agree? Search the topic there. If it is not there, or says something different, the claim needs more than one source before you repeat it."
+          ]
+        },
+        {
+          "heading": "MedlinePlus as the cross-reference",
+          "body": "Free, plain-language, from the National Library of Medicine, and citable. It is also the reference source for the Health Literacy Ambassador programme, so learning to reach for it does double work.",
+          "items": []
+        },
+        {
+          "heading": "What to do with a claim that fails",
+          "body": "Do not repost. Do not argue in the comments. If it matters, take it to a chapter meeting as a Source Check example — that is a five-minute segment with no preparation.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Take the last health claim you saw in a feed. Run the four questions. Time it.",
+        "Find the same topic on MedlinePlus. Note what it says differently.",
+        "Bring one failed claim to the next chapter meeting."
+      ],
+      "worksheet": true,
+      "where": "Any feed, any day. Health Literacy Ambassador, which exists to counter health misinformation and uses MedlinePlus as its anchor.",
+      "coach": "Do not run this as a lesson about misinformation. Run it as a game — bring three claims, the chapter scores them. The filter is learned by using it, and the members who learn it teach their families.",
+      "grounding": {
+        "model": "Source evaluation; MedlinePlus (National Library of Medicine)",
+        "grade": "R",
+        "citation": "MedlinePlus, U.S. National Library of Medicine, as the credible-source anchor named in the Health Literacy Ambassador guideline. The four-question filter is a DC HOSA construction consistent with standard source-evaluation practice.",
+        "caveat": null
+      },
+      "ce": "Health Literacy Ambassador",
+      "provenance": "New card, 12 Sep 2026, from Health Literacy Module HL-M2 and ATC/Ambassador Module AMB-7."
+    },
+    {
+      "id": "community-read-it-use-it",
+      "title": "Read It, Use It",
+      "domain": "community",
+      "level": 1,
+      "pillar": "EMPOWER",
+      "minutes": 15,
+      "audiences": [
+        "member"
+      ],
+      "why": "Health literacy starts with the basic version: can you read a label, a dosage instruction, an appointment letter, and do what it says? Most members assume they can. Many cannot, on the documents that matter, and nobody has ever checked.",
+      "parts": [
+        {
+          "heading": "The three levels, and which one this is",
+          "body": "Health literacy is not one skill. It rises in three steps, and this card is the first.",
+          "items": [
+            "Functional — reading and applying basic health information. A label, a dose, a notice. This card.",
+            "Interactive — extracting information and acting on it with other people. Asking a provider, helping a family member navigate a system, explaining something accurately to a peer. Lead a Team.",
+            "Critical — analysing information and using it to change the conditions that produce health. Why outcomes differ by ward, and what would move them. Lead Beyond."
+          ]
+        },
+        {
+          "heading": "Four documents to practise on",
+          "body": "",
+          "items": [
+            "An over-the-counter medicine label. Find the dose for your age, the maximum in 24 hours, and the one thing it says not to take it with.",
+            "A prescription label. Find how many, how often, with or without food, and the refill count.",
+            "An appointment letter. Find the date, the place, what to bring, and what happens if you miss it.",
+            "A vaccine information sheet. Find what it is for, the common side effects, and who to call."
+          ]
+        }
+      ],
+      "steps": [
+        "Take the four documents to a chapter meeting. In pairs, find each item and time it.",
+        "Note which one took longest. That is the document type the chapter should make a handout for.",
+        "Move to Lead a Team when you can do all four in under two minutes each."
+      ],
+      "worksheet": false,
+      "where": "Your own life first. Then the chapter’s health fair table, where the same documents are what people bring you.",
+      "coach": "This looks too basic to bother with. Run it once anyway. The members who struggle with the prescription label are the ones who will never say so, and they are the ones who most need the next card.",
+      "grounding": {
+        "model": "Three levels of health literacy — Nutbeam",
+        "grade": "R",
+        "citation": "Nutbeam (2000), Health Promotion International — functional, interactive and critical health literacy.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Health Literacy Module §3 (Nutbeam ladder) at the functional level."
+    },
+    {
+      "id": "community-pemat-before-you-post",
+      "title": "Score It Before You Post It",
+      "domain": "community",
+      "level": 2,
+      "pillar": "CONNECT",
+      "minutes": 15,
+      "audiences": [
+        "chapter officer",
+        "state officer"
+      ],
+      "why": "Every flyer, post, poster and presentation a chapter makes is patient education material. There is a validated instrument that scores such material on two things — can people understand it, and can they act on it — and it takes ten minutes. It turns ‘is this a good flyer’ from a taste argument into a number.",
+      "parts": [
+        {
+          "heading": "Two scores",
+          "body": "",
+          "items": [
+            "Understandability — can a person of any background work out the key messages? Plain words, short sentences, one idea at a time, a clear purpose stated up front, visuals that help rather than decorate.",
+            "Actionability — can they identify what to do? A specific action, stated as a verb, with the how and the when. ‘Get screened’ is not actionable. ‘Call this number to book a free screening on Saturday’ is."
+          ]
+        },
+        {
+          "heading": "The gate",
+          "body": "Nothing the chapter produces goes out until it has been scored. Not as bureaucracy — as the one discipline that improves everything the chapter already makes without adding a single new activity.",
+          "items": [
+            "Score it yourself first. Then have someone who did not make it score it. The gap between the two numbers is the finding.",
+            "Anything under the threshold you set gets one more pass. Usually the fix is cutting words and adding one sentence that starts with a verb.",
+            "Keep the scores. Six months in, the chapter can see whether its materials are getting better."
+          ]
+        }
+      ],
+      "steps": [
+        "Take the last thing your chapter published. Score it on the printed sheet.",
+        "Rewrite the one sentence that would most raise the actionability score.",
+        "Adopt the gate at the next officer meeting. Write it into the charter."
+      ],
+      "worksheet": true,
+      "where": "Every chapter communication. Health Education, Public Service Announcement, Community Awareness — the rubrics for all three score exactly these two things. Every Level 2 Ambassador project.",
+      "coach": "The first time a chapter scores its own flyer, the number is usually lower than they expect and the room goes quiet. Let it. Then ask what one change would move it most. That question is the whole tool.",
+      "grounding": {
+        "model": "Patient Education Materials Assessment Tool — AHRQ",
+        "grade": "R",
+        "citation": "PEMAT and User’s Guide, Agency for Healthcare Research and Quality — validated instrument scoring understandability and actionability of print and audiovisual materials.",
+        "caveat": "Federal health resources have moved and been revised. Re-verify the PEMAT link and current version before distributing the printed sheet."
+      },
+      "ce": "Health Education · Public Service Announcement · Health Literacy Ambassador",
+      "provenance": "New card, 12 Sep 2026, from Health Literacy Module HL-O2 and ATC/Ambassador Module AMB-3."
+    },
+    {
+      "id": "community-health-literate-chapter",
+      "title": "The Health-Literate Chapter",
+      "domain": "community",
+      "level": 2,
+      "pillar": "BUILD",
+      "minutes": 30,
+      "audiences": [
+        "chapter officer",
+        "advisor"
+      ],
+      "why": "Health literacy has two definitions now, and the second one is about organisations — how well they enable people to find, understand and use health information. A chapter is an organisation that produces health information. That makes it auditable, and this card is the audit.",
+      "parts": [
+        {
+          "heading": "Five questions, scored 1–4",
+          "body": "Adapted from the federal toolkit’s organisational assessment. Run in autumn, run again in spring.",
+          "items": [
+            "Does our communication reach people who are not already in the room?",
+            "Can a family member who does not work in health care read our materials?",
+            "Do our events end with a next step someone can take, or do they end at awareness?",
+            "Is anything we publish available in the languages our school community speaks?",
+            "When we tell people something, do we check what they understood? (See Teach-Back.)"
+          ]
+        },
+        {
+          "heading": "Then one improvement cycle",
+          "body": "Plan, do, study, act. Pick the lowest score. Decide one change. Make it. Score again. That is the whole cycle, and the second run is what turns a score into evidence.",
+          "items": []
+        },
+        {
+          "heading": "The public-availability fact",
+          "body": "The federal toolkit this adapts is publicly available and may be reproduced without permission in the United States for non-commercial use. DC HOSA can reprint the relevant tools into chapter material directly rather than paraphrasing. Keep the AHRQ citation intact when you do.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Score the five questions at an officer meeting. Do not average — the lowest number is the finding.",
+        "Choose one change for the lowest score. Name an owner and a date.",
+        "Score again after the change. Report both numbers to the chapter."
+      ],
+      "worksheet": true,
+      "where": "Twice a year at officer meetings. It is also one third of the Chapter Health Literacy Challenge.",
+      "coach": "The multilingual question is the one chapters skip and the one that matters most in DC. If a chapter scores itself 4 on it, ask to see the translated material.",
+      "grounding": {
+        "model": "Organizational health literacy — Healthy People 2030; AHRQ Health Literacy Universal Precautions Toolkit, Tool 2; PDSA",
+        "grade": "R",
+        "citation": "Healthy People 2030 organizational health literacy definition (ODPHP). AHRQ Health Literacy Universal Precautions Toolkit, 3rd ed. (2024), Tool 2 and the PDSA worksheet.",
+        "caveat": "Re-verify federal links before distribution; the toolkit edition and location have changed before."
+      },
+      "ce": "Community Awareness",
+      "provenance": "New card, 12 Sep 2026, from Health Literacy Module HL-O1."
+    },
+    {
+      "id": "community-teach-back",
+      "title": "Teach-Back",
+      "domain": "community",
+      "level": 2,
+      "pillar": "EMPOWER",
+      "minutes": 5,
+      "audiences": [
+        "chapter officer",
+        "member"
+      ],
+      "why": "You do not know whether someone understood you until they say it back in their own words. Teach-back is a check on the explainer, not a quiz on the listener — which is why it is a leadership skill and not only a clinical one, and why five minutes of it at every meeting rehearses three competitive events at once.",
+      "parts": [
+        {
+          "heading": "The round",
+          "body": "Five minutes of a chapter meeting. No slides.",
+          "items": [
+            "One member explains a health concept in ninety seconds. Ask Me 3, a vaccine, why hydration matters — anything from MedlinePlus.",
+            "A second member explains it back, in their own words, to the first.",
+            "The first member revises the explanation based on what did not land. That revision is the learning."
+          ]
+        },
+        {
+          "heading": "The phrasing that makes it work",
+          "body": "",
+          "items": [
+            "Not ‘do you understand?’ — everyone says yes.",
+            "‘I want to make sure I explained that well. Can you tell me how you would describe it to someone else?’",
+            "If they cannot, the explanation failed, not the listener."
+          ]
+        }
+      ],
+      "steps": [
+        "Put a five-minute Teach-Back round on the next three agendas.",
+        "Rotate who explains. Nobody explains twice until everyone has once.",
+        "Keep a list of the concepts that took more than one revision — those are the chapter’s handout topics."
+      ],
+      "worksheet": false,
+      "where": "Every chapter meeting. Healthy Living Round Two, Health Education and Public Service Announcement all score the ability to explain something so it lands.",
+      "coach": "Watch for the explainer who blames the listener. Redirect, gently and every time: what would you change in what you said? That reframe is the entire point.",
+      "grounding": {
+        "model": "Teach-back method — AHRQ Health Literacy Universal Precautions Toolkit, Tool 5",
+        "grade": "R",
+        "citation": "AHRQ Health Literacy Universal Precautions Toolkit, 3rd ed. (2024), Tool 5: Use the Teach-Back Method.",
+        "caveat": null
+      },
+      "ce": "Healthy Living · Health Education · Public Service Announcement",
+      "provenance": "New card, 12 Sep 2026, from Health Literacy Module HL-O3. Also the practical home of the Voice · Lead a Team topic ‘Explain it so it lands’."
+    },
+    {
+      "id": "community-become-an-ambassador",
+      "title": "Become an Ambassador",
+      "domain": "community",
+      "level": 2,
+      "pillar": "ADVANCE",
+      "minutes": 45,
+      "audiences": [
+        "member",
+        "chapter officer",
+        "advisor"
+      ],
+      "why": "Health Literacy Ambassador is the only event in the catalogue every member in every division can complete, with no entry cap and no ranking, and Level 1 ends with the member delivering a presentation at a chapter meeting. That means every ambassador generates chapter programming as a side effect. It is a participation programme wearing an event’s clothes, and the chapters that treat it that way get a year of meetings written for free.",
+      "parts": [
+        {
+          "heading": "Level 1",
+          "body": "",
+          "items": [
+            "Complete the online module. A certificate and Level 2 access instructions arrive by email.",
+            "Build a presentation on a MedlinePlus health topic — length, content and style are the member’s choice.",
+            "Deliver it at a chapter meeting or in class. That delivery is the chapter’s meeting segment."
+          ]
+        },
+        {
+          "heading": "Level 2",
+          "body": "",
+          "items": [
+            "Complete the virtual escape-room module — MedlinePlus-based puzzles. Members may work in a small group, but each needs their own computer and submits for their own certificate.",
+            "Complete one of five projects using MedlinePlus: posters for a physician’s office · an article for the Chartered Association newsletter · materials for a career, senior, clinic or hospital fair · patient handouts for professionals or employers · educational tips shared with others.",
+            "Present the project to peers. Upload the presentation and supporting documents as one combined PDF — new for 2026–27; the old activity-tracking system is no longer used."
+          ]
+        },
+        {
+          "heading": "The access checklist — this is what decides whether it happens",
+          "body": "The friction is invisible from outside and decisive inside a DC classroom.",
+          "items": [
+            "Certificates are emailed, and many school email systems block external senders. Every participant needs a working personal email address before starting. Some will not have one — find out first.",
+            "Level 1 needs a laptop or Chromebook. It switches between two sites; a phone will not work.",
+            "Level 2 needs guest sign-in and one computer per member, even in a group.",
+            "Run Level 1 as a whole-chapter session in a booked computer lab, not as homework. This single decision is the highest-leverage one in the whole programme."
+          ]
+        },
+        {
+          "heading": "The window",
+          "body": "Activities from 1 June 2026 to 15 May 2027 count for international recognition. DC HOSA sets its own deadline and recognition method for Chartered Association recognition — until that is published, members default to the international window.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Book the computer lab. Confirm every participant has a personal email that receives external mail.",
+        "Run Level 1 as one session. Schedule the resulting presentations across the year’s meetings — one or two per meeting, with a sign-up board and a topic register so no two members build the same topic.",
+        "Score every Level 2 project on the PEMAT sheet before it goes anywhere."
+      ],
+      "worksheet": true,
+      "where": "Chapter meetings all year. Every Level 2 project is patient education material, which is the Community Awareness and Public Service Announcement rubric in practice.",
+      "coach": "The access checklist is the advisor’s job and it is the entire difference between a chapter with fifteen ambassadors and a chapter with two. A member who wants to do this and does not have a personal email or a laptop at home simply does not complete it, and nobody finds out why.",
+      "grounding": {
+        "model": "Health Literacy Ambassador ILC Guidelines 2026–27; expectancy-value cost term",
+        "grade": "R",
+        "citation": "Health Literacy Ambassador ILC Guidelines, September 2026, hosa.org (NLM-sponsored). The access barriers are the cost term of Expectancy-Value Theory (Eccles & Wigfield) applied literally.",
+        "caveat": "Guideline mechanics — upload method, module platforms, deadlines — are as published for 2026–27 and are revised mid-season. Re-pull before promoting."
+      },
+      "ce": "Health Literacy Ambassador",
+      "provenance": "New card, 12 Sep 2026, from ATC/Ambassador Module §6–7 (AMB-2, AMB-6) and Health Literacy Module §4."
+    },
+    {
+      "id": "community-map-your-ward",
+      "title": "Map Your Ward",
+      "domain": "community",
+      "level": 2,
+      "pillar": "CONNECT",
+      "minutes": 30,
+      "audiences": [
+        "chapter officer",
+        "state officer"
+      ],
+      "why": "A poster in the school hallway reaches the people who are already reached. The organisations in your ward that do health outreach — clinics, libraries, faith communities, recreation centres, mutual aid — already hold the community’s trust. Health literacy work done alongside them reaches people a school-based event never will.",
+      "parts": [
+        {
+          "heading": "Who to map",
+          "body": "One page, one ward. Name, what they do, who they reach, a contact, and whether the chapter has ever spoken to them.",
+          "items": [
+            "Community clinics and health centres.",
+            "Public library branches — they run programmes and have display space.",
+            "Faith communities with health ministries or regular gatherings.",
+            "Recreation centres and senior centres.",
+            "Mutual aid groups and neighbourhood associations.",
+            "The ward’s Advisory Neighborhood Commission — it knows who else is doing what."
+          ]
+        },
+        {
+          "heading": "What the map is for",
+          "body": "",
+          "items": [
+            "Level 2 Ambassador projects need a place — a physician’s office, a fair, a clinic. The map is the venue list.",
+            "The advocacy Audience element: a chapter that wants to be heard needs to know who is already listening in the ward.",
+            "Partnerships that outlive this year’s officers, because the map is written down."
+          ]
+        }
+      ],
+      "steps": [
+        "Fill the printed map for your ward. Six organisations minimum.",
+        "Pick one the chapter has never contacted. Write the one-sentence ask.",
+        "Put the map in the Transition Packet so next year’s officers start with it."
+      ],
+      "worksheet": true,
+      "where": "Before any community event. Every Level 2 Ambassador placement. The One-Page Ask at Voice · Lead Beyond.",
+      "coach": "Chapters default to the school hallway because it needs no permission. Ask what the chapter’s ward is, then ask for one organisation in it by name. If the answer takes more than five seconds, the map does not exist yet.",
+      "grounding": {
+        "model": "Community asset mapping; Lundy Model — Audience",
+        "grade": "P",
+        "citation": "Community partner mapping as a practitioner convention. The Audience element from the Lundy Model of Participation (R) is the reason it matters.",
+        "caveat": null
+      },
+      "ce": "Community Awareness · Health Literacy Ambassador",
+      "provenance": "New card, 12 Sep 2026, from Health Literacy Module HL-O4 and ATC/Ambassador Module AMB-4."
+    },
+    {
+      "id": "community-healthy-living-deliberately",
+      "title": "Healthy Living, Run Deliberately",
+      "domain": "community",
+      "level": 2,
+      "pillar": "EMPOWER",
+      "minutes": 20,
+      "audiences": [
+        "chapter officer",
+        "advisor",
+        "member"
+      ],
+      "why": "Healthy Living asks a member to set a personal health goal, sustain it for months, and present the journey. Framed as behaviour change and self-advocacy — which is what the rubric scores — it is one of the best events in the catalogue. Framed around weight or body, it is the wrong container for a teenager, and the guideline itself says so. The framing is a choice, and it is the chapter’s to make.",
+      "parts": [
+        {
+          "heading": "What the event actually rewards",
+          "body": "",
+          "items": [
+            "A specific goal, a baseline taken before the goal period starts, and evidence of sustained effort — the top scoring band asks for nine to twelve months.",
+            "A five-minute presentation that integrates the portfolio rather than reading from it.",
+            "The three published sample goals are daily hydration, a running time, and reducing stress headaches through a short daily practice. None is a weight goal. That is the intended framing."
+          ]
+        },
+        {
+          "heading": "Goals that work",
+          "body": "Behaviour or capacity, never body size.",
+          "items": [
+            "‘Drink water instead of soda at lunch, every school day.’",
+            "‘Run a mile without stopping by March.’",
+            "‘Sleep before 11 on school nights, four nights a week.’",
+            "‘Ten minutes of the breathing practice before every test.’"
+          ]
+        },
+        {
+          "heading": "How to promote it",
+          "body": "",
+          "items": [
+            "As a behaviour-change and self-advocacy event.",
+            "Never with before-and-after framing, body imagery, or language that ranks bodies.",
+            "The goal window opened 1 July 2026 and runs to 15 May 2027 — members are already inside it."
+          ]
+        }
+      ],
+      "steps": [
+        "Write your goal as a behaviour with a frequency. If it contains a number about your body, rewrite it.",
+        "Take the baseline before the first day, and discuss it with a licensed provider if the goal involves diet or exercise.",
+        "Bring the goal to your advisor for the required signature, and expect them to read it."
+      ],
+      "worksheet": false,
+      "where": "Healthy Living Round Two. Also the member-facing half of the Ask Me 3 and Teach-Back cards, since explaining the journey is what is scored.",
+      "coach": "The advisor signature is a review, not a formality, and it is the event’s main safety mechanism. A goal framed around weight, body size or restriction gets redirected to a behaviour goal before it is signed — the guideline gives you the standing to do that. A member showing distress around food, exercise or body image is routed to the school counsellor and their family and is not steered into this event; a competitive frame around personal health is the wrong container for that student. Portfolio review happens before submission with the student choosing what stays in, and the permission form is signed by a parent or guardian, not collected at the registration table. Quote the guideline’s own guardrails when briefing other advisors — it explicitly discourages any diet or exercise programme not under a licensed provider’s direction.",
+      "grounding": {
+        "model": "Healthy Living ILC Guidelines 2026–27; behaviour-change framing",
+        "grade": "R",
+        "citation": "Healthy Living ILC Guidelines, September 2026 (2026–27), hosa.org, NASM-sponsored — event mechanics, sample goals, and the guideline’s own safeguarding language.",
+        "caveat": "Event mechanics are as published for 2026–27. One published sample question references a ‘Supplementation’ module that does not appear in the five-band test plan; resolve against the NASM course before building any test preparation, which belongs to the Study Hub in any case."
+      },
+      "ce": "Healthy Living",
+      "provenance": "New card, 12 Sep 2026, from Health Literacy Module §1–2 and HL-A1. Safeguarding material placed in the coach note, per the module’s instruction to keep it out of student-facing text."
+    },
+    {
+      "id": "community-ward-lens",
+      "title": "The Ward Lens",
+      "domain": "community",
+      "level": 3,
+      "pillar": "CONNECT",
+      "minutes": 40,
+      "audiences": [
+        "state officer",
+        "chapter officer"
+      ],
+      "why": "Health outcomes in DC differ sharply from one ward to the next. Knowing that is not the skill. The skill is moving from ‘this ward has worse outcomes’ to the determinants behind it and the decisions that produced them — and then to the one decision a chapter or an affiliate could actually influence. That is the critical level of health literacy, and it is the level a state officer should be modelling.",
+      "parts": [
+        {
+          "heading": "Start with the published data, not with a story",
+          "body": "DC Health publishes ward-level health data. Use the current release, cite it, and date it. Do not carry a figure from memory or from this card — the numbers move and this card deliberately holds none.",
+          "items": [
+            "Pick one outcome. Life expectancy, a chronic condition, access to a provider, a screening rate.",
+            "Find it by ward in the current DC Health data. Write down the source and the year.",
+            "Find the ward where it is worst and the ward where it is best."
+          ]
+        },
+        {
+          "heading": "Then ask what produces the gap",
+          "body": "Determinants, not behaviour. The question is never ‘what are people in that ward doing wrong’.",
+          "items": [
+            "Where are the providers, the pharmacies, the grocery stores, the clinics — and how long does it take to reach them without a car?",
+            "What does housing, income, and school quality look like, and how long has it looked that way?",
+            "Which past decisions — zoning, transit, hospital closures, where a clinic was built — shaped the current map?",
+            "Which of those is a decision someone could still make differently?"
+          ]
+        },
+        {
+          "heading": "Then choose the one thing",
+          "body": "A chapter cannot fix a determinant. It can pick one, in one ward, and act on it — a health fair placed where the map says it is needed, a One-Page Ask to the Council about one specific gap, a partnership with the one organisation already working on it.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Choose one outcome and find it by ward in current DC Health data. Cite it.",
+        "List three determinants that plausibly produce the gap. For each, name a decision that shaped it.",
+        "Write the one thing your chapter or the SEC could do about one of them, this year."
+      ],
+      "worksheet": true,
+      "where": "SEC strategic planning. The Community domain’s highest level, and the determinants layer under World Health & Disparities and Public Health.",
+      "coach": "Two failure modes. The first is stopping at the disparity — it feels like insight and it is only a fact. The second is blaming behaviour. When an officer says a ward has worse outcomes ‘because people there…’, stop them and ask what is within a mile of that person’s home.",
+      "grounding": {
+        "model": "Critical health literacy — Nutbeam; social determinants of health",
+        "grade": "R",
+        "citation": "Nutbeam (2000) critical level. Social determinants framework per Healthy People 2030 and the WHO Commission on Social Determinants of Health. Data: DC Health, current ward-level publications — cite the specific release used.",
+        "caveat": "This card contains no figures on purpose. Any number a member uses must come from a named, dated DC Health source."
+      },
+      "ce": "World Health & Disparities · Public Health",
+      "provenance": "New card, 12 Sep 2026, from Health Literacy Module HL-S1."
+    },
+    {
+      "id": "community-organizational-health-literacy",
+      "title": "Organizational Health Literacy",
+      "domain": "community",
+      "level": 3,
+      "pillar": "BUILD",
+      "minutes": 30,
+      "audiences": [
+        "state officer",
+        "state staff"
+      ],
+      "why": "The second definition of health literacy is about the organisation, not the person: how well it enables people to find, understand and use health information. It applies to DC HOSA exactly as it applies to a chapter. A Chartered Association that tells chapters to communicate clearly while sending dense advisor emails has an organisational health literacy problem of its own, and this is how you find out.",
+      "parts": [
+        {
+          "heading": "The two definitions",
+          "body": "Healthy People 2030 split the old single definition in two and shifted the emphasis from understanding to use, and from the individual to the organisation.",
+          "items": [
+            "Personal — the degree to which individuals can find, understand and use information and services to inform health decisions for themselves and others.",
+            "Organisational — the degree to which organisations equitably enable individuals to do the same."
+          ]
+        },
+        {
+          "heading": "Run the chapter audit on the affiliate",
+          "body": "The five questions from The Health-Literate Chapter, applied to DC HOSA itself.",
+          "items": [
+            "The website. Can a parent new to CTSOs work out what HOSA is and what it costs in under two minutes?",
+            "Advisor communications. Score the last three emails on the PEMAT sheet.",
+            "Conference materials. Is there a next step someone can take, or does it end at information?",
+            "Family-facing content. In which languages?",
+            "Recognition programmes. Can a member find out how to qualify without asking someone?"
+          ]
+        },
+        {
+          "heading": "Adopt a plain-language standard",
+          "body": "Federal plain-language guidance exists and is free. Adopting it as a house standard for affiliate communication is a decision the SEC and state staff can make in one meeting, and it costs nothing.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Score the affiliate on the five questions. Publish the scores to the SEC.",
+        "Fix the lowest one this term. Name an owner.",
+        "Propose the plain-language standard as a Standing Rule."
+      ],
+      "worksheet": false,
+      "where": "SEC and state staff planning. It is also the third of the three parts of the Chapter Health Literacy Challenge — the affiliate has to have done it before asking chapters to.",
+      "coach": "If the SEC proposes the challenge to chapters before running the audit on the affiliate, stop them. Nothing undermines a health literacy campaign faster than an unreadable email announcing it.",
+      "grounding": {
+        "model": "Organizational health literacy — Healthy People 2030; plain language (federal standard)",
+        "grade": "R",
+        "citation": "Healthy People 2030 definitions of personal and organizational health literacy (ODPHP). Federal plain-language guidelines, plainlanguage.gov.",
+        "caveat": "Re-verify federal links before adopting the standard formally; federal health and plain-language resources have moved."
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Health Literacy Module §3 (spine), HL-S3 and HL-T1."
+    },
+    {
+      "id": "community-health-literacy-challenge",
+      "title": "The Chapter Health Literacy Challenge",
+      "domain": "community",
+      "level": 3,
+      "pillar": "CONNECT",
+      "minutes": 30,
+      "audiences": [
+        "state officer",
+        "state staff"
+      ],
+      "why": "A state-level campaign that every chapter can complete cheaply, that produces affiliate-level evidence rather than an attendance count, and that ties directly to the recognition ladder chapters already care about. It is three existing cards run once each, reported once, and recognised.",
+      "parts": [
+        {
+          "heading": "The three parts, per chapter",
+          "body": "",
+          "items": [
+            "Run The Health-Literate Chapter audit once. Report the lowest score.",
+            "Score one piece of chapter material on the PEMAT sheet. Report the score and one change made.",
+            "Set a participation proportion for Health Literacy Ambassador Level 1 — the share of members completing it by a stated date. A proportion, not a count, so it is fair across chapters of every size."
+          ]
+        },
+        {
+          "heading": "Recognition",
+          "body": "International HOSA awards no medals for Ambassador. The Chartered Association recognition carries all the motivational weight, and the State Advisor sets it.",
+          "items": [
+            "Tie Ambassador participation to the Standards of Excellence ladder — Emerging, Established, Elite — as one of the criteria that moves a chapter up a tier. That gives the ladder a behaviour to reward.",
+            "Recognise at SLC, by chapter name. A named cohort in affiliate communications. A banner.",
+            "Publish the DC deadline and the recognition method before launch. Until they exist, chapters default to the international window and the campaign has no forcing date."
+          ]
+        },
+        {
+          "heading": "What the SEC gets back",
+          "body": "An affiliate-wide dataset: lowest audit scores by chapter, PEMAT scores before and after, Ambassador participation rates. That is something evidence-based to say about the affiliate at the end of the year.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Run the affiliate-level audit first (Organizational Health Literacy). Do not skip this.",
+        "Publish the DC Ambassador deadline and the recognition method. Both are State Advisor decisions.",
+        "Launch with two or three early-adopter chapters. Make their result visible. Then the rest."
+      ],
+      "worksheet": true,
+      "where": "The SEC calendar, launched in autumn so the Ambassador window is used. Reported at SLC.",
+      "coach": "This is the one campaign in the Hub where the state staff decisions — deadline, recognition — gate everything. Make them before the SEC designs the launch, or the SEC will design around their absence.",
+      "grounding": {
+        "model": "Chapter-level health literacy campaign; Diffusion of Innovations for rollout",
+        "grade": "P",
+        "citation": "DC HOSA construction combining three R-graded instruments (organizational audit, PEMAT, Ambassador guideline). Rollout sequencing per Rogers (R). Standards of Excellence tiers as settled 7 Sep 2026.",
+        "caveat": null
+      },
+      "ce": "Health Literacy Ambassador",
+      "provenance": "New card, 12 Sep 2026, from Health Literacy Module HL-S2 and ATC/Ambassador Module AMB-1, AMB-5, §8."
+    },
+    {
+      "id": "team-what-a-team-expects",
+      "title": "What a Team Expects of You",
+      "domain": "team",
+      "level": 1,
+      "pillar": "BUILD",
+      "minutes": 10,
+      "audiences": [
+        "member"
+      ],
+      "why": "A chapter that works has written down what its members owe each other — how fast people reply, how a disagreement gets raised, what happens when someone misses a commitment. As a member you did not write that document, but you are bound by it, and the fastest way to be trusted with more is to know it and keep it.",
+      "parts": [
+        {
+          "heading": "Ask to see it",
+          "body": "Every chapter with an officer charter has a member-facing half. If yours does not, ask an officer what the unwritten version is. The answer tells you a lot about the chapter.",
+          "items": []
+        },
+        {
+          "heading": "The four that matter most",
+          "body": "",
+          "items": [
+            "Response time. If the group chat expects a reply within a day, a reply within a day. Silence reads as absence.",
+            "Commitments. If you say you will do a thing, it happens or you say early that it will not. Late is recoverable; silent is not.",
+            "Disagreement. Raise it to the person, in the way the charter says, not around them.",
+            "Showing up. Two meetings missed without a word is a signal to the officers whether you mean it as one or not."
+          ]
+        },
+        {
+          "heading": "What you get back",
+          "body": "A chapter that keeps these is one where you get a real task with a real deadline by your third meeting — because you have shown you will do it. That is the trade.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Read the chapter charter, or ask an officer to describe the expectations in one minute.",
+        "Pick the one of the four you are weakest on. Fix that one this month.",
+        "Reply to the next chapter message within the day, even if the reply is ‘can’t, sorry’."
+      ],
+      "worksheet": false,
+      "where": "Your first month in the chapter. It is the member side of the Officer Charter at Lead a Team.",
+      "coach": "Members are rarely told what is expected until they have already broken it. Have officers read the member-facing half of the charter aloud at the first meeting of the year. Once.",
+      "grounding": {
+        "model": "Team charters — Mathieu & Rapp",
+        "grade": "R",
+        "citation": "Mathieu & Rapp (2009), Journal of Applied Psychology 94(1), 90–103 — teams with high-quality charters showed better performance trajectories. This card is the member-facing corollary.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Rebuild Specification §3 Team L1."
+    },
+    {
+      "id": "team-say-the-uncomfortable-thing",
+      "title": "Say the Uncomfortable Thing",
+      "domain": "team",
+      "level": 1,
+      "pillar": "EMPOWER",
+      "minutes": 10,
+      "audiences": [
+        "member",
+        "chapter officer"
+      ],
+      "why": "Teams that work are ones where people can say ‘I think this is wrong’, ‘I don’t know how to do this’, or ‘I made a mistake’ without paying for it. That condition has a name, it is the strongest single predictor of team effectiveness there is, and it is created by what the person in charge does — not by team-building activities.",
+      "parts": [
+        {
+          "heading": "What it is",
+          "body": "Psychological safety: the shared belief that the team is safe for interpersonal risk-taking. Not niceness. Not the absence of disagreement. The opposite — a team where disagreement is cheap enough to happen.",
+          "items": []
+        },
+        {
+          "heading": "As a member, three things you can do",
+          "body": "",
+          "items": [
+            "Ask the question everyone is thinking. The first person to say ‘I don’t understand the plan’ makes it possible for the next four.",
+            "Report your own mistake before it is found. Early and plainly. ‘I dropped this, here is where it stands.’",
+            "When someone else does either of those, respond to the content and not to the courage. Treat it as normal, because it should be."
+          ]
+        },
+        {
+          "heading": "How the chapter measures it",
+          "body": "There is a seven-item scale, free and short. Officers run it in October and again in March and report the team average — never individual answers. If the number is low, the fix is in what the officers do, not in the members.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "At the next meeting, ask one question you would normally keep to yourself.",
+        "The next time you drop something, say so in the group chat within the day.",
+        "Answer the seven-item pulse honestly when the officers send it."
+      ],
+      "worksheet": false,
+      "where": "Every meeting, every group chat. The Debrief card depends on it entirely.",
+      "coach": "You cannot instruct a team to be safe. You can only go first — state your own mistake before anyone else speaks, respond to a hard question with thanks rather than defence, and do it every time. The seven-item pulse tells you whether it is working; the members’ behaviour tells you whether you are.",
+      "grounding": {
+        "model": "Psychological safety — Edmondson",
+        "grade": "R",
+        "citation": "Edmondson (1999), Administrative Science Quarterly — the construct and the seven-item team psychological safety scale. Identified as the strongest predictor of team effectiveness in Google’s Project Aristotle.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §3.3 at the member level; the Seven-Item Pulse instrument referenced here and administered from the Officer Charter card."
+    },
+    {
+      "id": "team-supporting-others-emotions",
+      "title": "When Someone Is Upset",
+      "domain": "team",
+      "level": 1,
+      "pillar": "CONNECT",
+      "minutes": 10,
+      "audiences": [
+        "member",
+        "chapter officer"
+      ],
+      "why": "Saying the wrong thing to someone in distress does not just fail to help — it tells them their experience is invalid, and trust closes in seconds. In a clinic that costs a patient relationship; in a chapter it costs a member. These are questions that open the conversation instead of closing it.",
+      "parts": [
+        {
+          "heading": "Ask this, not that",
+          "body": "",
+          "items": [
+            "Anger — ask ‘what boundary do you feel was crossed?’ Not ‘calm down’ or ‘it’s not a big deal’.",
+            "Sadness — ask ‘what loss or unmet expectation is this?’ Not ‘it could be worse’.",
+            "Anxiety — ask ‘what worries you most, and what is actually in your control?’ Not ‘just relax’.",
+            "Frustration — ask ‘what is at stake that you care about?’ Not ‘let it go’.",
+            "Overwhelm — ask ‘what is one thing we could take off your plate right now?’ Not ‘everyone’s busy’.",
+            "Shame — ask ‘what story are you telling yourself about what happened?’ Not ‘you shouldn’t feel that way’.",
+            "Fear — ask ‘what is the worst that could realistically happen, and could you handle it?’ Not ‘don’t be scared’.",
+            "Disappointment — ask ‘what were you expecting that didn’t happen?’ Not ‘you should have known’."
+          ]
+        },
+        {
+          "heading": "The pattern under all eight",
+          "body": "Every ‘ask’ line is a question about the person’s experience. Every ‘not’ line is an instruction to stop having it. That is the whole difference, and it is enough.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Pick the one emotion you most often meet in the chapter. Learn its ‘ask’ line by heart.",
+        "The next time you catch yourself about to say a ‘not’ line, ask the question instead.",
+        "Notice what happens in the following ten seconds."
+      ],
+      "worksheet": true,
+      "where": "After a competition result. In the group chat at 11pm. At a health fair table when someone is scared of what they just read.",
+      "coach": "This is a script, not a theory, and it is labelled as one. It works because it is specific and rehearsed. Do not let it become a poster — have members practise the lines in pairs once, out loud.",
+      "grounding": {
+        "model": "Practitioner script for responding to negative emotions",
+        "grade": "P",
+        "citation": "Practitioner framework as supplied in the original DC HOSA materials. Consistent with the validation literature in clinical communication, but the specific eight-line script has no independent empirical base — present it as a working tool, never as research.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "Ported 12 Sep 2026 from members.html ‘Supporting Others’ Emotions’ modal. Relabelled P per the salvage audit."
+    },
+    {
+      "id": "team-write-the-charter",
+      "title": "Write the Charter",
+      "domain": "team",
+      "level": 2,
+      "pillar": "BUILD",
+      "minutes": 45,
+      "audiences": [
+        "chapter officer",
+        "state officer"
+      ],
+      "why": "Charter-writing is one of the few team interventions with clean evidence behind it. It costs one meeting in the first two weeks, and officer teams almost never do it — then spend the year having the arguments the charter would have settled.",
+      "parts": [
+        {
+          "heading": "Six fields, one page, signed",
+          "body": "",
+          "items": [
+            "What this team exists to accomplish this year. One or two sentences, not a mission statement.",
+            "Who decides what, and by what rule — consensus, majority, the president’s call. Name the rule per type of decision.",
+            "Expected response time on the group chat.",
+            "How we raise a disagreement. To whom, in what form, by when.",
+            "What happens the first time someone misses a commitment. Written before it happens, so it is a procedure and not a confrontation.",
+            "When we revisit this document. The date. This field is what separates a charter from a poster."
+          ]
+        },
+        {
+          "heading": "Add the accountability script",
+          "body": "The last field of the charter is the exact wording one officer uses to raise a missed commitment with another. Agreed in advance, it is usable. Improvised in the moment, it is a conflict. See Hold a Peer Accountable.",
+          "items": []
+        },
+        {
+          "heading": "Run the pulse from it",
+          "body": "The seven-item psychological safety scale goes out in October and March. The charter names who sends it and states that only the team average is reported.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Book one officer meeting in the first two weeks of the term for nothing but this.",
+        "Fill all six fields. Sign it. Photograph it.",
+        "Put the revisit date in the calendar — the January reset is the natural one."
+      ],
+      "worksheet": true,
+      "where": "The first two weeks of every officer term, at chapter and state level. Revisited at the January midpoint.",
+      "coach": "If a team says they ‘don’t need’ a charter because they get along, that is the team that needs it most — they have never had the disagreement that would have tested it. Ask what happens the first time someone misses a deadline. If nobody can answer in a sentence, there is no charter.",
+      "grounding": {
+        "model": "Team charters and performance strategies — Mathieu & Rapp",
+        "grade": "R",
+        "citation": "Mathieu & Rapp (2009), Journal of Applied Psychology 94(1), 90–103.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §3.2 and Audience Tool Addendum S1, S6."
+    },
+    {
+      "id": "team-conflict-triage",
+      "title": "Conflict Triage",
+      "domain": "team",
+      "level": 2,
+      "pillar": "BUILD",
+      "minutes": 15,
+      "audiences": [
+        "chapter officer",
+        "state officer",
+        "advisor"
+      ],
+      "why": "Conflict on a team comes in three kinds, and the wrong response to one kind makes it worse. Before responding to any officer-team conflict, the chair answers one question — which kind is this — and that answer routes to a different script. The single most useful move a student leader can learn is converting a relationship complaint into a task or process question.",
+      "parts": [
+        {
+          "heading": "The three kinds",
+          "body": "",
+          "items": [
+            "Task — what are we doing? A disagreement about the goal, the event, the decision. Some of this is healthy.",
+            "Process — how are we doing it? Who decides, who does what, by when. Usually a charter gap.",
+            "Relationship — how do we feel about each other. Consistently harmful, and it is never resolved in a meeting."
+          ]
+        },
+        {
+          "heading": "Three scripts",
+          "body": "",
+          "items": [
+            "Task → structured debate. Put both positions on the board, give each side two minutes uninterrupted, vote or decide by the rule in the charter.",
+            "Process → charter amendment. The conflict is a missing rule. Write the rule; the conflict usually dissolves.",
+            "Relationship → a private conversation between the two people, or with the chair as a third. Not the group chat, not the meeting. Ever."
+          ]
+        },
+        {
+          "heading": "The conversion",
+          "body": "Most relationship complaints have a task or process complaint underneath. ‘She never listens’ is often ‘she made a decision the charter says we make together’. Find the underneath and treat that.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Next conflict: before responding, write down which of the three it is.",
+        "Apply the matching script and nothing else.",
+        "If it was relationship, ask what the task or process complaint underneath might be."
+      ],
+      "worksheet": true,
+      "where": "Officer team meetings. SEC. Any committee. It replaces the difficult-conversations models the old build carried.",
+      "coach": "Advisors get pulled into relationship conflict and try to mediate it in front of the team. Do not. Take it private, and ask each person separately what the other one did — the task or process answer is usually right there.",
+      "grounding": {
+        "model": "Task, relationship and process conflict — Jehn; De Dreu & Weingart meta-analysis",
+        "grade": "R",
+        "citation": "Jehn (1995), Administrative Science Quarterly; De Dreu & Weingart (2003), Journal of Applied Psychology — relationship conflict consistently harmful, task conflict less benign than earlier claimed. Interest-based framing after Fisher & Ury (P).",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §3.5. Replaces the ALIGN / CALM ‘Difficult Conversations’ modal from advisors.html (salvage audit: REWRITE)."
+    },
+    {
+      "id": "team-hand-off-a-task",
+      "title": "Hand Off a Task",
+      "domain": "team",
+      "level": 2,
+      "pillar": "EMPOWER",
+      "minutes": 15,
+      "audiences": [
+        "chapter officer",
+        "advisor",
+        "state staff"
+      ],
+      "why": "Delegation fails in one of two ways: the task is thrown over the wall and dropped, or it is handed over and then taken back at the first wobble. There is a four-rung sequence that avoids both, and health science students already know it — it is how a clinical skill is taught.",
+      "parts": [
+        {
+          "heading": "Four rungs",
+          "body": "Same task, four passes, the officer stepping back one rung each time.",
+          "items": [
+            "You do it while they watch. Narrate what you are deciding, not just what you are doing.",
+            "You do it together. They drive, you are beside them.",
+            "They do it while you watch. You say nothing unless asked.",
+            "They do it and report back. You are not in the room."
+          ]
+        },
+        {
+          "heading": "What each rung is for",
+          "body": "",
+          "items": [
+            "Rung one makes the invisible decisions visible.",
+            "Rung two catches the misunderstanding before it becomes a habit.",
+            "Rung three is the hard one for the officer — the silence is the teaching.",
+            "Rung four is the only rung that counts as delegation. The first three are training."
+          ]
+        },
+        {
+          "heading": "Not this",
+          "body": "The old build carried a matrix that matched a leadership ‘style’ to a member’s readiness. That model is widely taught and has weak evidence for the prescribed matching. Retired. The four rungs are simpler, and they work.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Pick one task you keep doing yourself. Name the member who should own it by December.",
+        "Schedule the four rungs on four dates.",
+        "On rung three, say nothing. Time yourself."
+      ],
+      "worksheet": false,
+      "where": "Every officer who does too much. The advisor side of it is the Student-Led Transfer Ladder — which chapter functions the advisor still performs that a student could.",
+      "coach": "The rung most officers skip is three. They go from doing it together to handing it over, and the member fails, and the officer concludes delegation does not work. Ask which rung they are on. It is nearly always two.",
+      "grounding": {
+        "model": "Graduated handoff; expert coaching condition — Hackman",
+        "grade": "R",
+        "citation": "Hackman’s expert-coaching condition rendered as a four-step progression; parallels the see-one/do-one clinical skills sequence. Replaces Situational Leadership (Hersey & Blanchard), grade C — heavily taught, weak empirical support for style-matching.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Audience Tool Addendum O5 and A4. Replaces the ‘Student Empowerment Matrix’ modal from advisors.html (salvage audit: REWRITE, retired model)."
+    },
+    {
+      "id": "team-give-feedback",
+      "title": "Give Feedback That Lands",
+      "domain": "team",
+      "level": 2,
+      "pillar": "EMPOWER",
+      "minutes": 10,
+      "audiences": [
+        "chapter officer",
+        "state officer"
+      ],
+      "why": "Feedback is the thing a chapter officer does most often and is taught least. One three-part structure — what happened, what the person did, what effect it had — keeps it specific enough to act on and free of the judgement that makes people stop listening.",
+      "parts": [
+        {
+          "heading": "Situation, behaviour, impact",
+          "body": "",
+          "items": [
+            "Situation — when and where. ‘At Tuesday’s meeting, during the fundraiser discussion.’",
+            "Behaviour — what they did, observably. ‘You cut in three times while Sam was talking.’ Not ‘you were rude’.",
+            "Impact — what it did. ‘Sam stopped contributing and we lost the one person who had run a fundraiser.’"
+          ]
+        },
+        {
+          "heading": "Then stop",
+          "body": "Do not add advice unless asked. The three parts are the feedback; the next step is theirs to propose. If they ask, offer one thing, not five.",
+          "items": []
+        },
+        {
+          "heading": "It works in both directions",
+          "body": "The same three parts deliver praise that is worth something. ‘At the health fair, you stayed with the grandmother who was frightened by her results, and she left with a plan. That is the whole reason we were there.’",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Write the next piece of feedback you need to give in the three parts before you give it.",
+        "Delete every adjective about the person. Keep every verb about the behaviour.",
+        "Give one piece of positive feedback this week in the same three parts."
+      ],
+      "worksheet": true,
+      "where": "After every event. In every one-to-one. It is the everyday tool that Conflict Triage and Hold a Peer Accountable escalate from.",
+      "coach": "Officers give feedback as a character judgement because it is faster. Ask them to say the behaviour line first, before anything else. If they cannot name a behaviour, there is no feedback yet — only a feeling.",
+      "grounding": {
+        "model": "Situation–Behavior–Impact — Center for Creative Leadership",
+        "grade": "P",
+        "citation": "SBI feedback model, Center for Creative Leadership. Widely used practitioner tool; label it as such.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "Ported 12 Sep 2026 from officers.html SBI Feedback Card. Rehomed here per the salvage audit map-gap decision — feedback was absent from the topic map."
+    },
+    {
+      "id": "team-fill-the-room",
+      "title": "Fill the Room",
+      "domain": "team",
+      "level": 2,
+      "pillar": "BUILD",
+      "minutes": 30,
+      "audiences": [
+        "chapter officer",
+        "advisor"
+      ],
+      "why": "Recruitment is a funnel with five stages, and at every stage people leave for a reason. The reason is almost never the message. It is a cost — a meeting time that collides with a bus route, a dues figure nobody explained, a first meeting where everyone else already knew each other. Find the cost at each stage and the funnel fills itself.",
+      "parts": [
+        {
+          "heading": "Five stages, each with a conversion action and a cost",
+          "body": "",
+          "items": [
+            "Hears about it → attends once. Action: a named person invites them. Cost: they do not know anyone who will be there.",
+            "Attends once → joins. Action: they are given something to do before they leave. Cost: dues, and nobody said what they buy.",
+            "Joins → engages. Action: a real task with a deadline by meeting three. Cost: the meeting time, the location, the transport.",
+            "Engages → leads. Action: the four-rung handoff of one function. Cost: fear of being the only one who cares.",
+            "Leads → recruits. Action: they invite the next one, by name."
+          ]
+        },
+        {
+          "heading": "The cost column is the point",
+          "body": "For every stage, write the cost in time, money, social risk and what the member gives up to be there. Most chapters have never written that column. When they do, the fix is nearly always logistics, not messaging.",
+          "items": []
+        },
+        {
+          "heading": "The first thirty days",
+          "body": "Onboarding is the second and third stage done deliberately. One named action per week — a greeting by name at meeting one; a real task by meeting three; a question about what they want from HOSA before week four, with a promise about how the answer will be used.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Fill the five-stage funnel for your chapter on the printed sheet. Cost column first.",
+        "Pick the stage where most people leave. Change one cost.",
+        "Write the first-thirty-days sequence and assign one officer to run it for every new member."
+      ],
+      "worksheet": true,
+      "where": "August to October. Again in January for the second-semester intake.",
+      "coach": "When a chapter says nobody comes, ask what time the meeting is and how the members get home. That is usually the answer, and it has nothing to do with the flyer.",
+      "grounding": {
+        "model": "Expectancy-Value Theory, cost term — Eccles & Wigfield; Developmental Relationships Framework — Search Institute",
+        "grade": "R",
+        "citation": "Eccles & Wigfield expectancy-value model, the cost term. Search Institute Developmental Relationships Framework — express care, challenge growth, provide support, share power, expand possibilities — for the first-thirty-days sequence.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Audience Tool Addendum O4 and Content Research Map §3.4 (First Thirty Days), combined."
+    },
+    {
+      "id": "team-five-conditions",
+      "title": "Five Conditions",
+      "domain": "team",
+      "level": 3,
+      "pillar": "BUILD",
+      "minutes": 25,
+      "audiences": [
+        "chapter officer",
+        "state officer",
+        "advisor",
+        "state staff"
+      ],
+      "why": "Most chapters that say they have a motivation problem have a structure problem. There are five conditions under which teams work, and scoring them in September and again in January tells you which one is missing — and each missing one routes to a different fix. This replaces the stage model most leadership material still teaches.",
+      "parts": [
+        {
+          "heading": "Five questions, scored 1–4",
+          "body": "",
+          "items": [
+            "A real team — is membership stable and bounded? Does everyone know who is on it?",
+            "A compelling direction — can every officer say in one sentence what the year is for?",
+            "An enabling structure — are roles clear, are meetings designed, is the work divided so it can actually be done?",
+            "A supportive context — does the chapter have the room, the budget, the advisor time, the school’s backing?",
+            "Expert coaching — is someone helping the team get better at working together, not only at the task?"
+          ]
+        },
+        {
+          "heading": "Low score, different fix",
+          "body": "",
+          "items": [
+            "Low direction → a goal-setting problem. Write the one sentence.",
+            "Low structure → a roles-and-meetings problem. Charter and agenda.",
+            "Low context → an advocacy problem. The Internal Advocacy Pack goes to an administrator.",
+            "Low coaching → an advisor problem, or a state-staff one.",
+            "Low ‘real team’ → the roster is the problem. Who is actually on this?"
+          ]
+        },
+        {
+          "heading": "What was retired",
+          "body": "Forming, storming, norming, performing is universally taught and has never held up as a sequence teams pass through. Keep the four words as vocabulary if they help. Do not diagnose a chapter with them.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Score the five in September at an officer meeting. Do not average.",
+        "Take the lowest and apply its fix.",
+        "Score again in January. Whether the number moved is the finding."
+      ],
+      "worksheet": true,
+      "where": "Chapter officer teams and the SEC, twice a year. The affiliate-level version is the health record state staff keep per chapter.",
+      "coach": "Chapters diagnose themselves with the wrong word. ‘We have no motivation’ is nearly always a 1 on structure. Run the five questions before accepting any chapter’s own diagnosis.",
+      "grounding": {
+        "model": "Conditions for team effectiveness — Hackman",
+        "grade": "R",
+        "citation": "Hackman (2002), Leading Teams — real team, compelling direction, enabling structure, supportive context, expert coaching. Replaces Tuckman’s stage model, grade C.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §3.1. Replaces the Chapter Health Diagnostic from advisors.html (salvage audit: REWRITE)."
+    },
+    {
+      "id": "team-january-reset",
+      "title": "The January Reset",
+      "domain": "team",
+      "level": 3,
+      "pillar": "BUILD",
+      "minutes": 60,
+      "audiences": [
+        "chapter officer",
+        "state officer",
+        "advisor"
+      ],
+      "why": "Teams do not improve gradually. They change sharply at the temporal midpoint of their lifespan, when the deadline suddenly becomes real. An officer term runs September to May; the midpoint is January. A reset scheduled there is not generic advice — it is the one moment the research says a team is most willing to change how it works.",
+      "parts": [
+        {
+          "heading": "What the midpoint does",
+          "body": "Around halfway, a team realises how much time is left and how much of the plan has not happened. That realisation is uncomfortable and it is useful — it is the only point in the year when a team will voluntarily abandon its September assumptions.",
+          "items": []
+        },
+        {
+          "heading": "The reset, in one meeting",
+          "body": "",
+          "items": [
+            "Re-score the Five Conditions. Compare to September.",
+            "Re-read the charter. Amend what has not held.",
+            "Each officer writes a midpoint memo: what I said I would do, what has happened, what I am changing for the second half. One page.",
+            "Re-derive the calendar from the second peak — the offsite Round Two dates and SLC.",
+            "One decision the team has been avoiding, decided."
+          ]
+        },
+        {
+          "heading": "For the SEC",
+          "body": "This is the defensible reason for a mid-year retreat. Not a reward, not a bonding exercise — the point in the year when the council is most able to change course.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Put the reset in the calendar now, in the first two weeks of January, before anything else claims the date.",
+        "Send the midpoint memo template two weeks before.",
+        "Run the five parts in order. The avoided decision goes last so it cannot be skipped."
+      ],
+      "worksheet": true,
+      "where": "January, every year, at every level. It is also the second reading of the charter and the second run of the Five Conditions.",
+      "coach": "The reset fails when it is run as a celebration. Open with the September scores and the calendar as it actually stands. Let the gap be visible before anyone talks about what went well.",
+      "grounding": {
+        "model": "Punctuated equilibrium in groups — Gersick",
+        "grade": "R",
+        "citation": "Gersick (1988), Academy of Management Journal — teams shift sharply at the temporal midpoint of their lifespan rather than improving gradually.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §3.1 and Audience Tool Addendum S5."
+    },
+    {
+      "id": "team-hold-a-peer-accountable",
+      "title": "Hold a Peer Accountable",
+      "domain": "team",
+      "level": 3,
+      "pillar": "EMPOWER",
+      "minutes": 10,
+      "audiences": [
+        "chapter officer",
+        "state officer"
+      ],
+      "why": "Raising a missed commitment with a peer is the hardest conversation on an officer team, because nobody outranks anybody. The only thing that makes it possible is agreeing the exact words in advance and writing them into the charter. Decided before it is needed, it is a procedure. Decided in the moment, it is a fight.",
+      "parts": [
+        {
+          "heading": "The script, written in September",
+          "body": "The charter states it. Something like:",
+          "items": [
+            "‘You said you would have X by Y. It is not here. Where does it stand, and what do you need?’",
+            "The three parts: the commitment as it was made, the fact that it was not kept, an open question. No adjectives. No history.",
+            "The reply is also scripted: a status, and a new date or a request for help. Not an explanation of why."
+          ]
+        },
+        {
+          "heading": "Why it works",
+          "body": "Because it was agreed. The person raising it is doing what the team decided, not making a personal accusation. The person receiving it heard the words in September and signed them.",
+          "items": []
+        },
+        {
+          "heading": "The second time",
+          "body": "The charter also says what happens the second time. Usually: the task moves to someone else, stated in the meeting, without discussion. That is not punishment. It is what the team agreed.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Write the exact script into the charter at the first officer meeting. Read it aloud.",
+        "The first time it is needed, use the words as written. Do not improve them.",
+        "Debrief afterwards, privately, with the person — how did the script land."
+      ],
+      "worksheet": false,
+      "where": "Officer teams and the SEC, from the second month onward. It is the last field of Write the Charter.",
+      "coach": "When an officer tells you a teammate is not pulling their weight, ask whether the script has been used. It almost never has. Do not run the conversation for them; ask them to run it as written and report back.",
+      "grounding": {
+        "model": "Psychological safety; team charters",
+        "grade": "R",
+        "citation": "Edmondson (1999) on the conditions under which peers can raise problems; Mathieu & Rapp (2009) on charters as the vehicle for pre-agreed norms.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Audience Tool Addendum S6."
+    },
+    {
+      "id": "team-force-field",
+      "title": "Force Field",
+      "domain": "team",
+      "level": 3,
+      "pillar": "ADVANCE",
+      "minutes": 25,
+      "audiences": [
+        "state officer",
+        "chapter officer",
+        "state staff"
+      ],
+      "why": "Every change a team tries to make has forces pushing it forward and forces holding it back. The instinct is to push harder. The finding is that pushing harder often increases the resistance too. The sustainable path is usually to reduce a restraining force — simplify the form, move the date — rather than to shout louder for compliance.",
+      "parts": [
+        {
+          "heading": "Map both sides",
+          "body": "One page. The change you want across the top. Driving forces on the left, restraining on the right, each rated weak, medium, or strong.",
+          "items": [
+            "Example — every chapter submitting officer applications on time. Driving: SEC visibility, peer chapters submitting early, the benefit of more planning time, advisor buy-in. Restraining: competing school deadlines, a confusing form, advisor turnover, no consequence for lateness historically."
+          ]
+        },
+        {
+          "heading": "Then choose",
+          "body": "",
+          "items": [
+            "Which restraining force is easiest to reduce? Usually process friction — the form, the timing, the instructions.",
+            "Which driving force is most worth strengthening? Usually visibility of early adopters.",
+            "Do one of each. Not everything."
+          ]
+        },
+        {
+          "heading": "Where it fits",
+          "body": "Run it before the January reset on the change the team most needs to make in the second half. Run it before any statewide initiative, as the first page of the launch plan.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Name the change. Fill both columns on the printed sheet.",
+        "Rate each force.",
+        "Pick one restraining force to reduce and one driving force to strengthen. Assign each."
+      ],
+      "worksheet": true,
+      "where": "Before any change the team is about to push for. It pairs with Early Adopters First at Governance · Lead Beyond.",
+      "coach": "Teams fill the driving column enthusiastically and leave the restraining column half empty. Make them fill the right side first. The right side is where the plan is.",
+      "grounding": {
+        "model": "Force field analysis — Lewin",
+        "grade": "P",
+        "citation": "Lewin (1951), Field Theory in Social Science. A classic practitioner tool with theoretical grounding; the specific driving/restraining analysis is not an empirically validated intervention and is labelled accordingly.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "Ported 12 Sep 2026 from state-officers.html — Force Field Analysis section and worksheet. Rehomed here per the salvage audit map-gap decision; regraded P."
+    },
+    {
+      "id": "self-know-your-strengths",
+      "title": "Know Your Strengths",
+      "domain": "self",
+      "level": 1,
+      "pillar": "EMPOWER",
+      "minutes": 25,
+      "audiences": [
+        "member",
+        "chapter officer"
+      ],
+      "why": "Most strengths tools give you a label. One gives you a list of sixty specific things a student leader can do, sorted into eight clusters, with a free inventory built for young people. A list that specific is something you can write a goal against. A label is not.",
+      "parts": [
+        {
+          "heading": "The eight clusters",
+          "body": "Sixty competencies sit inside these. Each one is defined on four dimensions — do you know it, do you value it, can you do it, do you actually do it.",
+          "items": [
+            "Learning and reasoning · Self-awareness and development · Group dynamics · Interpersonal interaction · Civic responsibility · Communication · Strategic planning · Personal behaviour"
+          ]
+        },
+        {
+          "heading": "Take the inventory",
+          "body": "",
+          "items": [
+            "The Student Leadership Competencies Inventory is free, has a shortened youth version, and takes about twenty minutes.",
+            "Results are not stored. Print or screenshot them before closing the page — you will need them in April.",
+            "A separate free 360 evaluation measures the behaviour dimension — what others see you do. That one comes later."
+          ]
+        },
+        {
+          "heading": "What to do with sixty",
+          "body": "Nothing, yet. The point of this card is the vocabulary. The next card picks two.",
+          "items": []
+        },
+        {
+          "heading": "Why this maps to the pillars",
+          "body": "The eight clusters sit cleanly under BUILD, EMPOWER, ADVANCE and CONNECT. That gives every card in this Hub and every module in the Advisor Development Program a common language.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Take the youth inventory. Save the results somewhere you will find in April.",
+        "Read the eight cluster names aloud. Pick the one that surprised you.",
+        "Move to Two Competencies, One Term when you have the results in hand."
+      ],
+      "worksheet": false,
+      "where": "September, for every member. It is the measurement spine’s first instrument — September and April.",
+      "coach": "The other tools members will have met — personality types, learning styles, strengths labels — have been retired from this Hub for weak evidence and because they teach members to explain problems as fixed traits. If a member arrives with one of those, do not argue; hand them this inventory and ask which two competencies they want to work on.",
+      "grounding": {
+        "model": "Student Leadership Competencies — Seemiller",
+        "grade": "R",
+        "citation": "Seemiller, The Student Leadership Competencies Guidebook; Seemiller & Rosch, Journal of Leadership Education, on the Inventory’s validation; youth competency-based model in JOLE 17(1), 2018. Inventory at studentleadershipcompetencies.com.",
+        "caveat": "MBTI, DISC, learning-styles inventories and CliftonStrengths are not used in this Hub. The first three are grade C; the last is paid."
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §1.1. Replaces the EQ Self-Assessment and Competency Self-Assessment Tracker from members.html (salvage audit: REWRITE)."
+    },
+    {
+      "id": "self-event-fit",
+      "title": "Find Your Event",
+      "domain": "self",
+      "level": 1,
+      "pillar": "ADVANCE",
+      "minutes": 20,
+      "audiences": [
+        "member",
+        "chapter officer"
+      ],
+      "why": "The most common reason a member drifts away after SLC is that they were assigned an event rather than fitted to one. A free federal interest inventory plus a short crosswalk routes a member to the competitive event categories that match how they actually like to work — before anyone signs them up for anything.",
+      "parts": [
+        {
+          "heading": "Take the profiler",
+          "body": "The O*NET Interest Profiler, from the U.S. Department of Labor. No account, no cost, results on screen. It scores six interest types.",
+          "items": []
+        },
+        {
+          "heading": "The crosswalk",
+          "body": "Take your top two types and read across.",
+          "items": [
+            "Investigative → Health Science events and the Academic Testing Center. You like finding out.",
+            "Social → Health Professions and the Leadership category. You like people and helping.",
+            "Realistic → Emergency Preparedness and the skills-based events. You like doing with your hands.",
+            "Enterprising → Teamwork events and the advocacy-shaped Leadership events. You like persuading and organising.",
+            "Artistic → Health Career Photography, Public Service Announcement, the presentation-heavy events.",
+            "Conventional → the Academic Testing Center, Medical Terminology, the events with a defined body of knowledge."
+          ]
+        },
+        {
+          "heading": "Then go to the Study Hub",
+          "body": "Once you have a category, the Study Hub has a tool for every event DC HOSA offers. This card gets you to the right shelf. It does not prepare you for the test — that is the Study Hub’s job, and it stays there.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Take the Interest Profiler. Note your top two types.",
+        "Read across the crosswalk. List three events that fit.",
+        "Take those three to your advisor before registration closes in January."
+      ],
+      "worksheet": true,
+      "where": "Before event selection every year. The crosswalk is the same one the Middle School Division uses in its careers-to-events segment — built once, used in both places.",
+      "coach": "Advisors assign events by what the chapter needs entered. Ask instead what the profiler said. A member in the right category competes for three years; a member in the wrong one competes once.",
+      "grounding": {
+        "model": "Holland RIASEC interest typology; O*NET Interest Profiler",
+        "grade": "R",
+        "citation": "Holland’s RIASEC model; O*NET Interest Profiler, U.S. Department of Labor / Employment and Training Administration — free, validated. The event crosswalk is a DC HOSA construction.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Audience Tool Addendum M1 (build-first item)."
+    },
+    {
+      "id": "self-goal-that-survives",
+      "title": "A Goal That Survives Contact",
+      "domain": "self",
+      "level": 1,
+      "pillar": "EMPOWER",
+      "minutes": 15,
+      "audiences": [
+        "member",
+        "chapter officer"
+      ],
+      "why": "Specific, hard goals beat ‘do your best’. That much is settled. But a well-formed goal is not an executed one, and the thing that closes the gap between intending and doing is naming the obstacle in advance and deciding — before it appears — exactly what you will do when it does.",
+      "parts": [
+        {
+          "heading": "Four lines on a card",
+          "body": "",
+          "items": [
+            "Wish — one sentence. What you want to do this term.",
+            "Outcome — what it looks like when it is done. Be concrete enough to picture.",
+            "Obstacle — the internal one. Not ‘no time’; the thing in you that will get in the way. Usually a habit, a fear, or a Tuesday.",
+            "Plan — an if-then. ‘If [the obstacle shows up], then I will [specific action].’"
+          ]
+        },
+        {
+          "heading": "Why the obstacle line is the whole card",
+          "body": "Positive thinking about the outcome on its own reduces the energy to pursue it. Naming the obstacle, right after picturing the outcome, is what produces the plan. The if-then is what makes the plan fire without deciding in the moment.",
+          "items": []
+        },
+        {
+          "heading": "Not SMART",
+          "body": "SMART produces well-formed goals. This produces executed ones. If the chapter has a SMART worksheet, replace it with this.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Fill the four lines for one goal this term. Wallet-size.",
+        "Read the if-then aloud. If it does not name a specific action you could do in under two minutes, rewrite it.",
+        "Check the card at the January reset."
+      ],
+      "worksheet": true,
+      "where": "The start of every term. The Two-Competency plan is two of these. Healthy Living’s goal-setting is one of these with a health topic.",
+      "coach": "When a member’s goal fails, ask to see the obstacle line. It is nearly always missing or external. Rewrite that line with them and the goal usually works the second time.",
+      "grounding": {
+        "model": "Mental contrasting with implementation intentions — WOOP",
+        "grade": "R",
+        "citation": "Oettingen, mental contrasting; Gollwitzer & Sheeran (2006) meta-analysis of implementation intentions, effect around d = .65. Goal specificity per Locke & Latham (R). SMART is the practitioner packaging of the latter (P).",
+        "caveat": null
+      },
+      "ce": "Healthy Living",
+      "provenance": "New card, 12 Sep 2026, from Audience Tool Addendum M2. Replaces the Growth Mindset Goal Sheet from members.html (salvage audit: REWRITE)."
+    },
+    {
+      "id": "self-three-questions",
+      "title": "Reflect in Three Questions",
+      "domain": "self",
+      "level": 1,
+      "pillar": "EMPOWER",
+      "minutes": 10,
+      "audiences": [
+        "member",
+        "chapter officer",
+        "state officer"
+      ],
+      "why": "Reflection only happens if the structure is short enough to actually use. Three questions, three words each, and it works after a competition, after a meeting, after a week. It is the one reflection structure across this whole Hub, so that a member does not learn four competing ones.",
+      "parts": [
+        {
+          "heading": "The three",
+          "body": "",
+          "items": [
+            "What? — what happened. Facts only. What you did, what others did, what the result was.",
+            "So what? — why it matters. What it tells you about yourself, the team, the plan.",
+            "Now what? — what you will do differently, and when."
+          ]
+        },
+        {
+          "heading": "Wins and losses, same three questions",
+          "body": "After a win, the So What is usually ‘what specifically made that work, so I can do it on purpose’. After a loss, the So What is usually ‘what was in my control’. The Now What is the same either way — one change, one date.",
+          "items": []
+        },
+        {
+          "heading": "The healthcare parallel",
+          "body": "Every clinical role debriefs. Surgery does it after every case; emergency medicine after every shift. The habit you build here on a competition result is the one you will use on a patient outcome.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "After the next event, write the three answers in under five minutes.",
+        "Keep them somewhere you can find. Six of these across a year is a portfolio.",
+        "Bring the Now What to your next chapter meeting."
+      ],
+      "worksheet": true,
+      "where": "After any competition, event, or leadership moment. Inside the Debrief at Team. It is what the Wins & Losses journal became.",
+      "coach": "Members overwrite the What with the So What — ‘I was nervous and it went badly’. Send it back once: what happened, in facts, no feelings. The reflection gets sharper immediately.",
+      "grounding": {
+        "model": "What? So What? Now What? — Rolfe, Freshwater & Jasper",
+        "grade": "P",
+        "citation": "Rolfe, Freshwater & Jasper (2001), Critical Reflection for Nursing and the Helping Professions. A practitioner reflection framework; adopted here as the single structure across the Hub because it is free, three words long, and students complete it.",
+        "caveat": "Kolb’s experiential learning cycle is defensible as a reflection sequence and appears in the Debrief card in that role only. The learning-styles inventory it spawned is grade C and is not used."
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §5. Replaces the STARR-format Wins & Losses Reflection Journal from members.html (salvage audit: REWRITE, to a single reflection structure)."
+    },
+    {
+      "id": "self-two-competencies",
+      "title": "Two Competencies, One Term",
+      "domain": "self",
+      "level": 2,
+      "pillar": "EMPOWER",
+      "minutes": 30,
+      "audiences": [
+        "chapter officer",
+        "state officer"
+      ],
+      "why": "A list of sixty competencies defeats itself the moment someone picks ten. Two, from different clusters, with one observable behaviour each and a named chapter activity to practise in — that is a plan an officer can actually run and a 360 can actually measure in April.",
+      "parts": [
+        {
+          "heading": "September",
+          "body": "",
+          "items": [
+            "Take the Student Leadership Competencies Inventory if you have not. Save the result.",
+            "Choose exactly two competencies, from two different clusters. Not the two you are best at.",
+            "For each, write one behaviour someone else could observe. Not ‘be a better communicator’ — ‘open every committee report with the recommendation’.",
+            "Name the chapter activity where you will practise it. The meeting, the event, the role."
+          ]
+        },
+        {
+          "heading": "Through the year",
+          "body": "Each competency becomes a WOOP card — the obstacle line is what keeps it alive past October.",
+          "items": []
+        },
+        {
+          "heading": "April",
+          "body": "The free 360 evaluation. Two or three people who watched you all year score the behaviour dimension. Compare to September. That is the year’s development, in a number.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Pick two. Write them on the printed plan with the cluster, the behaviour, and the activity.",
+        "Turn each into a WOOP card.",
+        "Book the April 360 now, and name the people who will do it."
+      ],
+      "worksheet": true,
+      "where": "Every officer, September to April. The Portfolio Charter for state officers is this plus the office’s outcome.",
+      "coach": "When an officer picks two competencies they are already strong in, send them back. The second choice is usually the honest one. And insist on the behaviour line — a competency without an observable behaviour cannot be scored in April, which means the year cannot be measured.",
+      "grounding": {
+        "model": "Student Leadership Competencies — Seemiller; goal specificity",
+        "grade": "R",
+        "citation": "Seemiller’s competency model and the free 360 Evaluation for the behaviour dimension. Two-competency selection follows the goal-specificity finding (Locke & Latham).",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §1.1 (the tool to build). Replaces the Officer Self-Assessment from officers.html (salvage audit: REWRITE)."
+    },
+    {
+      "id": "self-online-presence",
+      "title": "Show Up Professionally Online",
+      "domain": "self",
+      "level": 2,
+      "pillar": "ADVANCE",
+      "minutes": 30,
+      "audiences": [
+        "chapter officer",
+        "state officer",
+        "member"
+      ],
+      "why": "By the time a member is an officer they have a public record whether they built it or not. DC HOSA already has a full guide to building one deliberately — a LinkedIn Professional Development Guide with a persona filter for members, officers, and advisors. This card points at it and does not rebuild it.",
+      "parts": [
+        {
+          "heading": "What the Guide covers",
+          "body": "",
+          "items": [
+            "A profile that says what you actually do in HOSA, in terms a hospital recruiter recognises.",
+            "How to write up a competitive event, a service project, or an officer role as experience.",
+            "Who to connect with and how to ask — the informational interview is the natural first move.",
+            "What not to post, and why the standard for a future healthcare professional starts now."
+          ]
+        },
+        {
+          "heading": "Where it lives",
+          "body": "The Guide is a DC HOSA resource distributed through affiliate communications and the State Executive Council. Ask your advisor or the VP Public Relations for the current link.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Open the Guide with your audience filter set.",
+        "Do the profile section this week. One hour.",
+        "Write up your most recent HOSA role in the format the Guide gives."
+      ],
+      "worksheet": false,
+      "where": "Any time from Lead a Team onward. Before the first informational interview. Before applying for anything.",
+      "coach": "Do not let this become a lecture about social media. The Guide already exists; the officer’s job is to do the profile section. Ask to see it a week later.",
+      "grounding": {
+        "model": "DC HOSA LinkedIn Professional Development Guide",
+        "grade": "P",
+        "citation": "DC HOSA LinkedIn Professional Development Guide, 2026 — the persona-filter pattern from that Guide is also the pattern this Hub uses for audience filtering.",
+        "caveat": "The Guide’s canonical link is not yet recorded in hub.json. Add it to this card’s data when the hosting location is confirmed; until then the card directs members to the advisor or VP Public Relations."
+      },
+      "ce": "Interviewing Skills · Job Seeking Skills",
+      "provenance": "New card, 12 Sep 2026, from Rebuild Specification §3 Self L2 — link, do not rebuild."
+    },
+    {
+      "id": "self-breadth",
+      "title": "Breadth Over Depth-of-One",
+      "domain": "self",
+      "level": 2,
+      "pillar": "ADVANCE",
+      "minutes": 10,
+      "audiences": [
+        "member",
+        "chapter officer",
+        "advisor"
+      ],
+      "why": "The only large study of what CTSO participation does found that the number of different kinds of things a member did — competition, leadership, service, professional development — was what tracked with better outcomes. A member doing one thing brilliantly is the risk profile, not the member doing several things loosely.",
+      "parts": [
+        {
+          "heading": "Four quadrants, three by May",
+          "body": "",
+          "items": [
+            "Competition — entered an event, any event.",
+            "Leadership — held a role, ran a committee, chaired one meeting.",
+            "Community service — one project, with a real community partner.",
+            "Professional development — one informational interview, one shadowing visit, one career session."
+          ]
+        },
+        {
+          "heading": "What the study found, honestly",
+          "body": "",
+          "items": [
+            "More types of participation went with greater academic motivation and engagement, better grades, higher career self-efficacy, and stronger college aspirations.",
+            "Of the four elements, competition showed the most positive effects.",
+            "And: the CTSO students in the study started the year ahead of the comparison group and gained less across it. This Hub does not cite the study as proof that HOSA causes achievement. It supports a breadth recommendation and nothing more."
+          ]
+        },
+        {
+          "heading": "Why it matters for the chapter",
+          "body": "A chapter that only competes loses the members who did not place. A chapter with all four quadrants gives every member a place to be good at something.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Mark which quadrants you have touched this year on the printed tracker.",
+        "Pick the emptiest one. Do one thing in it before the next meeting.",
+        "Officers: count how many members have at least three by March."
+      ],
+      "worksheet": true,
+      "where": "Every member, checked at the January reset. It is also the shape of the Internal Advocacy Pack an advisor takes to an administrator.",
+      "coach": "This is the evidence advisors reach for when a chapter is threatened by a schedule change or a budget cut, and it survives scrutiny precisely because it is not inflated. Use the honest version. Administrators have seen the other kind.",
+      "grounding": {
+        "model": "CTSO participation breadth — Alfeld et al.",
+        "grade": "R",
+        "citation": "Alfeld et al. (2007), Looking Inside the Black Box: The Value Added by Career and Technical Student Organizations to Students’ High School Experience, National Research Center for Career and Technical Education.",
+        "caveat": "Supports a breadth recommendation. Does not support a causal claim about achievement — the CTSO group started higher and gained less. Do not cite it as proof HOSA works."
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Audience Tool Addendum M3."
+    },
+    {
+      "id": "self-informational-interview",
+      "title": "The Fifteen-Minute Interview",
+      "domain": "self",
+      "level": 2,
+      "pillar": "ADVANCE",
+      "minutes": 30,
+      "audiences": [
+        "member",
+        "chapter officer"
+      ],
+      "why": "A member with no clinical access has one move that costs nothing and works every time: fifteen minutes with someone who does the job, asking six questions. It produces a contact, a story for the next application, and a piece of the professional-development quadrant — and it is the first time most members find out that people say yes.",
+      "parts": [
+        {
+          "heading": "The ask",
+          "body": "Two sentences by email or through the Guide. Who you are, what you are curious about, fifteen minutes at their convenience. Nothing about a job.",
+          "items": []
+        },
+        {
+          "heading": "Six questions",
+          "body": "",
+          "items": [
+            "What does an ordinary day actually look like?",
+            "What did you not expect about this work?",
+            "What would you tell a student who is choosing between this and something adjacent?",
+            "What is the training path, really, and where do people get stuck?",
+            "Who else should I talk to?",
+            "Is there anything I could read or watch that would help me understand this better?"
+          ]
+        },
+        {
+          "heading": "Within 24 hours",
+          "body": "A thank-you, three sentences, naming one thing they said that changed how you see the field. That note is what makes the second conversation possible.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Find one person. A parent in the chapter, a partner from the ward map, someone from the advisor’s network.",
+        "Send the two-sentence ask.",
+        "Do the fifteen minutes. Send the thank-you the same day."
+      ],
+      "worksheet": true,
+      "where": "The professional-development quadrant of Breadth. Before any application. The parent network — the densest professional network most chapters have and never survey — is the first place to look.",
+      "coach": "Members freeze on the ask, not the interview. Have them send the email during a chapter meeting, with an officer beside them. Then it is done.",
+      "grounding": {
+        "model": "Career self-efficacy — Bandura-derived, measured in Alfeld et al.",
+        "grade": "R",
+        "citation": "Career self-efficacy as an outcome measure in Alfeld et al. (2007); Bandura’s self-efficacy construct. The six-question protocol is a DC HOSA construction.",
+        "caveat": null
+      },
+      "ce": "Interviewing Skills",
+      "provenance": "New card, 12 Sep 2026, from Audience Tool Addendum M5 and the parent-network finding in DC-FACTS.md §11."
+    },
+    {
+      "id": "self-demands-and-resources",
+      "title": "Demands and Resources",
+      "domain": "self",
+      "level": 3,
+      "pillar": "EMPOWER",
+      "minutes": 20,
+      "audiences": [
+        "advisor",
+        "state officer",
+        "state staff",
+        "chapter officer"
+      ],
+      "why": "Burnout is what happens when what a role demands exceeds what it gives you to meet those demands. Engagement comes from the resources side on its own. That is a diagnosis with a lever attached: the question is not ‘are you burning out’ but ‘which single resource, if added, would change the ratio most’ — and the answer is an ask you can make.",
+      "parts": [
+        {
+          "heading": "Two columns",
+          "body": "Private. Not for submission.",
+          "items": [
+            "Demands of this role, this year. Hours, deadlines, the emotional load, the things nobody else will do if you do not.",
+            "Resources available. Time, money, people, authority, recognition, a co-advisor, a student who can run a meeting, a released period."
+          ]
+        },
+        {
+          "heading": "Then one question",
+          "body": "Which single resource, if added, would change the ratio most? Not three. One. The answer becomes the ask — to a department chair, to the SEC, to the State Advisor — and the Internal Advocacy Pack is how you make it.",
+          "items": []
+        },
+        {
+          "heading": "The six warning dimensions",
+          "body": "If you want to name where the strain is, there are six: workload, control, reward, community, fairness, values. Naming the dimension is the first step. It is not the fix — the fix is the resource.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Fill both columns honestly. Ten minutes.",
+        "Circle the one resource.",
+        "Write the ask in one sentence and decide who receives it."
+      ],
+      "worksheet": true,
+      "where": "Advisors in November, when the year’s shape is clear. State officers at the January reset. Anyone who has said ‘I can’t keep doing this’ out loud.",
+      "coach": "Advisors will fill the demands column and leave the resources column half empty because they have stopped believing there are any. Sit with them and fill it. The released period, the co-advisor, the stipend — those exist in other schools and can be asked for in this one.",
+      "grounding": {
+        "model": "Job Demands–Resources model — Bakker & Demerouti; Maslach burnout dimensions",
+        "grade": "R",
+        "citation": "Bakker & Demerouti (2007), Journal of Managerial Psychology — the JD-R model. The six dimensions (workload, control, reward, community, fairness, values) after Maslach & Leiter (2001), Annual Review of Psychology.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "Ported and extended 12 Sep 2026 from the Advisor Sustainability Check in advisors.html (Maslach) with the JD-R extension from Audience Tool Addendum A2."
+    },
+    {
+      "id": "self-hand-it-on",
+      "title": "Hand It On",
+      "domain": "self",
+      "level": 3,
+      "pillar": "BUILD",
+      "minutes": 60,
+      "audiences": [
+        "chapter officer",
+        "state officer",
+        "advisor",
+        "state staff"
+      ],
+      "why": "A chapter that loses its institutional memory every May restarts every September. One document, completed by each outgoing officer in an hour, is the difference between a chapter that improves and one that oscillates. The same format works for state officers and for state staff, because the problem is identical at every level.",
+      "parts": [
+        {
+          "heading": "The packet, one page per role",
+          "body": "",
+          "items": [
+            "Passwords and where they live. Which accounts, who holds the recovery email.",
+            "Vendor, partner and contact list — the ward map, the school contacts, the people who said yes.",
+            "What we tried that worked, and why.",
+            "What we tried that failed, and why. This section is the valuable one.",
+            "The three things I would do differently.",
+            "The calendar, with the real dates attached, and which ones were derived from what."
+          ]
+        },
+        {
+          "heading": "Shadow before you leave",
+          "body": "Wherever possible the incoming officer sits beside the outgoing one for the last month — in meetings, watching decisions, asking in real time. Reconstructing context after the fact is what the packet is for; it is never as good as having been there.",
+          "items": []
+        },
+        {
+          "heading": "State staff: the continuity file",
+          "body": "The same format applied to the roles that persist — vendor relationships, OSSE contacts, form IDs, repositories, credentials, what is on autopilot and what is not. It is the affiliate’s largest continuity risk, and the one nobody writes down because the people holding it have not left yet.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Fill the packet for your role in May, before the last meeting, not after.",
+        "Walk the incoming officer through it in person. One hour.",
+        "File it where the next-but-one officer will find it."
+      ],
+      "worksheet": true,
+      "where": "May, every role, every level. The midpoint memo at the January reset is the first draft.",
+      "coach": "The packet gets skipped because May is busy and the outgoing officer has already left in their head. Make it the last required act of the role — the certificate is handed over when the packet is. That is not harsh; it is the only thing that makes the packet exist.",
+      "grounding": {
+        "model": "Succession and knowledge transfer",
+        "grade": "P",
+        "citation": "Organisational memory and volunteer succession literature; the specific packet format is a practitioner convention. Shadowing as knowledge transfer is well-documented in the nonprofit succession literature.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, collapsing the End-of-Year Advisor Reflection (advisors.html), the Annual Institutional Knowledge Handoff (state-staff.html), and Audience Tool Addendum O3 and T5 into one continuity format with audience overlays."
+    },
+    {
+      "id": "voice-speaking-ladder",
+      "title": "The Speaking Ladder",
+      "domain": "voice",
+      "level": 1,
+      "pillar": "EMPOWER",
+      "minutes": 5,
+      "audiences": [
+        "member",
+        "chapter officer"
+      ],
+      "why": "Nobody gets better at speaking by speaking more. They get better by speaking against one specific criterion, with immediate feedback, and then doing it again. Four rungs, one per chapter meeting, each scored on exactly one thing. One criterion is what makes it practice rather than repetition.",
+      "parts": [
+        {
+          "heading": "Four rungs",
+          "body": "Self-recorded on a phone. Scored against the one criterion only.",
+          "items": [
+            "Rung 1 — a chapter announcement. Thirty seconds. Criterion: no filler words in the first sentence.",
+            "Rung 2 — a committee report. Two minutes. Criterion: opens with the recommendation, not the history.",
+            "Rung 3 — a topic presentation. Five minutes. Criterion: one idea per slide, eye contact across three zones of the room.",
+            "Rung 4 — a judged mock in the event format. Criterion: scored on the relevant competitive event rating sheet."
+          ]
+        },
+        {
+          "heading": "Why one criterion",
+          "body": "Deliberate practice is targeted repetition against a specific standard with feedback, not general effort. A member told ‘be more confident’ has nothing to practise. A member told ‘no filler in the first sentence’ can hear on the recording whether they did it.",
+          "items": []
+        },
+        {
+          "heading": "Where the rungs live",
+          "body": "Rungs 1 and 2 are real business at real chapter meetings — the Five Moves and the committee report are already on the agenda. Rung 3 is a Health Literacy Ambassador Level 1 presentation. Rung 4 is the mock before SLC.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Do rung 1 at the next meeting. Record it. Listen for the first sentence only.",
+        "Do not move to rung 2 until rung 1 is clean twice.",
+        "Officers: put a rung on every meeting agenda, rotating who climbs."
+      ],
+      "worksheet": true,
+      "where": "Every chapter meeting. You will already be ready for Prepared Speaking and Speaking Skills, and for the presentation round of any event that has one.",
+      "coach": "Resist giving more than one note. If the member’s first sentence was clean, say so and stop, even if the rest was rough. Next rung, next criterion. The whole method depends on the note count being one.",
+      "grounding": {
+        "model": "Deliberate practice — Ericsson",
+        "grade": "R",
+        "citation": "Ericsson, Krampe & Tesch-Römer (1993), Psychological Review — deliberate practice as targeted repetition against a specific criterion with immediate feedback.",
+        "caveat": null
+      },
+      "ce": "Prepared Speaking · Speaking Skills",
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §4.1 (the tool to build). Absorbs the ‘thirty-second announcement’ and ‘committee report’ topics from the spec’s Voice map as rungs 1 and 2."
+    },
+    {
+      "id": "voice-nerves-are-fuel",
+      "title": "Nerves Are Fuel",
+      "domain": "voice",
+      "level": 1,
+      "pillar": "EMPOWER",
+      "minutes": 5,
+      "audiences": [
+        "member",
+        "chapter officer",
+        "state officer"
+      ],
+      "why": "Telling yourself to calm down before you speak does not work, because calm and nervous are far apart and the body does not travel that distance in sixty seconds. Nervous and excited are almost the same state. Saying ‘I am excited’ out loud, once, outperformed trying to calm down — across speaking, singing, and maths tasks.",
+      "parts": [
+        {
+          "heading": "The one sentence",
+          "body": "Out loud, before you walk in: ‘I am excited.’ Not ‘I am calm.’ Not ‘I am fine.’ The point is not to believe it. The point is that it reframes the racing heart as readiness rather than threat, and that changes what you do next.",
+          "items": []
+        },
+        {
+          "heading": "What it replaces",
+          "body": "",
+          "items": [
+            "Deep breathing to reach calm — works slowly, and you do not have slowly.",
+            "‘Picture the audience in their underwear’ and the rest of the folklore.",
+            "The old build’s speaker model, which listed preparation, past success, self-esteem and support as the sources of confidence. All true, none of them available in the sixty seconds before a competitive event room. This is."
+          ]
+        },
+        {
+          "heading": "Then the exposure",
+          "body": "Reappraisal is for the moment. Graduated exposure is for the year — the Speaking Ladder is the exposure schedule.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Say it before the next thing you present. Out loud. Once.",
+        "Notice what your body does with the same heart rate under the new label.",
+        "Keep climbing the ladder — the reappraisal works better each time it is paired with a rung."
+      ],
+      "worksheet": false,
+      "where": "The corridor outside any competitive event room. Before any presentation. Before testifying.",
+      "coach": "Do not teach relaxation techniques for the sixty-second window. Teach this sentence, and reserve breathing and preparation for the weeks before. The member who says ‘I am excited’ walks in differently, and you can see it.",
+      "grounding": {
+        "model": "Anxiety reappraisal — Brooks",
+        "grade": "R",
+        "citation": "Brooks (2014), Journal of Experimental Psychology: General — reappraising pre-performance anxiety as excitement outperformed attempts to calm down. Graduated exposure for public-speaking anxiety has meta-analytic support.",
+        "caveat": null
+      },
+      "ce": "Prepared Speaking · Speaking Skills · Interviewing Skills",
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §4.1. Replaces the BMW Speaker Model modal from members.html (salvage audit: REWRITE)."
+    },
+    {
+      "id": "voice-one-idea-per-slide",
+      "title": "One Idea Per Slide",
+      "domain": "voice",
+      "level": 1,
+      "pillar": "EMPOWER",
+      "minutes": 10,
+      "audiences": [
+        "member",
+        "chapter officer"
+      ],
+      "why": "‘Your slides have too much text’ sounds like taste. It is not — it is a claim about how much a listener can process at once, and there is a mechanism behind it. Five principles, one line each, applied by the presenter before anyone else sees the deck.",
+      "parts": [
+        {
+          "heading": "The five-line check",
+          "body": "",
+          "items": [
+            "Coherence — cut anything that does not serve the point. The decorative image, the third bullet, the logo on every slide.",
+            "Signalling — cue what matters. Bold the one number. Put the recommendation at the top.",
+            "Redundancy — do not read on-screen text aloud. If it is on the slide, say something else.",
+            "Modality — narrate the graphic; do not caption it. Words in the air plus a picture on the screen beats words on the screen plus the same words in the air.",
+            "Segmenting — one idea per slide, and let the listener control the pace where you can."
+          ]
+        },
+        {
+          "heading": "Why this version lands with students",
+          "body": "Because it is a cognitive-load claim, not a design opinion. The listener has one channel for words and one for pictures; overload either and nothing gets through. That is a mechanism a health science student accepts.",
+          "items": []
+        },
+        {
+          "heading": "The competitive-event variant",
+          "body": "Each principle maps to a criterion on the presentation rating sheets — organisation, visual aids, delivery. Practice for the chapter and preparation for the event are the same activity.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Run the five lines on your last deck. Score each one yes or no.",
+        "Fix the worst one. Usually redundancy.",
+        "Rung 3 of the Speaking Ladder is scored on this."
+      ],
+      "worksheet": true,
+      "where": "Every presentation. Health Education, Public Service Announcement, Community Awareness, the Ambassador Level 1 presentation — all of them.",
+      "coach": "When a member defends a crowded slide, ask which of the five principles it passes. The argument ends there, because it is no longer about preference.",
+      "grounding": {
+        "model": "Cognitive Theory of Multimedia Learning — Mayer",
+        "grade": "R",
+        "citation": "Mayer, Multimedia Learning (2nd ed., 2009) — coherence, signalling, redundancy, modality and segmenting principles; one of the most replicated bodies of instructional-design research.",
+        "caveat": null
+      },
+      "ce": "Health Education · Public Service Announcement · Community Awareness",
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §4.2."
+    },
+    {
+      "id": "voice-committee-report",
+      "title": "The Committee Report",
+      "domain": "voice",
+      "level": 2,
+      "pillar": "BUILD",
+      "minutes": 10,
+      "audiences": [
+        "chapter officer",
+        "state officer"
+      ],
+      "why": "Most committee reports tell the meeting what the committee did. The meeting does not need to know that. It needs to know what the committee recommends, so it can decide. Open with the recommendation; the history is available if anyone asks.",
+      "parts": [
+        {
+          "heading": "The structure",
+          "body": "Two minutes, in this order.",
+          "items": [
+            "The recommendation. ‘The fundraising committee recommends a bake sale on 14 February, run by the sophomores, target three hundred dollars.’",
+            "The one reason. ‘The fun run needs a permit we cannot get in time.’",
+            "The decision needed. ‘We need a vote to adopt, and a volunteer to book the cafeteria.’",
+            "Then stop. Questions will surface anything else."
+          ]
+        },
+        {
+          "heading": "Report versus recommendation",
+          "body": "A report informs — here is what happened. A recommendation asks the body to act. The chair needs to know which one is coming, because only the second one gets a motion. Say which it is in the first five words.",
+          "items": []
+        },
+        {
+          "heading": "If you must tell a story",
+          "body": "One shape, when the meeting needs to understand a situation before it can decide: the situation as it was, the complication that changed it, the question that raises, and your answer. Four sentences. It is the only narrative structure this Hub teaches, because one is enough.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Rewrite your next report with the recommendation as the first sentence.",
+        "Cut everything that happened before the recommendation was reached.",
+        "Rung 2 of the Speaking Ladder. Record it; check the first sentence."
+      ],
+      "worksheet": false,
+      "where": "February of One Motion a Month, where committee reports are the month’s procedure. Every SEC meeting.",
+      "coach": "When a report runs long, the fix is never ‘be briefer’. It is ‘what are you asking us to decide’. Ask that, and the two minutes appear.",
+      "grounding": {
+        "model": "Recommendation-first reporting; SCQA structure",
+        "grade": "P",
+        "citation": "RONR 12th ed. §51 on committee reports and recommendations (R). The situation–complication–question–answer structure is a practitioner framework (Minto), retained as the single narrative structure and labelled accordingly.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Rebuild Specification §3 Voice L2. Absorbs the ‘Storytell Like a Leader — 5 Frameworks’ modal from members.html, reduced to one (salvage audit: REWRITE, reduced)."
+    },
+    {
+      "id": "voice-write-so-people-act",
+      "title": "Write So People Act",
+      "domain": "voice",
+      "level": 2,
+      "pillar": "BUILD",
+      "minutes": 15,
+      "audiences": [
+        "chapter officer",
+        "state officer",
+        "state staff"
+      ],
+      "why": "A chapter email that nobody acts on was not read badly; it was written so that no action was findable. Plain language is a federal standard with a short rulebook, and applying it to a chapter announcement takes five minutes and roughly halves the length.",
+      "parts": [
+        {
+          "heading": "The rules that do the most work",
+          "body": "",
+          "items": [
+            "The action first. What do you want them to do, by when. First line, not last.",
+            "One topic per message. Two topics is two messages.",
+            "Short sentences, common words, active voice. ‘Bring your form on Tuesday’, not ‘forms should be submitted by attendees prior to the Tuesday session’.",
+            "Headings and lists for anything longer than a paragraph. Nobody reads a wall.",
+            "The reader’s question, answered — ‘what does this mean for me’ — before your reason for writing."
+          ]
+        },
+        {
+          "heading": "For health material, score it",
+          "body": "Anything that is patient education — a flyer, a handout, a poster — gets the PEMAT score from Community as well. Plain language is the writing; PEMAT is the check.",
+          "items": []
+        },
+        {
+          "heading": "For the affiliate",
+          "body": "State staff and the SEC can adopt the federal plain-language guidance as a house standard in one meeting. A Chartered Association that asks chapters to communicate clearly should be able to show it does.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Take the last chapter message you sent. Put the action in the first line.",
+        "Cut it by half.",
+        "Send the shorter one next time and count the replies."
+      ],
+      "worksheet": true,
+      "where": "Every chapter and affiliate communication. The newsletter column. Anything with a deadline in it.",
+      "coach": "Read the SEC’s last three advisor emails with the five rules in hand. Score them. If the affiliate’s own writing fails, that is the first fix, before any chapter is asked to change.",
+      "grounding": {
+        "model": "Plain language — federal guidelines",
+        "grade": "R",
+        "citation": "Federal Plain Language Guidelines, plainlanguage.gov (Plain Writing Act of 2010). PEMAT for patient education material per the Community domain.",
+        "caveat": "Re-verify the plainlanguage.gov link before adopting formally."
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Rebuild Specification §3 Voice L2 and Health Literacy Module HL-S3."
+    },
+    {
+      "id": "voice-make-an-ask",
+      "title": "Make an Ask",
+      "domain": "voice",
+      "level": 3,
+      "pillar": "CONNECT",
+      "minutes": 30,
+      "audiences": [
+        "state officer",
+        "chapter officer"
+      ],
+      "why": "Youth advocacy fails in a specific way: plenty of voice, no audience. Members write, post, present — and nobody with the power to act was in the room. A four-box checklist tells you whether a campaign is real before you run it, and a 16-year-old can audit their own in ten minutes.",
+      "parts": [
+        {
+          "heading": "Four boxes — all four, or it is not participation",
+          "body": "",
+          "items": [
+            "Space — is there a safe, inclusive place for the members to form and express a view?",
+            "Voice — are they supported to say it? Information, time, the words.",
+            "Audience — is someone with the power to act actually listening? Named. In the room, or receiving the document.",
+            "Influence — will the view be acted on, and will the members be told what happened and why?"
+          ]
+        },
+        {
+          "heading": "The box DC students miss",
+          "body": "Audience. A campaign with Space and Voice and no Audience is an assembly. DC has something most affiliates lack: a city council whose committees accept public testimony, including from young people. That is an Audience with a calendar.",
+          "items": []
+        },
+        {
+          "heading": "Then the One-Page Ask",
+          "body": "See Testify. The ask is what you put in front of the Audience once you have found one.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Audit your current campaign against the four boxes. Write yes or no on each.",
+        "If Audience is no, stop. Find one — the ward map has candidates; the Council calendar has hearings.",
+        "If Influence is no, decide how members will hear back. That is part of the design, not an afterthought."
+      ],
+      "worksheet": true,
+      "where": "Any advocacy the chapter or SEC runs. Researched Persuasive Writing & Speaking and Extemporaneous Writing – Health Policy are this, in competition form.",
+      "coach": "When an officer proposes an awareness campaign, ask who the Audience is by name. If the answer is ‘the community’ or ‘students’, there is no Audience yet, and the campaign is not ready.",
+      "grounding": {
+        "model": "Lundy Model of Participation — Space, Voice, Audience, Influence",
+        "grade": "R",
+        "citation": "Lundy (2007), British Educational Research Journal — a rights-based model with published implementation evidence; used as the design spine of youth advocacy programmes including Amplify and Advocate (Journal of Community Psychology, 2025).",
+        "caveat": null
+      },
+      "ce": "Researched Persuasive Writing & Speaking · Extemporaneous Writing – Health Policy",
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §1.3."
+    },
+    {
+      "id": "voice-testify",
+      "title": "Testify",
+      "domain": "voice",
+      "level": 3,
+      "pillar": "CONNECT",
+      "minutes": 45,
+      "audiences": [
+        "state officer",
+        "chapter officer"
+      ],
+      "why": "The DC Council holds public hearings, and its committees accept testimony from members of the public — young people included. Public witnesses get a few minutes each. That is a real Audience with real power, on a published calendar, and almost no chapter has ever used it. The One-Page Ask is what you bring.",
+      "parts": [
+        {
+          "heading": "The One-Page Ask",
+          "body": "Six parts, in order, one page.",
+          "items": [
+            "The problem, in two sentences.",
+            "The DC-specific data point — a ward disparity from named DC Health data, a pathway gap, a funding line. Cited and dated.",
+            "The single ask, stated as a verb a named person can perform. Not ‘support health education’. ‘Fund the health science pathway at two more high schools in the FY28 budget.’",
+            "Who that person is — the committee, the councilmember, the agency.",
+            "The date by which it must happen, and why that date.",
+            "What happens next if the answer is no."
+          ]
+        },
+        {
+          "heading": "At the hearing",
+          "body": "",
+          "items": [
+            "Check the hearing notice for the witness time limit and the sign-up method. Follow both exactly.",
+            "Read the One-Page Ask aloud. It fits. Submit the written version for the record.",
+            "Say who you represent, and what you are and are not authorised to commit. See Speak for the Affiliate.",
+            "Say ‘I am excited’ in the corridor first."
+          ]
+        },
+        {
+          "heading": "Afterwards",
+          "body": "Report back to the chapter and the SEC — what was said, what the committee asked, what happens next. That closes the Influence box.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Draft the six parts. Have someone score the ask line: could a named person do this on Monday?",
+        "Find the next relevant hearing on the Council calendar. Sign up as a public witness.",
+        "Rehearse it as Rung 4 of the Speaking Ladder — timed, scored on the one criterion: the ask is in the first thirty seconds."
+      ],
+      "worksheet": true,
+      "where": "Council hearings on health, education, or the budget. The same document, shortened, is the Internal Advocacy Pack an advisor takes to a principal.",
+      "coach": "The first testimony is the hard one. Go with them. Sit behind them in the hearing room, say nothing, and debrief within 24 hours using the three questions. The second one they do alone.",
+      "grounding": {
+        "model": "Structured policy ask; DC Council public hearing process",
+        "grade": "P",
+        "citation": "The One-Page Ask is a DC HOSA construction built on the Lundy Model (R). DC Council hearing procedures — witness sign-up, time limits, written testimony — are as published in each committee’s hearing notice; confirm per hearing.",
+        "caveat": "Hearing procedures and time limits vary by committee and are set in each notice. Never rely on a remembered limit."
+      },
+      "ce": "Researched Persuasive Writing & Speaking · Extemporaneous Writing – Health Policy",
+      "provenance": "New card, 12 Sep 2026, from Content Research Map §1.3 (the tool to build) and Rebuild Specification §3 Voice L3."
+    },
+    {
+      "id": "voice-speak-for-the-affiliate",
+      "title": "Speak for the Affiliate",
+      "domain": "voice",
+      "level": 3,
+      "pillar": "CONNECT",
+      "minutes": 15,
+      "audiences": [
+        "state officer",
+        "state staff"
+      ],
+      "why": "The moment a state officer is introduced to a hospital partner or a Council staffer, they need to know where their authority ends. Right now they learn it by getting it wrong. This card is written as permissions rather than prohibitions, so it enables rather than chills.",
+      "parts": [
+        {
+          "heading": "You may, on your own authority",
+          "body": "",
+          "items": [
+            "Describe DC HOSA, its mission, its pillars, and its programmes accurately.",
+            "Share published figures — dated, from the membership report — and say when you do not know one.",
+            "Accept a speaking invitation for yourself, and say you will confirm the affiliate’s participation.",
+            "Take a partner’s interest back to the SEC and the State Advisor, with a date by which they will hear.",
+            "Give your own view, labelled as your own."
+          ]
+        },
+        {
+          "heading": "You may not, without the State Advisor",
+          "body": "",
+          "items": [
+            "Agree a partnership, sponsorship, or any arrangement with money or the DC HOSA name in it.",
+            "Quote a figure you have not seen published — membership, chapters, budget.",
+            "Respond to media on behalf of the affiliate.",
+            "Sign anything.",
+            "Commit a chapter to anything. Chapters commit themselves."
+          ]
+        },
+        {
+          "heading": "The sentence that handles every edge case",
+          "body": "‘That is a great question and it is not mine to answer — I will take it to the State Advisor and you will hear back by [date].’ Said with confidence, it reads as competence, not as weakness.",
+          "items": []
+        }
+      ],
+      "steps": [
+        "Read both lists at SEC orientation. Every officer.",
+        "Write the edge-case sentence on the back of your name badge, literally.",
+        "The first time you use it, tell the State Advisor the same day."
+      ],
+      "worksheet": true,
+      "where": "Every partner meeting, hearing, media contact, and conference. It is the second half of the Voting Delegate card — a delegate votes as a representative, not an individual, and needs the same boundary.",
+      "coach": "This gap is real and the affiliate has been closing it case by case. Write the two lists into SEC orientation and the Portfolio Charter so nobody learns them the hard way. And when an officer uses the edge-case sentence correctly, tell them — that is the behaviour you want repeated.",
+      "grounding": {
+        "model": "Representation and delegated authority — governance convention",
+        "grade": "P",
+        "citation": "DC HOSA governance construction, consistent with the Bylaws’ allocation of authority to the State Advisor. Practitioner convention; not a research finding.",
+        "caveat": null
+      },
+      "ce": null,
+      "provenance": "New card, 12 Sep 2026, from Audience Tool Addendum S4."
+    }
+  ]
+}

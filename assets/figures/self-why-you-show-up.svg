@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 262" role="img" aria-label="Three overlapping needs — autonomy, competence, relatedness — with sustained motivation where all three meet">
+<g class="fig-g">
+<circle cx="270" cy="96" r="66" class="ring"/><circle cx="370" cy="96" r="66" class="ring"/><circle cx="320" cy="160" r="66" class="ring"/>
+<text x="190" y="52" text-anchor="end" class="lb">Autonomy</text><text x="190" y="67" text-anchor="end" class="sm">having some say</text>
+<line x1="196" y1="60" x2="222" y2="72" class="ln"/>
+<text x="450" y="52" class="lb">Competence</text><text x="450" y="67" class="sm">getting visibly better</text>
+<line x1="444" y1="60" x2="418" y2="72" class="ln"/>
+<text x="320" y="243" text-anchor="middle" class="lb">Relatedness</text><text x="320" y="258" text-anchor="middle" class="sm">belonging to the people</text>
+<circle cx="320" cy="118" r="19" class="ac-fill"/><text x="320" y="122" text-anchor="middle" class="sm inv">stays</text>
+<text x="540" y="150" text-anchor="middle" class="sm">take any one away</text><text x="540" y="166" text-anchor="middle" class="sm">and attendance drops</text>
+</g></svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 214" role="img" aria-label="Four levels of HOSA governance from HOSA Inc. down to the Local Chapter, with what each decides">
+<g class="fig-g">
+<text x="20" y="16" class="hd">Level</text><text x="392" y="16" class="hd">Decides</text>
+<g transform="translate(0,26)"><rect x="20" y="0" width="350" height="38" rx="8" class="bx"/><text x="195" y="16" text-anchor="middle" class="lb">HOSA Inc.</text><text x="195" y="30" text-anchor="middle" class="sm">Board of Directors · Headquarters staff</text><text x="392" y="23" class="sm">event guidelines · Bylaws · ILC</text></g>
+<g transform="translate(0,72)"><rect x="20" y="0" width="350" height="38" rx="8" class="bx"/><text x="195" y="16" text-anchor="middle" class="lb">International Executive Council</text><text x="195" y="30" text-anchor="middle" class="sm">elected student officers</text><text x="392" y="23" class="sm">represents members · runs the business session</text></g>
+<g transform="translate(0,118)"><rect x="20" y="0" width="350" height="38" rx="8" class="bx ac-fill"/><text x="195" y="16" text-anchor="middle" class="lb inv">Chartered Association — DC HOSA</text><text x="195" y="30" text-anchor="middle" class="sm inv">State Advisor · state staff · SEC</text><text x="392" y="23" class="sm">calendar · SLC · cut scores · DC deadlines</text></g>
+<g transform="translate(0,164)"><rect x="20" y="0" width="350" height="38" rx="8" class="bx"/><text x="195" y="16" text-anchor="middle" class="lb">Local Chapter</text><text x="195" y="30" text-anchor="middle" class="sm">advisor · chapter officers · members</text><text x="392" y="23" class="sm">meetings · projects · events entered</text></g>
+</g></svg>
