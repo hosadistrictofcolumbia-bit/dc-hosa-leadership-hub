@@ -77,6 +77,21 @@ function printCard(id){{
   window.print();
   setTimeout(done,3000);
 }}
+// A bare Cmd+P / File > Print (no button — the whole page as it sits) still has to show
+// everything: closed <details> (Coach note, Grounded in, a card's later parts) don't reliably
+// reveal their content from print CSS alone in current browsers, so force them open right
+// before printing and put them back after, whichever way printing was triggered.
+(function(){{
+  var reopen = [];
+  window.addEventListener('beforeprint', function(){{
+    reopen = [];
+    document.querySelectorAll('details:not([open])').forEach(function(d){{ reopen.push(d); d.open = true; }});
+  }});
+  window.addEventListener('afterprint', function(){{
+    reopen.forEach(function(d){{ d.open = false; }});
+    reopen = [];
+  }});
+}})();
 </script>
 </body>
 </html>
@@ -106,12 +121,21 @@ def card_html(c, dom_by_id):
         badges.append('<span class="badge">CE: %s</span>' % e(c["ce"]))
 
     parts = ""
-    for p in c.get("parts", []):
+    part_list = c.get("parts", [])
+    for idx, p in enumerate(part_list):
         lis = "".join("<li>%s</li>" % e(i) for i in p.get("items", []))
-        parts += '<div class="part"><h5>%s</h5>%s%s</div>' % (
-            e(p["heading"]),
-            ("<p>%s</p>" % e(p["body"])) if p.get("body") else "",
-            ("<ul>%s</ul>" % lis) if lis else "")
+        inner = (("<p>%s</p>" % e(p["body"])) if p.get("body") else "") + \
+                (("<ul>%s</ul>" % lis) if lis else "")
+        if idx == 0:
+            parts += '<div class="part"><h5>%s</h5>%s</div>' % (e(p["heading"]), inner)
+        else:
+            # Parts after the first fold behind a heading-styled <details> so a card with
+            # several parts doesn't read as one long scroll — first part (usually the setup
+            # a reader needs before "Do this") stays open, the rest are one click away.
+            # Reuses the .body class so the existing print rule (details .body{display:block})
+            # force-opens these on any print path, including a bare Cmd+P.
+            parts += '<details class="foldpart"><summary>%s</summary><div class="body"><div class="part">%s</div></div></details>' % (
+                e(p["heading"]), inner)
 
     steps = ""
     if c.get("steps"):
@@ -201,7 +225,12 @@ def build():
                   'is used in an actual chapter meeting rather than read and filed.</p>'
                   + "".join(card_html(c, dom_by_id) for c in starters) + '</div></section>')
 
-    body = f"""<section class="hero"><div class="wrap">
+    body = f"""<section class="orient"><div class="wrap">
+  <p class="orient-h1">Chapter officer or state officer — or thinking about becoming one?</p>
+  <p class="orient-sub">You&rsquo;re in the right place. This Hub turns what officers actually do
+  into short, usable cards &mdash; not more reading.</p>
+</div></section>
+<section class="hero"><div class="wrap">
   <div class="eyebrow">DC HOSA · Washington, DC · 2026–27</div>
   <h1>Leadership, one rung at a time.</h1>
   <p>Five capability domains, three levels each. Start where you are and the next rung is

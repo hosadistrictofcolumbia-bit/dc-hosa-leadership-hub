@@ -32,6 +32,10 @@ a{color:inherit}
 .nav a[aria-current]{background:var(--accent);color:#fff}
 
 /* hero */
+.orient{background:var(--paper-2);padding:18px 0;border-bottom:1px solid var(--rule)}
+.orient-h1{font-family:var(--display);font-weight:800;font-size:clamp(19px,2.6vw,25px);
+  line-height:1.28;letter-spacing:-.2px;max-width:38ch;margin:0;color:var(--ink)}
+.orient-sub{margin:6px 0 0;font-size:15px;color:var(--ink-2);max-width:58ch}
 .hero{padding:64px 0 40px;border-bottom:1px solid var(--rule)}
 .hero h1{font-family:var(--display);font-weight:900;font-size:clamp(38px,6vw,64px);line-height:1.02;letter-spacing:-1.5px;max-width:16ch}
 .hero p{margin-top:16px;font-size:17px;color:var(--ink-2);max-width:58ch}
@@ -87,6 +91,10 @@ summary::-webkit-details-marker{display:none}
 summary::before{content:'▸ ';display:inline-block;transition:transform .15s}
 details[open] summary::before{content:'▾ '}
 details .body{font-size:14px;color:var(--ink-2);margin-top:9px}
+details.foldpart{margin-top:18px}
+details.foldpart summary{font-family:var(--display);font-weight:700;font-size:16.5px;color:var(--ink)}
+details.foldpart summary::before{color:var(--accent)}
+details.foldpart .part{margin-top:0}
 .grade{display:inline-block;font-weight:700;font-size:11px;letter-spacing:.5px;padding:2px 7px;border-radius:4px;margin-right:7px}
 .grade.R{background:#dff0e6;color:#14532d}
 .grade.P{background:#fdf0d9;color:#7c4a03}
@@ -132,13 +140,16 @@ footer.foot p+p{margin-top:5px}
 @page{margin:0.45in 0.6in 0.5in}
 @media print{
   /* ---- shared: strip the chrome ---- */
-  .top,.filters,.printbtn,.nav,footer.foot,.hero .eyebrow,#count,#none{display:none!important}
+  .top,.filters,.printbtn,.nav,footer.foot,.hero .eyebrow,.orient,#count,#none{display:none!important}
   html{font-size:10.5pt}
   body{background:#fff;color:#000;line-height:1.38}
   a{text-decoration:none;color:inherit}
   details{break-inside:avoid;border-top:1px solid #ccc;padding-top:5pt;margin-top:7pt;display:block}
+  details.foldpart{margin-top:7pt}
+  details.foldpart .part{margin-top:0}
   details .body{display:block;margin-top:4pt}
   summary{break-after:avoid;color:#000;font-size:8pt;letter-spacing:1.2pt;text-transform:uppercase;font-weight:700;pointer-events:none}
+  details.foldpart summary{font-family:var(--text);font-size:8pt;font-weight:700;color:#000}
   summary::before,summary::after{content:''!important}
   .grade{border:1px solid #888;background:#fff!important;color:#000!important}
   .caveat{border-left:2pt solid #888;background:#fff;padding:4pt 8pt}
